@@ -6,14 +6,15 @@ Esses *endpoints* são responsáveis por fornecer dados sobre os estabelecimento
 
 ## URL Base 
 [http://mobile-aceite.tcu.gov.br/mapa-da-saude/](http://mobile-aceite.tcu.gov.br:80/mapa-da-saude/)
+
 Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.gov.br/appCivicoRS/swagger/index.html?url=/mapa-da-saude/v2/api-docs) 
 
 ## Docs
--[/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}](#Estabelecimentos)
+*[/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}](#Estabelecimentos)
 
 
 
 
 
 ###Estabelecimentos
--/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}
+*/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}
