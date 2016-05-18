@@ -13,7 +13,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
 
 
-## Informações
+## `informacao`
 Cada estabelecimento de saúde está representado pelos seguintes dados.
 * codCnes - O código único do estabelecimento no Cadastro Nacional de Estabelecimentos de Saúde(CNES).
 * codUnidade - Código único do estabelecimento de saúde, diferente do código do CNES.
@@ -74,7 +74,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
        codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     
-    Para referência do significado de cada campo veja na sessão de [` Informações`](#informacoes) acima.
+    Para referência do significado de cada campo veja na sessão de [`informacao`](#informacoes) acima.
   * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
 
     **Retorno**
