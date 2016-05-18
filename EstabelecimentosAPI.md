@@ -13,7 +13,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
 
 
-## Informações
+## `Informações`
 Cada estabelecimento de saúde está representado pelos seguintes dados.
 * codCnes - O código único do estabelecimento no Cadastro Nacional de Estabelecimentos de Saúde(CNES).
 * codUnidade - Código único do estabelecimento de saúde, diferente do código do CNES.
@@ -47,7 +47,8 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 
 
 ###Estabelecimentos
- `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+
+*`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
     **Parâmetros**
