@@ -47,7 +47,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 
 
 ###Estabelecimentos
-* `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+ `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
     **Parâmetros**
