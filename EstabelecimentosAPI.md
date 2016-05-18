@@ -10,7 +10,7 @@ Esses *endpoints* são responsáveis por fornecer dados sobre os estabelecimento
 Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.gov.br/appCivicoRS/swagger/index.html?url=/mapa-da-saude/v2/api-docs) 
 
 ## Docs
-* [/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}](#Estabelecimentos)
+* [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
 
 
 ## Informações
@@ -46,8 +46,8 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 * long - Referênte à geolocalização do estabelecimento indicando latitude.
 
 
-###[Estabelecimentos](Estabelecimentos)
-* /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}
+###Estabelecimentos
+* `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
     **Parâmetros**
@@ -68,13 +68,14 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
       * ATENÇÃO ESPECÍFICA 
       * UNIDADE ADMINISTRATIVA 
       * ATENDIMENTO DOMICILIAR 
-    Observação: O valor para filtro deve ser passado todo em maíusculo e com acentos, exatamente iguais à listagem acima.
+    **Observação:** O valor para filtro deve ser passado todo em maíusculo e com acentos, exatamente iguais à listagem acima.
   * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
        codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
-    Observações: 
+    **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
   * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
 
     **Retorno**
+    
     **Exemplo**
     ````
             {
