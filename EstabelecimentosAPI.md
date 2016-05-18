@@ -13,7 +13,37 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}](#Estabelecimentos)
 
 
-
+## Informações
+Cada estabelecimento de saúde está representado pelos seguintes dados.
+* codCnes - O código único do estabelecimento no Cadastro Nacional de Estabelecimentos de Saúde(CNES).
+* codUnidade - Código único do estabelecimento de saúde, diferente do código do CNES.
+* codIbge -  Código de registro do estabelecimento no IBGE.
+* nomeFantasia -  Nome fantasia do estabelecimento de Saúde.
+* natureza - Representa a natureza empresárial do estabelecimento.
+* tipoUnidade - Representa o tipo do estabeleciemento.
+* esferaAdministrativa - Representa o tipo administrativo do estabelecimento, por exemplo, se é de esfera estadual, municipal, empresa privada, entre outros.
+* vinculoSus - Define se o estabelecimento tem ou não vínculo com o Sistema Único de Saúde.
+* retencao - Define se o estabelecimento é uma unidade publica ou algum dos tipos de unidades privadas.
+* fluxoClientela - Representa o tipo de atendimento oferecido nesse estabelecimento.
+* origemGeografica - Representa qual a origem geográfica do estabelecimento.
+* temAtendimentoUrgencia - Define se o estabelecimento tem ou não atendimento de urgência.
+* temAtendimentoAmbulatorial - Define se o estabelecimento tem ou não atendimento ambulantórial.
+* temCentroCirurgico - Define se o estabelecimento tem ou não centro cirúrgico.
+* temObstetra - Define se o estabelecimento tem ou não obestetra.
+* temNeoNatal - Define se o estabelecimento tem ou não atendimento neo natal.
+* temDialise - Define se o estabelecimento tem ou não diálise.
+* descricaoCompleta - Descrição do estabelecimento.
+* tipoUnidadeCnes - Descreve o tipo de estabelecimento de acordo com o CNES.
+* categoriaUnidade - Representa o tipo do estabeleciemento.
+* logradouro - Referente ao endereço do estabelecimento e representa o logradouro.
+* numero - Referente ao endereço do estabelecimento e representa o número.
+* bairro - Referente ao endereço do estabelecimento e representa o bairro.
+* cidade - Referente ao endereço do estabelecimento e representa a cidade.
+* uf - Referente ao endereço do estabelecimento e representa a uf.
+* cep -  Referente ao endereço do estabelecimento e representa o CEP.
+* turnoAtendimento -  Referente aos turnos de atendimento do estabelecimento.
+* lat - Referênte à geolocalização do estabelecimento indicando latitude.
+* long - Referênte à geolocalização do estabelecimento indicando latitude.
 
 
 ###Estabelecimentos
@@ -40,34 +70,43 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       * ATENDIMENTO DOMICILIAR 
     Observação: O valor para filtro deve ser passado todo em maíusculo e com acentos, exatamente iguais à listagem acima.
   * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
-      * codCnes - O código único do estabelecimento no Cadastro Nacional de Estabelecimentos de Saúde(CNES).
-      * codUnidade - Código único do estabelecimento de saúde, diferente do código do CNES.
-      * codIbge -  Código de registro do estabelecimento no IBGE.
-      * nomeFantasia -  Nome fantasia do estabelecimento de Saúde.
-      * natureza - Representa a natureza empresárial do estabelecimento.
-      * tipoUnidade - Representa o tipo(categoria) do estabeleciemento de saúde.
-      * esferaAdministrativa - Representa o tipo administrativo do estabelecimento, por exemplo, se é de esfera estadual, municipal, empresa privada, entre outros.
-      * vinculoSus - Define se o estabelecimento tem ou não vínculo com o Sistema Único de Saúde.
-      * retencao - Define se o estabelecimento é uma unidade publica ou algum dos tipos de unidades privadas.
-      * fluxoClientela - Representa o tipo de atendimento oferecido nesse estabelecimento.
-      * origemGeografica - Representa qual a origem geográfica do estabelecimento.
-      * temAtendimentoUrgencia - 
-      * temAtendimentoAmbulatorial - 
-      * temCentroCirurgico - 
-      * temObstetra - 
-      * temNeoNatal - 
-      * temDialise - 
-      * descricaoCompleta": "PSF 16 NOVA FORMOSA  ADMINISTRACAO DIRETA DA SAUDE (MS,SES e SMS)      SAUDE BUCAL MI ABORDAGEM  FUMANTE   CIRURGIAO-DENTISTA DA ESTRATEGIA DE SAUDE DA  MEDICO DA ESTRATEGIA DE SAUDE DA  ENFERMEIRO DA ESTRATEGIA DE SAUDE DA  ",
-      * "tipoUnidadeCnes": "CENTRO DE SAUDE/UNIDADE BASICA",
-      * "categoriaUnidade": "POSTO DE SAÚDE",
-      * "logradouro": "RUA 205",
-      * "numero": "S/N",
-      * "bairro": "NOVA FORMOSA",
-      * "cidade": "FORMOSA",
-      * "uf": "GO",
-      * "cep": "73809330",
-      * "turnoAtendimento": "Atendimento nos turnos da manhã e à tarde.",
-      * "lat": -15.5232632160182,
-      * "long": -47.3129868507372
+       codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
+    Observações: 
   * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
 
+    **Retorno**
+    **Exemplo**
+    ````
+            {
+                "codCnes": 5168945,
+                "codUnidade": "5208005168945",
+                "codIbge": 520800,
+                "nomeFantasia": "ODONTOLOGICA",
+                "natureza": "Empresa",
+                "tipoUnidade": "CONSULTÓRIO PARTICULAR",
+                "esferaAdministrativa": "Privada",
+                "vinculoSus": "Não",
+                "retencao": "Unidade Privada Lucrativa***",
+                "fluxoClientela": "Atendimento de demanda espontânea e referenciada",
+                "origemGeografica": "CNES_GEO",
+                "temAtendimentoUrgencia": "Não",
+                "temAtendimentoAmbulatorial": "Sim",
+                "temCentroCirurgico": "Não",
+                "temObstetra": "Não",
+                "temNeoNatal": "Não",
+                "temDialise": "Sim",
+                "descricaoCompleta": "ODONTOLOGICA  EMPRESA PRIVADA     CIRURGIAO DENTISTA - CLINICO GERAL  ",
+                "tipoUnidadeCnes": "CONSULTORIO ISOLADO",
+                "categoriaUnidade": "CONSULTÓRIO",
+                "logradouro": "R STA LUZIA",
+                "numero": "181",
+                "bairro": "CENTRO",
+                "cidade": "FORMOSA",
+                "uf": "GO",
+                "cep": "73801440",
+                "telefone": "06136314461",
+                "turnoAtendimento": "Atendimento nos turnos da manhã e à tarde.",
+                "lat": -15.53375,
+                "long": -47.32255
+            }
+    ```
