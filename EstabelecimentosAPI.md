@@ -72,6 +72,8 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
   * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
        codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    
+    Para referência do significado de cada campo veja na sessão de [`Informações`](#informacoes) acima.
   * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
 
     **Retorno**
