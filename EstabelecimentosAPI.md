@@ -11,7 +11,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 * [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
-* [`/rest/estabelecimentos/unidade/{codUnidade}`](#rest-estabelecimentos-unidade-codUnidade)
+* [`/rest/estabelecimentos/unidade/{codUnidade}`](#rest-estabelecimentos-unidade-{codUnidade})
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
@@ -167,6 +167,6 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     
     Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
     
-* 
+
 
     
