@@ -10,8 +10,8 @@ Esses *endpoints* são responsáveis por fornecer dados sobre os estabelecimento
 Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.gov.br/appCivicoRS/swagger/index.html?url=/mapa-da-saude/v2/api-docs) 
 
 ## Docs
-* [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimento)
-* [`/rest/estabelecimentos/unidade/{codUnidade}`](#detalhes)
+* [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
+* [`/rest/estabelecimentos/unidade/{codUnidade}`](#rest-estabelecimentos-unidade-codUnidade)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
