@@ -11,9 +11,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 * [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
+* [`/rest/estabelecimentos/unidade/{codUnidade}`](#detalhes-estabelecimento)
 
-
-## `informacao`
+## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
 * codCnes - O código único do estabelecimento no Cadastro Nacional de Estabelecimentos de Saúde(CNES).
 * codUnidade - Código único do estabelecimento de saúde, diferente do código do CNES.
@@ -74,13 +74,14 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
        codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     
-    Para referência do significado de cada campo veja na sessão de [`informacao`](#informacoes) acima.
+    Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
   * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
 
     **Retorno**
     
     **Exemplo**
     ````
+        [
             {
                 "codCnes": 5168945,
                 "codUnidade": "5208005168945",
@@ -113,5 +114,59 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
                 "lat": -15.53375,
                 "long": -47.32255
             }
+        ]    
     ```
+    
+    Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
+    
+* `/rest/estabelecimentos/unidade/{codUnidade}`
+
+    Busca dados de um estabelecimento de saúde pelo campo único de código unidade.
+    **Parâmetros**
+    * {codUnidade} - Parâmetro de path que indica o código de unidade.
+    
+    **Retorno**
+    
+    **Exemplo**
+    ````
+        [
+            {
+                "codCnes": 5168945,
+                "codUnidade": "5208005168945",
+                "codIbge": 520800,
+                "nomeFantasia": "ODONTOLOGICA",
+                "natureza": "Empresa",
+                "tipoUnidade": "CONSULTÓRIO PARTICULAR",
+                "esferaAdministrativa": "Privada",
+                "vinculoSus": "Não",
+                "retencao": "Unidade Privada Lucrativa***",
+                "fluxoClientela": "Atendimento de demanda espontânea e referenciada",
+                "origemGeografica": "CNES_GEO",
+                "temAtendimentoUrgencia": "Não",
+                "temAtendimentoAmbulatorial": "Sim",
+                "temCentroCirurgico": "Não",
+                "temObstetra": "Não",
+                "temNeoNatal": "Não",
+                "temDialise": "Sim",
+                "descricaoCompleta": "ODONTOLOGICA  EMPRESA PRIVADA     CIRURGIAO DENTISTA - CLINICO GERAL  ",
+                "tipoUnidadeCnes": "CONSULTORIO ISOLADO",
+                "categoriaUnidade": "CONSULTÓRIO",
+                "logradouro": "R STA LUZIA",
+                "numero": "181",
+                "bairro": "CENTRO",
+                "cidade": "FORMOSA",
+                "uf": "GO",
+                "cep": "73801440",
+                "telefone": "06136314461",
+                "turnoAtendimento": "Atendimento nos turnos da manhã e à tarde.",
+                "lat": -15.53375,
+                "long": -47.32255
+            }
+        ]    
+    ```
+    
+    Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
+    
+* 
+
     
