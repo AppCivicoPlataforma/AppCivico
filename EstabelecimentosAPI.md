@@ -14,6 +14,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`/rest/estabelecimentos/unidade/{codUnidade}`](#encontrar-estabelecimento)
 * [`/rest/especialidades/unidade/{codUnidade}`](#especialidades)
 * [`/rest/profissionais/unidade/{codUnidade}`](#profissionais)
+* [`/rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
@@ -199,14 +200,14 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
         ]
     ```
     
-        **Dados retornados**
-        * descricaoHabilitacao - Descrição da especialidade.
-        * descricaoGrupo - Grupo que a especialidade pertence.
+    **Dados retornados**
+    * descricaoHabilitacao - Descrição da especialidade.
+    * descricaoGrupo - Grupo que a especialidade pertence.
         
 ### Profissionais
 * `/rest/profissionais/unidade/{codUnidade}`
     
-    Busca especialidades disponíveis em um estabelecimento de saúde identificado pelo código unidade.
+    Busca tipos de profissionais disponíveis em um estabelecimento de saúde identificado pelo código unidade.
 
     **Parâmetros**
     
@@ -226,7 +227,38 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
         ]
     ```
     
-        **Dados retornados**
-        * descricaoAtividadeProfissional - Descrição da atividade profissional disponível.
-        * quantidadeProfissionais - Quantidade de profissionais que atual nessa àrea no estabelecimento.
+    
+    **Dados retornados**
         
+    * descricaoAtividadeProfissional - Descrição da atividade profissional disponível.
+    * quantidadeProfissionais - Quantidade de profissionais que atual nessa àrea no estabelecimento.
+        
+### Serviços especializados
+
+* `/rest/servicos/unidade/{codUnidade}` 
+    
+    Busca serviços especializados disponíveis em um estabelecimento de saúde identificado pelo código unidade.
+
+    **Parâmetros**
+    
+    * {codUnidade} - Parâmetro de path que indica o código de unidade.
+    
+    **Exemplo**
+    ```
+       [
+          {
+            "descricaoClassificacaoServico": "SERVICO DE ATENCAO A DSTHIVAIDS",
+            "descricao": "SERVICO DE ATENCAO ESPECIALIZADA - SAE"
+          },
+          {
+            "descricaoClassificacaoServico": "SERVICO DE ATENCAO A SAUDE AUDITIVA",
+            "descricao": "DIAGNOSTICO EM AUDIOLOGIA"
+          }
+        ]
+    ```
+    
+    
+    **Dados retornados**
+        
+    * descricaoClassificacaoServico - Representa a classificação do serviço especializado.
+    * descricao - Descrição do serviço especializado.
