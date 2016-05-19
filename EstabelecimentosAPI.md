@@ -12,6 +12,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ## Docs
 * [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
 * [`/rest/estabelecimentos/unidade/{codUnidade}`](#encontrar-estabelecimento)
+* [`/rest/especialidades/unidade/{codUnidade}`](#especialidades)
+* [`/rest/profissionais/unidade/{codUnidade}`](#profissionais)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
@@ -46,7 +48,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 * long - Referênte à geolocalização do estabelecimento indicando latitude.
 
 
-## Estabelecimentos
+### Estabelecimentos
 
 * `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
@@ -118,12 +120,15 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     ```
     
     Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
-## Encontrar estabelecimento
+    
+### Encontrar estabelecimento
 
 * `/rest/estabelecimentos/unidade/{codUnidade}`
 
     Busca dados de um estabelecimento de saúde pelo campo único de código unidade.
+    
     **Parâmetros**
+    
     * {codUnidade} - Parâmetro de path que indica o código de unidade.
     
     **Retorno**
@@ -168,6 +173,60 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     
     Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
     
+### Especialidades
 
-
+* `/rest/especialidades/unidade/{codUnidade}`
     
+    Busca especialidades disponíveis em um estabelecimento de saúde identificado pelo código unidade.
+    
+    **Parâmetros**
+    
+    * {codUnidade} - Parâmetro de path que indica o código de unidade.
+    
+    **Retorno**
+    
+    **Exemplo**
+    ```
+        [
+          {
+            "descricaoHabilitacao": "ATENCAO A SAUDE BUCAL",
+            "descricaoGrupo": "CENTRO DE ESPECIALIDADES ODONTOLOGICAS II"
+          },
+          {
+            "descricaoHabilitacao": "ATENCAO A SAUDE OCULAR",
+            "descricaoGrupo": "PROJETO OLHAR BRASIL"
+          }
+        ]
+    ```
+    
+        **Dados retornados**
+        * descricaoHabilitacao - Descrição da especialidade.
+        * descricaoGrupo - Grupo que a especialidade pertence.
+        
+### Profissionais
+* `/rest/profissionais/unidade/{codUnidade}`
+    
+    Busca especialidades disponíveis em um estabelecimento de saúde identificado pelo código unidade.
+
+    **Parâmetros**
+    
+    * {codUnidade} - Parâmetro de path que indica o código de unidade.
+    
+    **Exemplo**
+    ```
+       [
+            {
+                "descricaoAtividadeProfissional": "ADMINISTRADOR ",
+                "quantidadeProfissionais": 7
+            },
+            {
+                "descricaoAtividadeProfissional": "AGENTE COMUNITARIO DE SAUDE ",
+                "quantidadeProfissionais": 15
+            }
+        ]
+    ```
+    
+        **Dados retornados**
+        * descricaoAtividadeProfissional - Descrição da atividade profissional disponível.
+        * quantidadeProfissionais - Quantidade de profissionais que atual nessa àrea no estabelecimento.
+        
