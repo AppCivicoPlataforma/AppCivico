@@ -11,7 +11,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 * [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
-* [`/rest/estabelecimentos/unidade/{codUnidade}`](#rest-estabelecimentos-unidade-{codUnidade})
+* [`/rest/estabelecimentos/unidade/{codUnidade}`](#/rest/estabelecimentos/unidade/{codUnidade})
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
@@ -46,9 +46,9 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 * long - Referênte à geolocalização do estabelecimento indicando latitude.
 
 
-###Estabelecimentos
+##Estabelecimentos
 
-* `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+### `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
     **Parâmetros**
@@ -119,7 +119,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     
     Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
     
-* `/rest/estabelecimentos/unidade/{codUnidade}`
+### `/rest/estabelecimentos/unidade/{codUnidade}`
 
     Busca dados de um estabelecimento de saúde pelo campo único de código unidade.
     **Parâmetros**
