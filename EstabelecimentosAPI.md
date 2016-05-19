@@ -46,7 +46,8 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 * long - Referênte à geolocalização do estabelecimento indicando latitude.
 
 
-##Estabelecimentos
+## Estabelecimentos
+
 * `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
@@ -117,7 +118,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     ```
     
     Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
-##Encontrar estabelecimento
+## Encontrar estabelecimento
 
 * `/rest/estabelecimentos/unidade/{codUnidade}`
 
