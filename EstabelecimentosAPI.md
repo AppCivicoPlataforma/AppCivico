@@ -10,11 +10,12 @@ Esses *endpoints* são responsáveis por fornecer dados sobre os estabelecimento
 Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.gov.br/appCivicoRS/swagger/index.html?url=/mapa-da-saude/v2/api-docs) 
 
 ## Docs
-* [`/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
-* [`/rest/estabelecimentos/unidade/{codUnidade}`](#encontrar-estabelecimento)
-* [`/rest/especialidades/unidade/{codUnidade}`](#especialidades)
-* [`/rest/profissionais/unidade/{codUnidade}`](#profissionais)
-* [`/rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
+* [`GET - /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
+* [`GET - /rest/estabelecimentos/unidade/{codUnidade}`](#encontrar-estabelecimento)
+* [`GET - /rest/especialidades/unidade/{codUnidade}`](#especialidades)
+* [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais)
+* [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
+* [`GET - /rest/remedios`](#remédios)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
@@ -51,7 +52,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 
 ### Estabelecimentos
 
-* `/rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+* `GET - /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
     **Parâmetros**
@@ -77,7 +78,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
        codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     
-    Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
+    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) topo do documento.
   * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
 
     **Retorno**
@@ -124,7 +125,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     
 ### Encontrar estabelecimento
 
-* `/rest/estabelecimentos/unidade/{codUnidade}`
+* `GET - /rest/estabelecimentos/unidade/{codUnidade}`
 
     Busca dados de um estabelecimento de saúde pelo campo único de código unidade.
     
@@ -176,7 +177,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     
 ### Especialidades
 
-* `/rest/especialidades/unidade/{codUnidade}`
+* `GET - /rest/especialidades/unidade/{codUnidade}`
     
     Busca especialidades disponíveis em um estabelecimento de saúde identificado pelo código unidade.
     
@@ -205,13 +206,15 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     * descricaoGrupo - Grupo que a especialidade pertence.
         
 ### Profissionais
-* `/rest/profissionais/unidade/{codUnidade}`
+* `GET - /rest/profissionais/unidade/{codUnidade}`
     
     Busca tipos de profissionais disponíveis em um estabelecimento de saúde identificado pelo código unidade.
 
     **Parâmetros**
     
     * {codUnidade} - Parâmetro de path que indica o código de unidade.
+    
+    **Retorno**
     
     **Exemplo**
     ```
@@ -235,13 +238,15 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
         
 ### Serviços especializados
 
-* `/rest/servicos/unidade/{codUnidade}` 
+* `GET - /rest/servicos/unidade/{codUnidade}` 
     
     Busca serviços especializados disponíveis em um estabelecimento de saúde identificado pelo código unidade.
 
     **Parâmetros**
     
     * {codUnidade} - Parâmetro de path que indica o código de unidade.
+    
+    **Retorno**
     
     **Exemplo**
     ```
@@ -262,3 +267,21 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
         
     * descricaoClassificacaoServico - Representa a classificação do serviço especializado.
     * descricao - Descrição do serviço especializado.
+
+### Remédios
+* `GET - /rest/remedios`
+    
+    Pesquisa dados de medicamentos fabricados no Brasil e registrados pela ANVISA.
+
+     **Parâmetros**
+    
+    * produto - Parâmetro de query que realiza busca pelo nome do produto.
+    * codBarraEan - Parâmetro de query que realiza busca pelo [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13), que é um código representado por 13 dígitos.
+    * apresentacao - Parâmetro de query que realiza busca pela descrição do remédio.
+    * quantidade - Parâmetro de query que indica quantidade máxima de remédios a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    
+    **Retorno**
+    
+    **Exemplo**
+    
+    
