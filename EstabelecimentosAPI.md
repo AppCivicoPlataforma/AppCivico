@@ -327,7 +327,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     **Dados retornados**
         
     * cod - Representa o código único identificador do medicamento na base de dados.
-    * codBarraEan - Representa o código de barras EAN-13 [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13) registrado do remédio.
+    * codBarraEan - Representa o código de barras EAN-13 [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13) registrado do medicamento.
     * principioAtivo - Indica o princípio ativo do medicamento.
     * cnpj - Indica o CNPJ do laboratório fabricante do medicamento.
     * laboratorio - Indica o laboratório fabricante do remédio.
