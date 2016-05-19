@@ -284,4 +284,79 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     
     **Exemplo**
     
+    ```
+        [
+            {
+                "codBarraEan": "7891058006402",
+                "principioAtivo": "LEVOTIROXINA SÓDICA",
+                "cnpj": "02.685.377/0001-57",
+                "laboratorio": "SANOFI-AVENTIS FARMACÊUTICA LTDA",
+                "codGgrem": "502816901110317",
+                "registro": "1130010230185",
+                "produto": "PURAN T4",
+                "apresentacao": "100 MCG COM CT BL AL PLAS INC X 28",
+                "classeTerapeutica": "H03A0 - PREPARAÇÕES PARA TIREOIDE",
+                "precoLiberado": "Não",
+                "pf0": 5.72,
+                "pf12": 6.5,
+                "pf17": 6.89,
+                "pf17Alc": 6.89,
+                "pf175": 6.93,
+                "pf175Alc": 6.93,
+                "pf18": 6.97,
+                "pf18Alc": 6.97,
+                "pf20": 7.14,
+                "pmc0": 7.91,
+                "pmc12": 8.98,
+                "pmc17": 9.52,
+                "pmc17Alc": 9.52,
+                "pmc175": 9.58,
+                "pmc175Alc": 9.58,
+                "pmc18": 9.64,
+                "pmc18Alc": 9.64,
+                "pmc20": 9.87,
+                "restricao": "Não",
+                "cap": "Não",
+                "confaz87": "Sim",
+                "ultimaAlteracao": "13/04/2015",
+                "cod": 502816901110317
+            }
+        ]
+    ```
+    
+    **Dados retornados**
+        
+    * cod - Representa o código único identificador do medicamento na base de dados.
+    * codBarraEan - Representa o código de barras EAN-13 [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13) registrado do remédio.
+    * principioAtivo - Indica o princípio ativo do medicamento.
+    * cnpj - Indica o CNPJ do laboratório fabricante do medicamento.
+    * laboratorio - Indica o laboratório fabricante do remédio.
+    * codGgrem - 
+    * registro - 
+    * produto - Representa o nome do medicamento.
+    * apresentacao - 
+    * classeTerapeutica - 
+    * precoLiberado - 
+    * pf0 - 
+    * pf12 - 
+    * pf17 - 
+    * pf17Alc - 
+    * pf175 - 
+    * pf175Alc - 
+    * pf18 - 
+    * pf18Alc - 
+    * pf20 - 
+    * pmc0 - 
+    * pmc12 - 
+    * pmc17 - 
+    * pmc17Alc - 
+    * pmc175 - 
+    * pmc175Alc - 
+    * pmc18 - 
+    * pmc18Alc - 
+    * pmc20 - 
+    * restricao - 
+    * cap - 
+    * confaz87 - 
+    * ultimaAlteracao - Data da ultima alteração desses dados na base.
     
