@@ -120,7 +120,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
         ]    
     ```
     
-    Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
+    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) topo do documento.
     
 ### Encontrar estabelecimento
 
@@ -172,7 +172,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
         ]    
     ```
     
-    Para referência do significado de cada campo veja na sessão de `Dados disponíveis` topo do documento.
+    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) topo do documento.
     
 ### Especialidades
 
