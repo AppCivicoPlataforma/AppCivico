@@ -392,7 +392,7 @@ Cada escola está representado pelos seguintes dados.
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
       * {ano} - Parâmetro de path que representa o ano à ser buscado.
-      * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
+      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada.
       
       
    **Retorno**
@@ -437,7 +437,7 @@ Cada escola está representado pelos seguintes dados.
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
       * {ano} - Parâmetro de path que representa o ano à ser buscado.
-      * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
+      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada.
       
    **Retorno**
       
@@ -484,7 +484,7 @@ Cada escola está representado pelos seguintes dados.
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
+      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada.
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
       * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
@@ -528,7 +528,7 @@ Cada escola está representado pelos seguintes dados.
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
+      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada.
 
    **Retorno**
       
