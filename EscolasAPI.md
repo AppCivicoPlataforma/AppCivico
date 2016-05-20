@@ -14,9 +14,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/escolas/{codEscola}`](#encontrar-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes`](#avaliações-de-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`](#avaliações-de-escola-por-ano)
-* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/media`](#media-de-avaliações-de-escola-por-ano)
-* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}`](#media-de-avaliações-de-escola-por-ano-e-tipo)
-* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}/media`](#media-de-avaliações-de-escola-por-ano-e-tipo)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/media`](#média-de-avaliações-de-escola-por-ano)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}`](#avaliações-de-escola-por-ano-e-tipo)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}/media`](#média-de-avaliações-de-escola-por-ano-e-tipo)
 
 
 ## Dados disponíveis
