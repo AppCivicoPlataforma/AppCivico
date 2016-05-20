@@ -21,6 +21,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}`](#avaliações-de-escola-por-tipo)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}/media`](#média-de-avaliações-de-escola-por-tipo)
 
+* [`GET /rest/tiposavaliacao`](#tipos-de-avaliações)
+
+
 ## Dados disponíveis
 Cada escola está representado pelos seguintes dados.
 * links - Conjunto de links refêrentes à escola.
@@ -389,8 +392,7 @@ Cada escola está representado pelos seguintes dados.
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
       * {ano} - Parâmetro de path que representa o ano à ser buscado.
       * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
-      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
-      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+      
       
    **Retorno**
       
@@ -471,6 +473,7 @@ Cada escola está representado pelos seguintes dados.
                "media": 3.7
             }
          ```
+         
 ### Avaliações de Escola por tipo
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}`
@@ -538,3 +541,27 @@ Cada escola está representado pelos seguintes dados.
                "media": 3.7
             }
          ```
+
+## Tipos de Avaliação
+
+   * `GET /rest/tiposavaliacao`
+   
+      Busca todos os tipos de avaliações disponíveis.
+   
+   **Parâmetros**
+      
+      Não há parâmetros.
+
+   **Retorno**
+      
+      * 200 - OK
+      
+         **Exemplo**
+            
+         ```
+            {
+               "cod": 2,
+               "nome": "IDEB Anos Finais"
+            }
+         ```
+        
