@@ -86,8 +86,8 @@ Cada escola está representado pelos seguintes dados.
   
       Busca dados de escolas próximas à uma coordenada de referência possibilitando também uma busca por nome.
 
-      **Parâmetros**
-
+   **Parâmetros**
+   
       * nome - Parâmetro de query opcional que pode ser completo ou parte do nome para busca.
       * latitude - Parâmetro de query que recebe a latitude para busca georeferênciada.
       * longitude - Parâmetro de query que recebe a longitude para busca georeferênciada.
@@ -95,5 +95,81 @@ Cada escola está representado pelos seguintes dados.
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
       * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
-      **Retorno**
+   **Retorno**
       
+      * 400 - Combinação inválida de parâmetros. As combinações válidas são: nenhum parâmetro OU (nome) OU (latitude, longitude, raio). 
+      * 200 - Ok
+      
+         **Exemplo**
+         
+         ````
+            [
+               {
+                "links": [
+                  {
+                    "rel": "self",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001399"
+                  }
+                ],
+                "codEscola": 11001399,
+                "nome": "EMEF LEOCADIO PARDO",
+                "rede": "Pública",
+                "email": "NESC.SEMED@GMAIL.COM",
+                "esferaAdministrativa": "Municipal",
+                "categoriaEscolaPrivada": "Não é privada",
+                "situacaoFuncionamento": "Em Atividade",
+                "seFimLucrativo": "N",
+                "seConveniadaSetorPublico": "N",
+                "qtdSalasExistentes": 3,
+                "qtdSalasUtilizadas": 2,
+                "qtdFuncionarios": 4,
+                "qtdComputadores": 0,
+                "qtdComputadoresPorAluno": 0,
+                "qtdAlunos": 26,
+                "endereco": {
+                  "cep": "76801000",
+                  "descricao": "TERRA CAIDA BAIXO MADEIRA S/NSAO CARLOS",
+                  "bairro": "ZONA RURAL",
+                  "municipio": "Porto Velho                                       ",
+                  "uf": "RO"
+                },
+                "zona": "RURAL",
+                "infraestrutura": {
+                  "temQuadraEsporteCoberta": "N",
+                  "temQuadraEsporteDescoberta": "N",
+                  "temInternet": "N",
+                  "temBandaLarga": "N",
+                  "temLaboratorioInformatica": "N",
+                  "temLaboratorioCiencias": "N",
+                  "temRefeitorio": "S",
+                  "temAuditorio": "N",
+                  "temDespensa": "S",
+                  "temAlmoxarifado": "N",
+                  "temPatioCoberto": "N",
+                  "temPatioDescoberto": "N",
+                  "temParqueInfantil": "N",
+                  "temCozinha": "S",
+                  "temBiblioteca": "N",
+                  "temBercario": "N",
+                  "temSanitarioNoPredio": "S",
+                  "temSanitarioForaPredio": "N",
+                  "temSalaLeitura": "N",
+                  "temAreaVerde": "S",
+                  "temAguaFiltrada": "S",
+                  "temAcessibilidade": "N",
+                  "temCreche": "N",
+                  "temEnsinoFundamental": "S",
+                  "temEnsinoMedio": "N",
+                  "temEnsinoMedioNormal": "N",
+                  "temEnsinoMedioProfissional": "N",
+                  "temEnsinoMedioIntegrado": "N",
+                  "temEducacaoJovemAdulto": "N",
+                  "temEducacaoIndigena": "N",
+                  "banheiroTemChuveiro": "N",
+                  "ofereceAlimentacao": "S",
+                  "atendeEducacaoEspecializada": "N"
+                }
+              }
+            ]
+         ```
+         
