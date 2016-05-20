@@ -80,7 +80,7 @@ Cada escola está representado pelos seguintes dados.
     * ofereceAlimentacao - Indica se a escola oferece alimentação.
     * atendeEducacaoEspecializada - Indica se a escola possui atendimento à educação especial.
 
-##Escolas
+###Escolas
 
   * `GET - rest/escolas`
   
@@ -173,7 +173,7 @@ Cada escola está representado pelos seguintes dados.
             ]
          ```
          
-# Encontrar escola
+### Encontrar escola
 
   * `GET - /rest/escolas/{codEscola}`
       
@@ -259,7 +259,7 @@ Cada escola está representado pelos seguintes dados.
               }
             ]
          ```
-# Avaliações de Escolas
+### Avaliações de Escolas
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes`
    
@@ -300,7 +300,7 @@ Cada escola está representado pelos seguintes dados.
             ]
          ```
          
-# Avaliações de Escolas por Ano
+### Avaliações de Escolas por Ano
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`
    
