@@ -428,7 +428,7 @@ Cada escola está representado pelos seguintes dados.
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}/media`
    
-      Busca média de todas as avaliações feitas feitas na escola por **ano** e **tipo**.
+      Busca média de todas as avaliações feitas na escola por **ano** e **tipo**.
 
    **Parâmetros**
    
@@ -453,7 +453,7 @@ Cada escola está representado pelos seguintes dados.
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/media`
    
-      Busca média de todas as avaliações feitas feitas na escola.
+      Busca média de todas as avaliações feitas na escola.
 
    **Parâmetros**
    
@@ -519,7 +519,7 @@ Cada escola está representado pelos seguintes dados.
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}/media`
    
-      Busca média de todas as avaliações feitas feitas na escola por **tipo**.
+      Busca média de todas as avaliações feitas na escola por **tipo**.
 
    **Parâmetros**
    
