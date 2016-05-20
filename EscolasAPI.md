@@ -11,9 +11,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 * [`GET - rest/escolas`](#escolas)
-* [`GET - /rest/escolas/{codEscola}`](#encontrar-escolas)
-* [`GET - /rest/escolas/{codEscola}/avaliacoes`](#avaliacoes-da-escola)
-
+* [`GET - /rest/escolas/{codEscola}`](#encontrar-escola)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes`](#avaliações-de-escolas)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`](#avaliações-de-escolas-por-ano)
 
 ## Dados disponíveis
 Cada escola está representado pelos seguintes dados.
@@ -169,6 +169,175 @@ Cada escola está representado pelos seguintes dados.
                   "ofereceAlimentacao": "S",
                   "atendeEducacaoEspecializada": "N"
                 }
+              }
+            ]
+         ```
+         
+# Encontrar escola
+
+  * `GET - /rest/escolas/{codEscola}`
+      
+      Busca dados de uma escola a partir do se código identificação único.
+   **Parâmetros**
+   
+      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      
+   **Retorno**
+      
+      * 404 - Escola com o código passado como parâmetro não foi encontrada.
+      * 200 - Ok
+         
+         **Exemplo**
+         
+         ```
+            [
+               {
+                "links": [
+                  {
+                    "rel": "self",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001399"
+                  }
+                ],
+                "codEscola": 11001399,
+                "nome": "EMEF LEOCADIO PARDO",
+                "rede": "Pública",
+                "email": "NESC.SEMED@GMAIL.COM",
+                "esferaAdministrativa": "Municipal",
+                "categoriaEscolaPrivada": "Não é privada",
+                "situacaoFuncionamento": "Em Atividade",
+                "seFimLucrativo": "N",
+                "seConveniadaSetorPublico": "N",
+                "qtdSalasExistentes": 3,
+                "qtdSalasUtilizadas": 2,
+                "qtdFuncionarios": 4,
+                "qtdComputadores": 0,
+                "qtdComputadoresPorAluno": 0,
+                "qtdAlunos": 26,
+                "endereco": {
+                  "cep": "76801000",
+                  "descricao": "TERRA CAIDA BAIXO MADEIRA S/NSAO CARLOS",
+                  "bairro": "ZONA RURAL",
+                  "municipio": "Porto Velho                                       ",
+                  "uf": "RO"
+                },
+                "zona": "RURAL",
+                "infraestrutura": {
+                  "temQuadraEsporteCoberta": "N",
+                  "temQuadraEsporteDescoberta": "N",
+                  "temInternet": "N",
+                  "temBandaLarga": "N",
+                  "temLaboratorioInformatica": "N",
+                  "temLaboratorioCiencias": "N",
+                  "temRefeitorio": "S",
+                  "temAuditorio": "N",
+                  "temDespensa": "S",
+                  "temAlmoxarifado": "N",
+                  "temPatioCoberto": "N",
+                  "temPatioDescoberto": "N",
+                  "temParqueInfantil": "N",
+                  "temCozinha": "S",
+                  "temBiblioteca": "N",
+                  "temBercario": "N",
+                  "temSanitarioNoPredio": "S",
+                  "temSanitarioForaPredio": "N",
+                  "temSalaLeitura": "N",
+                  "temAreaVerde": "S",
+                  "temAguaFiltrada": "S",
+                  "temAcessibilidade": "N",
+                  "temCreche": "N",
+                  "temEnsinoFundamental": "S",
+                  "temEnsinoMedio": "N",
+                  "temEnsinoMedioNormal": "N",
+                  "temEnsinoMedioProfissional": "N",
+                  "temEnsinoMedioIntegrado": "N",
+                  "temEducacaoJovemAdulto": "N",
+                  "temEducacaoIndigena": "N",
+                  "banheiroTemChuveiro": "N",
+                  "ofereceAlimentacao": "S",
+                  "atendeEducacaoEspecializada": "N"
+                }
+              }
+            ]
+         ```
+# Avaliações de Escolas
+
+   * `GET - /rest/escolas/{codEscola}/avaliacoes`
+   
+      Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola.
+   **Parâmetros**
+   
+      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+      
+   **Retorno**
+      
+      * 404 - Escola com o código passado como parâmetro não foi encontrada.
+      * 200 - Ok
+         
+         **Exemplo**
+            
+         ```
+            {
+               [ 
+                "links": [
+                  {
+                    "rel": "escola",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001364"
+                  },
+                  {
+                    "rel": "self",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001364/avaliacoes/ano/2005/tipo/1"
+                  }
+                ],
+                "tipoAvaliacao": {
+                  "cod": 1,
+                  "nome": "IDEB Anos Iniciais"
+                },
+                "ano": 2005,
+                "valor": 3.4
+              }
+            ]
+         ```
+         
+# Avaliações de Escolas por Ano
+
+   * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`
+   
+      Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola por ano.
+   **Parâmetros**
+   
+      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      * {ano} - Parâmetro de path que representa o ano à ser buscado.
+      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+      
+   **Retorno**
+      
+      * 404 - Escola com o código passado como parâmetro não foi encontrada.
+      * 200 - Ok
+         
+         **Exemplo**
+            
+         ```
+            {
+               [ 
+                "links": [
+                  {
+                    "rel": "escola",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001364"
+                  },
+                  {
+                    "rel": "self",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001364/avaliacoes/ano/2005/tipo/1"
+                  }
+                ],
+                "tipoAvaliacao": {
+                  "cod": 1,
+                  "nome": "IDEB Anos Iniciais"
+                },
+                "ano": 2005,
+                "valor": 3.4
               }
             ]
          ```
