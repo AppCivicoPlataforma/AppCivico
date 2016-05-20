@@ -12,8 +12,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ## Docs
 * [`GET - rest/escolas`](#escolas)
 * [`GET - /rest/escolas/{codEscola}`](#encontrar-escola)
-* [`GET - /rest/escolas/{codEscola}/avaliacoes`](#avaliações-de-escolas)
-* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`](#avaliações-de-escolas-por-ano)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes`](#avaliações-de-escola)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`](#avaliações-de-escola-por-ano)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/media`](#media-de-avaliações-de-escola-por-ano)
 
 ## Dados disponíveis
 Cada escola está representado pelos seguintes dados.
@@ -259,7 +260,8 @@ Cada escola está representado pelos seguintes dados.
               }
             ]
          ```
-### Avaliações de Escolas
+         
+### Avaliações de Escola
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes`
    
@@ -300,7 +302,7 @@ Cada escola está representado pelos seguintes dados.
             ]
          ```
          
-### Avaliações de Escolas por Ano
+### Avaliações de Escola por Ano
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`
    
@@ -342,3 +344,26 @@ Cada escola está representado pelos seguintes dados.
             ]
          ```
          
+### Média avaliações de Escola por Ano
+
+   * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/media`
+   
+      Busca média de todas as avaliações feitas feitas na escola por ano.
+   **Parâmetros**
+   
+      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      * {ano} - Parâmetro de path que representa o ano à ser buscado.
+      
+      
+   **Retorno**
+      
+      * 404 - Escola com o código passado como parâmetro não foi encontrada.
+      * 200 - Ok
+         
+         **Exemplo**
+            
+         ```
+            {
+               "media": 3.7
+            }
+         ```
