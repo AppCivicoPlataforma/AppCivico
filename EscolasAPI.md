@@ -18,7 +18,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}`](#avaliações-de-escola-por-ano-e-tipo)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}/media`](#média-de-avaliações-de-escola-por-ano-e-tipo)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/media`](#média-de-avaliações-de-escola)
-
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}`](#avaliações-de-escola-por-tipo)
 
 ## Dados disponíveis
 Cada escola está representado pelos seguintes dados.
@@ -310,7 +310,7 @@ Cada escola está representado pelos seguintes dados.
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`
    
-      Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola por ano.
+      Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola por **ano**.
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
@@ -353,7 +353,7 @@ Cada escola está representado pelos seguintes dados.
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/media`
    
-      Busca média de todas as avaliações feitas feitas na escola por ano.
+      Busca média de todas as avaliações feitas feitas na escola por **ano**.
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
@@ -377,7 +377,7 @@ Cada escola está representado pelos seguintes dados.
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}`
    
-      Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola por ano e tipo.
+      Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola por **ano** e **tipo**.
 
    **Parâmetros**
    
@@ -393,9 +393,27 @@ Cada escola está representado pelos seguintes dados.
          **Exemplo**
             
          ```
-            {
-               "media": 3.7
-            }
+            [
+               {
+                [ 
+                "links": [
+                  {
+                    "rel": "escola",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001364"
+                  },
+                  {
+                    "rel": "self",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001364/avaliacoes/ano/2005/tipo/1"
+                  }
+                ],
+                "tipoAvaliacao": {
+                  "cod": 1,
+                  "nome": "IDEB Anos Iniciais"
+                },
+                "ano": 2005,
+                "valor": 3.4
+              }
+            ]
          ```         
          
          
@@ -403,7 +421,7 @@ Cada escola está representado pelos seguintes dados.
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}/media`
    
-      Busca média de todas as avaliações feitas feitas na escola por ano e tipo.
+      Busca média de todas as avaliações feitas feitas na escola por **ano** e **tipo**.
 
    **Parâmetros**
    
@@ -423,6 +441,7 @@ Cada escola está representado pelos seguintes dados.
                "media": 3.7
             }
          ```
+         
 ### Média de avaliações de Escola
 
    * `GET - /rest/escolas/{codEscola}/avaliacoes/media`
@@ -445,3 +464,44 @@ Cada escola está representado pelos seguintes dados.
                "media": 3.7
             }
          ```
+### Avaliações de Escola por tipo
+
+   * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}`
+   
+      Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola por **tipo**.
+
+   **Parâmetros**
+   
+      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      * {ano} - Parâmetro de path que representa o ano à ser buscado.
+      * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
+      
+   **Retorno**
+      
+      * 404 - Escola com o código passado como parâmetro não foi encontrada.
+      * 200 - Ok
+         
+         **Exemplo**
+         ```
+            [
+               {
+                [ 
+                "links": [
+                  {
+                    "rel": "escola",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001364"
+                  },
+                  {
+                    "rel": "self",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001364/avaliacoes/ano/2005/tipo/1"
+                  }
+                ],
+                "tipoAvaliacao": {
+                  "cod": 1,
+                  "nome": "IDEB Anos Iniciais"
+                },
+                "ano": 2005,
+                "valor": 3.4
+              }
+            ]
+         ```            
