@@ -17,6 +17,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/media`](#média-de-avaliações-de-escola-por-ano)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}`](#avaliações-de-escola-por-ano-e-tipo)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}/media`](#média-de-avaliações-de-escola-por-ano-e-tipo)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/media`](#média-de-avaliações-de-escola)
 
 
 ## Dados disponíveis
@@ -377,6 +378,7 @@ Cada escola está representado pelos seguintes dados.
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}`
    
       Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola por ano e tipo.
+
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
@@ -402,11 +404,34 @@ Cada escola está representado pelos seguintes dados.
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}/media`
    
       Busca média de todas as avaliações feitas feitas na escola por ano e tipo.
+
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
       * {ano} - Parâmetro de path que representa o ano à ser buscado.
       * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
+      
+   **Retorno**
+      
+      * 404 - Escola com o código passado como parâmetro não foi encontrada.
+      * 200 - Ok
+         
+         **Exemplo**
+            
+         ```
+            {
+               "media": 3.7
+            }
+         ```
+### Média de avaliações de Escola
+
+   * `GET - /rest/escolas/{codEscola}/avaliacoes/media`
+   
+      Busca média de todas as avaliações feitas feitas na escola.
+
+   **Parâmetros**
+   
+      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
       
    **Retorno**
       
