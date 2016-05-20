@@ -80,3 +80,20 @@ Cada escola está representado pelos seguintes dados.
     * ofereceAlimentacao - Indica se a escola oferece alimentação.
     * atendeEducacaoEspecializada - Indica se a escola possui atendimento à educação especial.
 
+##Escolas
+
+  * `GET - rest/escolas`
+  
+      Busca dados de escolas próximas à uma coordenada de referência possibilitando também uma busca por nome.
+
+      **Parâmetros**
+
+      * nome - Parâmetro de query opcional que pode ser completo ou parte do nome para busca.
+      * latitude - Parâmetro de query que recebe a latitude para busca georeferênciada.
+      * longitude - Parâmetro de query que recebe a longitude para busca georeferênciada.
+      * raio - Parâmetro de query que recebe o limite em quilometros a partir das coordenadas de referência que as  escolas serão buscadas.
+      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+      
+      **Retorno**
+      
