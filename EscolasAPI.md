@@ -19,6 +19,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/tipo/{tipo}/media`](#média-de-avaliações-de-escola-por-ano-e-tipo)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/media`](#média-de-avaliações-de-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}`](#avaliações-de-escola-por-tipo)
+* [`GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}/media`](média-de-avaliações-de-escola-por-tipo)
 
 ## Dados disponíveis
 Cada escola está representado pelos seguintes dados.
@@ -183,6 +184,7 @@ Cada escola está representado pelos seguintes dados.
   * `GET - /rest/escolas/{codEscola}`
       
       Busca dados de uma escola a partir do se código identificação único.
+
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
@@ -270,6 +272,7 @@ Cada escola está representado pelos seguintes dados.
    * `GET - /rest/escolas/{codEscola}/avaliacoes`
    
       Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola.
+
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
@@ -311,6 +314,7 @@ Cada escola está representado pelos seguintes dados.
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`
    
       Busca avaliações do Índice de Desenvolvimento da Educação Básica (Ideb) feitas na escola por **ano**.
+
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
@@ -354,6 +358,7 @@ Cada escola está representado pelos seguintes dados.
    * `GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}/media`
    
       Busca média de todas as avaliações feitas feitas na escola por **ano**.
+
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
@@ -384,7 +389,8 @@ Cada escola está representado pelos seguintes dados.
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
       * {ano} - Parâmetro de path que representa o ano à ser buscado.
       * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
-      
+      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
    **Retorno**
       
       * 404 - Escola com o código passado como parâmetro não foi encontrada.
@@ -473,9 +479,9 @@ Cada escola está representado pelos seguintes dados.
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {ano} - Parâmetro de path que representa o ano à ser buscado.
       * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
-      
+      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
    **Retorno**
       
       * 404 - Escola com o código passado como parâmetro não foi encontrada.
@@ -505,3 +511,27 @@ Cada escola está representado pelos seguintes dados.
               }
             ]
          ```            
+
+### Média de avaliações de Escola por tipo
+
+   * `GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}/media`
+   
+      Busca média de todas as avaliações feitas feitas na escola por **tipo**.
+
+   **Parâmetros**
+   
+      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      * {tipo} - Parâmetro de path qua representa o tipo de avaliação a ser buscada.
+
+   **Retorno**
+      
+      * 404 - Escola com o código passado como parâmetro não foi encontrada.
+      * 200 - Ok
+         
+         **Exemplo**
+            
+         ```
+            {
+               "media": 3.7
+            }
+         ```
