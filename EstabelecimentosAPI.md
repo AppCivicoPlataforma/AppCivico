@@ -336,27 +336,28 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     * produto - Representa o nome do medicamento.
     * apresentacao - 
     * classeTerapeutica - 
-    * precoLiberado - 
-    * pf0 - 
-    * pf12 - 
-    * pf17 - 
-    * pf17Alc - 
-    * pf175 - 
-    * pf175Alc - 
-    * pf18 - 
-    * pf18Alc - 
-    * pf20 - 
-    * pmc0 - 
-    * pmc12 - 
-    * pmc17 - 
-    * pmc17Alc - 
-    * pmc175 - 
-    * pmc175Alc - 
-    * pmc18 - 
-    * pmc18Alc - 
-    * pmc20 - 
+    * precoLiberado - Indica se o preço do medicamento é liberado ou não. O termo "liberado" significa que o medicamento está liberado dos critérios de estabelecimento ou ajuste de preço (Resolução CMED nº 5, de 9 de outubro de 2003). Apenas o Preço Fábrica encontra-se liberado, devendo o Preço Máximo ao Consumidor atender às margens previstas no art. 4º da Resolução nº 04, de 12 de março de 2015.
+    * pf0 - Representa o preço Fábrica ou Preço Fabricante que é o preço praticado pelas empresas produtoras ou importadoras do produto e pelas empresas distribuidoras. O PF é o preço máximo permitido para venda a farmácias, drogarias e para entes da Administração Pública.
+    * pf12 - Preço de fábrica com alíquotas de ICMS 12%.
+    * pf17 - Preço de fábrica com alíquotas de ICMS 17%. 
+    * pf17Alc - Preço de fábrica com alíquotas de ICMS 17% em áreas de Livre Comércio.
+    * pf175 - Preço de fábrica com alíquotas de ICMS 17.5%.
+    * pf175Alc - Preço de fábrica com alíquotas de ICMS 17.5% em áreas de Livre Comércio.
+    * pf18 - Preço de fábrica com alíquotas de ICMS 18%.
+    * pf18Alc - Preço de fábrica com alíquotas de ICMS 18% em áreas de Livre Comércio.
+    * pf20 -  Preço de fábrica com alíquotas de ICMS 20%.
+    * pmc0 -  Reprensenta o preço Máximo ao Consumidor, o qual é praticado pelas farmácias e Drogarias. O PMC é o preço máximo permitido para venda ao consumidor e inclui os impostos incidentes por estado. O preço Máximo ao Consumidor é o preço a ser praticado pelo comércio varejista, ou seja, farmácias e drogarias ( Orientação Interpretativa nº 02, 13/11/2006 – CMED.
+    * pmc12 - Preço de fábrica com alíquotas de ICMS 12%.
+    * pmc17 - Preço de fábrica com alíquotas de ICMS 17%.
+    * pmc17Alc - Preço de fábrica com alíquotas de ICMS 17% em áreas de Livre Comércio.
+    * pmc175 - Preço de fábrica com alíquotas de ICMS 17.5%.
+    * pmc175Alc - Preço de fábrica com alíquotas de ICMS 17.5% em áreas de Livre Comércio.
+    * pmc18 - Preço de fábrica com alíquotas de ICMS 18%.
+    * pmc18Alc - Preço de fábrica com alíquotas de ICMS 18% em áreas de Livre Comércio.
+    * pmc20 - Preço de fábrica com alíquotas de ICMS 20%.
     * restricao - 
     * cap - 
     * confaz87 - 
     * ultimaAlteracao - Data da ultima alteração desses dados na base.
     
+Para mais referências sobre os dados dos remédios, entre no site da [Agência Nacional de Vigilância Sanitária(ANVISA)](http://portal.anvisa.gov.br/wps/content/Anvisa+Portal/Anvisa/Pos+-+Comercializacao+-+Pos+-+Uso/Regulacao+de+Marcado/Assunto+de+Interesse/Mercado+de+Medicamentos/Listas+de+Precos+de+Medicamentos+03).
