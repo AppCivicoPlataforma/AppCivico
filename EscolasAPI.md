@@ -42,7 +42,7 @@ Cada escola está representado pelos seguintes dados.
 * qtdSalasUtilizadas - Indica a quantidade de salas utilizadas no espaço da escola.
 * qtdFuncionarios - Indica a quantidade total de funcionarios que trabalham na escola.
 * qtdComputadores - Indica a quantidade total de computadores na escola.
-* qtdComputadoresPorAluno - 
+* qtdComputadoresPorAluno - Indica a quantidade de computadores por aluno.
 * qtdAlunos - Indica a quantidade total de alunos atualmente matriculados na escola.
 * endereco 
     * cep - Cep da escola
