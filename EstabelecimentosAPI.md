@@ -331,11 +331,12 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     * principioAtivo - Indica o princípio ativo do medicamento.
     * cnpj - Indica o CNPJ do laboratório fabricante do medicamento.
     * laboratorio - Indica o laboratório fabricante do remédio.
-    * codGgrem - 
-    * registro - 
+    * codGgrem - Código que identifica o medicamento na  Gerência-Geral de Regulação
+    Econômica e Monitoramento de Mercado (GGREM).
+    * registro - Código de registro do medicamento.
     * produto - Representa o nome do medicamento.
-    * apresentacao - 
-    * classeTerapeutica - 
+    * apresentacao - Descrição do medicamento.
+    * classeTerapeutica - Classe terapêutica do medicamento.
     * precoLiberado - Indica se o preço do medicamento é liberado ou não. O termo "liberado" significa que o medicamento está liberado dos critérios de estabelecimento ou ajuste de preço (Resolução CMED nº 5, de 9 de outubro de 2003). Apenas o Preço Fábrica encontra-se liberado, devendo o Preço Máximo ao Consumidor atender às margens previstas no art. 4º da Resolução nº 04, de 12 de março de 2015.
     * pf0 - Representa o preço Fábrica ou Preço Fabricante que é o preço praticado pelas empresas produtoras ou importadoras do produto e pelas empresas distribuidoras. O PF é o preço máximo permitido para venda a farmácias, drogarias e para entes da Administração Pública.
     * pf12 - Preço de fábrica com alíquotas de ICMS 12%.
@@ -347,17 +348,17 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     * pf18Alc - Preço de fábrica com alíquotas de ICMS 18% em áreas de Livre Comércio.
     * pf20 -  Preço de fábrica com alíquotas de ICMS 20%.
     * pmc0 -  Reprensenta o preço Máximo ao Consumidor, o qual é praticado pelas farmácias e Drogarias. O PMC é o preço máximo permitido para venda ao consumidor e inclui os impostos incidentes por estado. O preço Máximo ao Consumidor é o preço a ser praticado pelo comércio varejista, ou seja, farmácias e drogarias ( Orientação Interpretativa nº 02, 13/11/2006 – CMED.
-    * pmc12 - Preço de fábrica com alíquotas de ICMS 12%.
-    * pmc17 - Preço de fábrica com alíquotas de ICMS 17%.
-    * pmc17Alc - Preço de fábrica com alíquotas de ICMS 17% em áreas de Livre Comércio.
-    * pmc175 - Preço de fábrica com alíquotas de ICMS 17.5%.
-    * pmc175Alc - Preço de fábrica com alíquotas de ICMS 17.5% em áreas de Livre Comércio.
-    * pmc18 - Preço de fábrica com alíquotas de ICMS 18%.
-    * pmc18Alc - Preço de fábrica com alíquotas de ICMS 18% em áreas de Livre Comércio.
-    * pmc20 - Preço de fábrica com alíquotas de ICMS 20%.
-    * restricao - 
-    * cap - 
-    * confaz87 - 
+    * pmc12 - Preço Máximo ao Consumidor com alíquotas de ICMS 12%.
+    * pmc17 - Preço Máximo ao Consumidor com alíquotas de ICMS 17%.
+    * pmc17Alc - Preço Máximo ao Consumidor com alíquotas de ICMS 17% em áreas de Livre Comércio.
+    * pmc175 - Preço Máximo ao Consumidor com alíquotas de ICMS 17.5%.
+    * pmc175Alc - Preço Máximo ao Consumidor com alíquotas de ICMS 17.5% em áreas de Livre Comércio.
+    * pmc18 - Preço Máximo ao Consumidor com alíquotas de ICMS 18%.
+    * pmc18Alc - Preço Máximo ao Consumidor com alíquotas de ICMS 18% em áreas de Livre Comércio.
+    * pmc20 - Preço Máximo ao Consumidor com alíquotas de ICMS 20%.
+    * restricao - Indica se o medicamento possui restrição hospitalar ou não.
+    * cap - Indica se o preço do medicamento está sujeito ao [Coeficiente de Adequação de Preços – CAP](http://portal.anvisa.gov.br/wps/content/Anvisa+Portal/Anvisa/Pos+-+Comercializacao+-+Pos+-+Uso/Regulacao+de+Marcado/Assunto+de+Interesse/Compras+Publicas/Perguntas+e+Respostas+-+Compras+Publicas)
+    * confaz87 - Indica se o medicamento está sujeito à isenção de ICMS pelo [CONVÊNIO ICMS 87/02](https://www.confaz.fazenda.gov.br/legislacao/convenios/2002/cv087_02)
     * ultimaAlteracao - Data da ultima alteração desses dados na base.
     
 Para mais referências sobre os dados dos remédios, entre no site da [Agência Nacional de Vigilância Sanitária(ANVISA)](http://portal.anvisa.gov.br/wps/content/Anvisa+Portal/Anvisa/Pos+-+Comercializacao+-+Pos+-+Uso/Regulacao+de+Marcado/Assunto+de+Interesse/Mercado+de+Medicamentos/Listas+de+Precos+de+Medicamentos+03).
