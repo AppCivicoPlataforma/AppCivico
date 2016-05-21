@@ -7,7 +7,7 @@ Todos os dados armazenados no metamodelo, que não dizem respeito à dados de us
 ## Esquema de Dados
 O esquema de dados é relacional e as tabelas estão modeladas da maneira mais genérica possível. Esse modelo de dados descreve como está estruturado o banco de dados onde estão sendo armazenados os usuários, postagens, hashtags, instalações, etc.
 ### Modelo Físico 
-<img src="https://ap.imagensbrasil.org/image/TBmg6" alt="TBmg6" border="1" width="800">
+<img src="https://ap.imagensbrasil.org/images/metamodelo-2.jpg" alt="Metamodelo" border="1" width="800">
 
 
 ## URL Base 
