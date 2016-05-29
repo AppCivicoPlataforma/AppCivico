@@ -5,7 +5,7 @@ Esses *endpoints* são responsáveis por fornecer dados sobre escolas públicas 
 [Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP)](http://portal.inep.gov.br/)
 
 ## URL Base 
-[http://mobile-aceite.tcu.gov.br:80/nossaEscolaRS/](http://mobile-aceite.tcu.gov.br:80/nossaEscolaRS/)
+`http://mobile-aceite.tcu.gov.br:80/nossaEscolaRS/`
 
 Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.gov.br/appCivicoRS/swagger/index.html?url=/nossaEscolaRS/v2/api-docs) 
 
