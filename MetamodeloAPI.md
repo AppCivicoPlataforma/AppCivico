@@ -24,8 +24,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/aplicativos`](#cadastrar-aplicativo)
 * [`GET - /rest/aplicativos/{codAplicativo}`](#informações-de-aplicativo)
 * [`PUT - /rest/aplicativos/{codAplicativo}`](#alterar-aplicativo)
-* [`GET - /rest/aplicativos/{codAplicativo}/tipos-perfil`](tipos-de-perfil-por-aplicativo)
-* 
+* [`GET - /rest/aplicativos/{codAplicativo}/tipos-perfil`](#tipos-de-perfil-por-aplicativo)
+* [`POST - /rest/aplicativos/{codAplicativo}/tipos-perfil`](#cadastrar-tipo-de-perfil)
 
 #Aplicativos
 
@@ -244,7 +244,47 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     * 404 - Aplicativo com o código mandado como parâmetro não encontrado.
     
+### Cadastrar Tipo de Perfil
+
+  Cadastra um novo tipo de perfil para um aplicativo.
+
+* `POST - /rest/aplicativos/{codAplicativo}/tipos-perfil`
+  
+   **Parâmetros**
+  
+    **aplication/json**
+      
+    * appToken - Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * {codAplicativo} - Código do aplicativo para qual será criado o novo tipo de perfil.
+    * **body** - Campos com informações sobre o tipo de perfil.
+      
+        * descricao - Descrição do tipo de perfil.
     
+      **Exemplo**
+        
+        ```
+            {
+              "descricao": "Descrição do tipo de perfil."
+            }
+        ```
+  **Retorno**
+  
+    * 201 - Tipo de perfil criado com sucesso.
     
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do tipo de perfil no campo **location**. 
+        
+        ````
+        "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25/tipos-perfil/41"
+        ```
+        
+    * 401 - Não autorizado.
+    
+        O apptoken enviado não é um token válido ou está expirado.
+        
+    * 400 - Parâmentros incorretos
+    
+        Falta de parâmetros obrigatórios ou parâmetros incorretos.
+    * 404 - Aplicativo não encontrado
+        Não exite uma aplicativo cadastrado com o código informado.
 
 
