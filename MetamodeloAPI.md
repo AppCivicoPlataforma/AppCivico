@@ -61,7 +61,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
 ### Cadastrar Aplicativo
     
-      Esse **endpoint** cadastra um aplicativo na plataforma.
+    Esse **endpoint** cadastra um aplicativo na plataforma.
 
 * `POST - /rest/aplicativos`
 
