@@ -160,7 +160,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
     * appToken - Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
     
-    * {codAplicativo} - Parâmetro de path que representa o código do aplicativo a ser buscado.
+    * {codAplicativo} - Parâmetro de path que representa o código do aplicativo a ser alterado.
 
     * **body** - Campos com as novas informações sobre o aplicativo.
       
@@ -197,3 +197,4 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       Não existe um aplicativo cadastrado com o código mandado como parâmtro na busca ou um responsável com o código informado no campo **codResponsavel**.
   
+# Tipos de Perfil
