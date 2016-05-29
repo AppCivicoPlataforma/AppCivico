@@ -34,7 +34,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   **Parâmetros**
       
-      Não há parâmetros.
+  Não há parâmetros.
+
   **Retorno**
     
     * 200 - OK
@@ -61,7 +62,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
 ### Cadastrar Aplicativo
     
-    Esse **endpoint** cadastra um aplicativo na plataforma.
+  Esse **endpoint** cadastra um aplicativo na plataforma.
 
 * `POST - /rest/aplicativos`
 
