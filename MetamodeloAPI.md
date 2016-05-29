@@ -21,8 +21,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * [`GET - /rest/aplicativos`](#buscar-aplicativos)
 * [`POST - /rest/aplicativos`](#cadastrar-aplicativo)
-
-
+* [`GET - /rest/aplicativos/{codAplicativo}`](#informações-de-aplicativo)
+* [`PUT - /rest/aplicativos/{codAplicativo}`](#alterar-aplicativo)
 
 #Aplicativos
 
@@ -108,5 +108,50 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
         Falta de parâmetros obrigatórios ou parâmetros incorretos.
       
+### Informações de Aplicativo
+  
+  Este *endpoint* retorna informações de um aplicativo especifico buscado por código do mesmo.
+  
+* `GET - /rest/aplicativos/{codAplicativo}`
 
+  **Parâmetros**
+  
+    * {codAplicativo} - Parâmetro de path que representa o código do aplicativo a ser buscado.
+  
+  **Retorno**
+    
+    * 200 - OK
+      
+      **Exemplo**
+      
+      ````
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/22"
+            },
+            {
+              "rel": "responsavel",
+              "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/1"
+            }
+          ],
+          "cod": 22,
+          "nome": "VacinApp",
+          "descricao": "Aplicativo para gerência de cartão de vacina digital"
+        }
+      ```
+      
+    * 404 - Aplicativo não encontrado
+      
+      Não existe um aplicativo cadastrado com o código mandado como parâmtro na busca.
+    
+### Alterar Aplicativo
+
+  Esse **endpoint** altera informações de um aplicativo cadastrado na plataforma.
+  
+
+* `PUT - /rest/aplicativos/{codAplicativo}`
+  
+  
   
