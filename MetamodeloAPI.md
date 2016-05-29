@@ -35,7 +35,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Grupos
 
-* [`POST - /rest/grupos`](criar-grupo)
+* [`POST - /rest/grupos`](#criar-grupo)
+* [`GET - /rest/grupos/{codGrupo}`](#encontrar-grupo)
 
 #Aplicativos
 
@@ -341,7 +342,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Criar grupo
 
-  Este *endpoin* é responsável por criar um novo grupo de usuários para um aplicativo.
+  Este *endpoint* é responsável por criar um novo grupo de usuários para um aplicativo.
 
 * `POST - /rest/grupos` 
 
@@ -393,4 +394,78 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     Não exite um aplicativo cadastrado com o código informado no campo **codAplicativo**.    
 
 
+### Encontrar Grupo
 
+  Este *endpoint* retorna informações de um grupo especifico buscado por código do mesmo.
+
+* `GET - /rest/grupos/{codGrupo}`
+
+   **Parâmetros**
+    
+    * {codGrupo} - Parâmetro de path que indica o código do grupo a ser buscado.
+  
+  **Retorno**
+    
+    * 200 - Ok
+      
+      **Exemplo**
+      
+      ```
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/1"
+            },
+            {
+              "rel": "aplicativo",
+              "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/100"
+            },
+            {
+              "rel": "tipoObjeto",
+              "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-objeto/100"
+            }
+          ],
+          "descricao": "teste",
+          "codObjeto": 0
+        }
+      ```
+      
+    * 404 - Grupo não encontrado.
+    
+### Membros por Grupo
+
+  Este *endpoint* retorna o membros de determinado grupo.
+  
+* `GET - /rest/grupos/{codGrupo}/membros`
+
+   **Parâmetros**
+    
+    * {codGrupo} - Parâmetro de path que indica o código do grupo a ser buscado.
+  
+  **Retorno**
+    
+    * 200 - Ok
+    
+      **Exemplo**
+      
+      ```
+        [
+          {
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/1/membros/1"
+              },
+              {
+                "rel": "pessoa",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/27"
+              }
+            ],
+            "dataHoraAtivo": "2016-02-18T22:50:35BRST"
+          }
+        ]
+      ```
+      
+    * 404 - Grupo não encontrado.
+  
