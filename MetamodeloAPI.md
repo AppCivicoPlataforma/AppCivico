@@ -213,7 +213,38 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   **Parâmetros**
     
     * {codAplicativo} - Parâmetro de path que indica o código do aplicativo em que os perfis serão buscados.
-    * pagina - 
-    * quantidadeDeItens - 
+    * pagina - Parâmetro de query opcional para uma busca paginada. **Opcional**. Número da página com valor padrão 0.
+    * quantidadeDeItens - Parâmetro de query opcional que define o máximo de escolas retornadas na busca. **Opcional**.Valor padrão é 20.
   
+  **Retorno**
+  
+    * 200 - Ok.
+      
+      **Exemplo**
+        
+        ```
+          [
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/100/tipos-perfil/2"
+                },
+                {
+                "rel": "aplicativo",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/100"
+                }
+              ],
+              "codTipoPerfil": 2,
+              "descricao": "Administrador",
+              "dataHoraCriacao": "2015-11-30T00:00:00BRST"
+            }
+          ]
+        ```
+    
+    * 404 - Aplicativo com o código mandado como parâmetro não encontrado.
+    
+    
+    
+
 
