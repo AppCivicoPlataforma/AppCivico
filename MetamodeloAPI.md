@@ -107,7 +107,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 400 - Parâmentros incorretos
     
         Falta de parâmetros obrigatórios ou parâmetros incorretos.
-      
+    * 404 - Responsável não encontrado
+        Não exite uma pessoa cadastrada com o código informado no campo **codResponsavel**.
 ### Informações de Aplicativo
   
   Este *endpoint* retorna informações de um aplicativo especifico buscado por código do mesmo.
@@ -153,5 +154,46 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * `PUT - /rest/aplicativos/{codAplicativo}`
   
+  **Parâmetros**
   
+    **aplication/json**
+      
+    * appToken - Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codAplicativo} - Parâmetro de path que representa o código do aplicativo a ser buscado.
+
+    * **body** - Campos com as novas informações sobre o aplicativo.
+      
+        * codResponsavel - Código do desenvolvedor responsável pelo aplicativo.
+        * descricao - Breve descrição do aplicativo. Explicação sobre o que o aplicativo faz, qual àrea de abordagem, e sobre que tipo de informação esse aplicativo armazena na plataforma.
+        * nome - Nome do aplicativo.
+        * token - . **Opcional**
+        
+      **Exemplo**
+        
+        ```
+            {
+              "codResponsavel": 1,
+              "descricao": "Aplicativo para visualizar informações sobre estabelecimentos de saúde",
+              "nome": "Mapa da Saúde",
+              "token": ""
+            }
+        ```
+  **Retorno**
+  
+    * 200 - Alterado com sucesso.
+    
+        Os dados foram alterados com sucesso.
+        
+    * 401 - Não autorizado.
+    
+        O apptoken enviado não é um token válido ou está expirado.
+        
+    * 400 - Parâmentros incorretos
+    
+        Falta de parâmetros obrigatórios ou parâmetros incorretos.
+        
+    * 404 - Aplicativo ou responsável não encontrado 
+      
+      Não existe um aplicativo cadastrado com o código mandado como parâmtro na busca ou um responsável com o código informado no campo **codResponsavel**.
   
