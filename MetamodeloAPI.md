@@ -13,7 +13,8 @@ O esquema de dados é relacional e as tabelas estão modeladas da maneira mais g
 
 
 ## URL Base 
-[http://mobile-aceite.tcu.gov.br:80/appCivicoRS/](http://mobile-aceite.tcu.gov.br:80/appCivicoRS/)
+
+`http://mobile-aceite.tcu.gov.br:80/appCivicoRS/`
 
 Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.gov.br/appCivicoRS/swagger/index.html?url=/appCivicoRS/v2/api-docs) 
 
@@ -23,6 +24,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/aplicativos`](#cadastrar-aplicativo)
 * [`GET - /rest/aplicativos/{codAplicativo}`](#informações-de-aplicativo)
 * [`PUT - /rest/aplicativos/{codAplicativo}`](#alterar-aplicativo)
+* [`GET - /rest/aplicativos/{codAplicativo}/tipos-perfil`](tipos-de-perfil-por-aplicativo)
+* 
 
 #Aplicativos
 
@@ -198,3 +201,19 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       Não existe um aplicativo cadastrado com o código mandado como parâmtro na busca ou um responsável com o código informado no campo **codResponsavel**.
   
 # Tipos de Perfil
+  
+  Para cada aplicativo é possível criar é possível criar perfis para um usuário já cadastrado na base na plataforma. Através do tipo de perfil é possível ter diferentes tipos de usuário em um determinado aplicativo.
+    
+### Tipos de Perfil por aplicativo
+
+  Este *endpoint* retorna os tipos de perfil criados para um determinado aplicativo.
+
+* `GET - /rest/aplicativos/{codAplicativo}/tipos-perfil`
+
+  **Parâmetros**
+    
+    * {codAplicativo} - Parâmetro de path que indica o código do aplicativo em que os perfis serão buscados.
+    * pagina - 
+    * quantidadeDeItens - 
+  
+
