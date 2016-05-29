@@ -37,6 +37,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * [`POST - /rest/grupos`](#criar-grupo)
 * [`GET - /rest/grupos/{codGrupo}`](#encontrar-grupo)
+* [`GET - /rest/grupos/{codGrupo}/membros`](#membros-por-grupo)
+* [`POST - /rest/grupos/{codGrupo}/membros`](#adicionar-membro-em-grupo)
+* [`GET - /rest/grupos/{codGrupo}/membros/{codMembro}`](#encontrar-membro-em-grupo)
 
 #Aplicativos
 
@@ -468,4 +471,79 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       ```
       
     * 404 - Grupo não encontrado.
+  
+### Adicionar membro em Grupo
+
+  Adiciona uma pessoa como membro de um grupo.
+  
+* `POST - /rest/grupos/{codGrupo}/membros` 
+  
+  **Parâmetros**
+  
+    **www-form-urlencoded**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * {codGrupo} - Parâmetro de path que indica o código do grupo a ser buscado.
+    * **body** - Campos com informações do membro
+      
+      * codUsuario - Código da pessoa que será adicionada como membro.
+  
+  **Retorno**
+
+  * 201 - Membro criado com sucesso.
+    
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do membro no grupo no campo **location**. 
+        
+        ```
+          "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/2/membros/2"
+        ```
+        
+  * 401 - Não autorizado.
+    
+    O apptoken enviado não é um token válido ou está expirado.
+        
+  * 400 - Parâmentros incorretos
+    
+    Falta de parâmetros obrigatórios ou parâmetros incorretos.
+  * 404 - Aplicativo não encontrado
+  
+    Não exite um grupo cadastrado com o código informado ou não existe uma pessoa cadastrada com o código informado no campo **codUsuario**.    
+
+### Encontrar membro em Grupo
+
+  Esse *endpoint* é responsável por encontrar um membro em determinado grupo.
+  
+* `GET - /rest/grupos/{codGrupo}/membros/{codMembro}`
+
+  **Parâmetros**
+    
+    * {codGrupo} - Parâmetro de path que representa o código do grupo. 
+    * {codMembro} - Parâmetro de path que representa o código do membro.
+  
+  **Retorno**
+    
+    * 200 - Ok
+      
+      **Exemplo**
+      
+        ```
+          {
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/2/membros/2"
+              },
+              {
+                "rel": "pessoa",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/27"
+              }
+            ],
+            "dataHoraAtivo": "2016-05-29T16:38:32BRT"
+          }
+        ```
+    * 404 - Não encontrado
+      Grupo com código especificado não encontrado ou pessoa com o código especificado não encontrada ou a pessoa não é membro desse grupo.
+
+# Hashtags
+      
   
