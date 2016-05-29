@@ -381,15 +381,16 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
           "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/2"
         ```
         
-    * 401 - Não autorizado.
+  * 401 - Não autorizado.
     
-        O apptoken enviado não é um token válido ou está expirado.
+    O apptoken enviado não é um token válido ou está expirado.
         
-    * 400 - Parâmentros incorretos
+  * 400 - Parâmentros incorretos
     
-        Falta de parâmetros obrigatórios ou parâmetros incorretos.
-    * 404 - Aplicativo não encontrado
-        Não exite um aplicativo cadastrado com o código informado no campo **codAplicativo**.    
+    Falta de parâmetros obrigatórios ou parâmetros incorretos.
+  * 404 - Aplicativo não encontrado
+  
+    Não exite um aplicativo cadastrado com o código informado no campo **codAplicativo**.    
 
 
 
