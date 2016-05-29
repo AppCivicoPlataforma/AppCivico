@@ -20,12 +20,22 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 
+### Aplicativos
+
 * [`GET - /rest/aplicativos`](#buscar-aplicativos)
 * [`POST - /rest/aplicativos`](#cadastrar-aplicativo)
 * [`GET - /rest/aplicativos/{codAplicativo}`](#informações-de-aplicativo)
 * [`PUT - /rest/aplicativos/{codAplicativo}`](#alterar-aplicativo)
+
+### Tipos de Perfil
+
 * [`GET - /rest/aplicativos/{codAplicativo}/tipos-perfil`](#tipos-de-perfil-por-aplicativo)
 * [`POST - /rest/aplicativos/{codAplicativo}/tipos-perfil`](#cadastrar-tipo-de-perfil)
+* [`GET - /rest/aplicativos/{codAplicativo}/tipos-perfil/{codTipoPerfil}`](#encontrar-tipo-de-perfil)
+
+### Grupos
+
+* [`POST - /rest/grupos`](criar-grupo)
 
 #Aplicativos
 
@@ -73,7 +83,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
       
     * **body** - Campos com informações sobre o aplicativo.
       
@@ -161,7 +171,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
     
     * {codAplicativo} - Parâmetro de path que representa o código do aplicativo a ser alterado.
 
@@ -202,7 +212,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 # Tipos de Perfil
   
-  Para cada aplicativo é possível criar é possível criar perfis para um usuário já cadastrado na base na plataforma. Através do tipo de perfil é possível ter diferentes tipos de usuário em um determinado aplicativo.
+  Para cada aplicativo é possível criar perfis para um usuário já cadastrado na base na plataforma. Através do tipo de perfil é possível ter diferentes tipos de usuário em um determinado aplicativo.
     
 ### Tipos de Perfil por aplicativo
 
@@ -254,7 +264,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
     * {codAplicativo} - Código do aplicativo para qual será criado o novo tipo de perfil.
     * **body** - Campos com informações sobre o tipo de perfil.
       
@@ -267,6 +277,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
               "descricao": "Descrição do tipo de perfil."
             }
         ```
+        
   **Retorno**
   
     * 201 - Tipo de perfil criado com sucesso.
@@ -286,5 +297,99 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         Falta de parâmetros obrigatórios ou parâmetros incorretos.
     * 404 - Aplicativo não encontrado
         Não exite uma aplicativo cadastrado com o código informado.
+
+### Encontrar Tipo de Perfil
+  
+  Este *endpoint* retorna informações de um tipo de perfil especifico buscado por código do mesmo.
+
+* `GET - /rest/aplicativos/{codAplicativo}/tipos-perfil/{codTipoPerfil}`
+  
+  **Parâmetros**
+    
+    * {codAplicativo} - Parâmetro de path que indica código do aplicativo.
+    * {codTipoPerfil} - Parâmtro de path que indica código do tipo de perfil a ser buscado.
+  **Retorno**
+  
+    * 200 - 0k
+    
+        ```
+          {
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25/tipos-perfil/41"
+              },
+              {
+                "rel": "aplicativo",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25"
+              }
+            ],
+            "codTipoPerfil": 41,
+            "descricao": "administrador",
+            "dataHoraCriacao": "2016-05-29T15:11:00BRT"
+          }
+        ```
+        
+    * 404 - Não encontrado.
+    
+        Não foi encontrado um tipo de perfil com esse código nesse aplicativo.
+  
+  
+# Grupos
+
+  Assim como diferentes perfis, para cada aplicativo é possível criar é possível grupos de usuários em um aplicativo. Onde se pode adicionar membros cadastrados na plataforma pelo seu código de usuário.
+
+### Criar grupo
+
+  Este *endpoin* é responsável por criar um novo grupo de usuários para um aplicativo.
+
+* `POST - /rest/grupos` 
+
+  **Parâmetros**
+  
+    **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+      
+    * **body** - Campos com informações sobre o grupo.
+    
+      * codAplicativo - Código do aplicativo à qual o grupo pertence.
+      * codGrupoPai - **Opcional**. Para criação de subgrupos em hieraquia e indica de qual grupo, esse grupo é um subgrupo.
+      * codObjeto -  **Opcional**. Código do objeto à qual esse grupo está associado.
+      * codTipoObjeto -  **Opcional**. Código do tipo de objeto à qual esse grupo está associado.
+      * descricao - Descrição do grupo.
+      
+      **Exemplo**
+      
+      ````
+      {
+        "codAplicativo": 0,
+        "codGrupoPai": 0,
+        "codObjeto": 0,
+        "codTipoObjeto": 0,
+        "descricao": "string"
+      }
+      ```
+  
+  **Retorno**
+
+  * 201 - Grupo criado com sucesso.
+    
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do grupo no campo **location**. 
+        
+        ```
+          "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/2"
+        ```
+        
+    * 401 - Não autorizado.
+    
+        O apptoken enviado não é um token válido ou está expirado.
+        
+    * 400 - Parâmentros incorretos
+    
+        Falta de parâmetros obrigatórios ou parâmetros incorretos.
+    * 404 - Aplicativo não encontrado
+        Não exite um aplicativo cadastrado com o código informado no campo **codAplicativo**.    
+
 
 
