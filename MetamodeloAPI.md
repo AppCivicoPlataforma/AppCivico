@@ -65,10 +65,46 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * `POST - /rest/aplicativos`
 
   **Parâmetros**
-      **aplication/json**
-      * appToken - Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
-      * 
+  
+    **aplication/json**
       
+    * appToken - Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+      
+    * **body** - Campos com informações sobre o aplicativo.
+      
+        * codResponsavel - Código do desenvolvedor responsável pelo aplicativo.
+        * descricao - Breve descrição do aplicativo. Explicação sobre o que o aplicativo faz, qual àrea de abordagem, e sobre que tipo de informação esse aplicativo armazena na plataforma.
+        * nome - Nome do aplicativo.
+        * token - . **Opcional**
+        
+      **Exemplo**
+        
+        ````
+            {
+              "codResponsavel": 1,
+              "descricao": "Aplicativo para visualizar informações sobre estabelecimentos de saúde",
+              "nome": "Mapa da Saúde",
+              "token": ""
+            }
+        ```
+        
   **Retorno**
+  
+    * 201 - Aplicação criada com sucesso.
+    
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do aplicativo no campo **location**. 
+        
+        ````
+            "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25"
+        ```
+        
+    * 401 - Não autorizado.
+    
+        O apptoken enviado não é um token válido ou está expirado.
+        
+    * 400 - Parâmentros incorretos
+    
+        Falta de parâmetros obrigatórios ou parâmetros incorretos.
+      
 
   
