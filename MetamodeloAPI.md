@@ -47,6 +47,11 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/hashtags/{codHashtag}`](#buscar-hashtag)
 * [`PUT - /rest/hashtags/{codHashtag}`](#atualizar-hashtag)
 
+### Instalações
+  
+* [`POST - /rest/instalacoes`]() 
+
+  
 
 #Aplicativos
 
@@ -567,12 +572,22 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
       
-    * **body** - Campos com informações sobre o grupo.
+    * **body** - Campos com informações sobre a hashtag.
     
       * codAplicativo - Código do aplicativo à qual a hashtag pertence.
       * descricao - Descrição da hash tag
       * nome - Representa a hashtag em si. Deve ser sempre iniciado com # e sem espaços em branco.
   
+      **Exemplo**
+      
+      ````
+        {
+          "codAplicativo": 100,
+          "descricao": "string",
+          "nome": "#test"
+        }
+      ```
+      
   **Retorno**
   
     * 201 - Hashtag criada com sucesso.
@@ -627,7 +642,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
           }
           
         ```
-      * 404 - Não encontrado
+    * 404 - Não encontrado
         Hashtag não encontrada.
       
 ### Atualizar Hashtag
@@ -644,11 +659,21 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     * codHashtag - Parâmetro de path que representa o código da hashtag a ser alterada.
 
-    * **body** - Campos com informações sobre o grupo.
+    * **body** - Campos com informações sobre a hashtag.
     
       * codAplicativo - Código do aplicativo à qual a hashtag pertence.
       * descricao - Descrição da hash tag
       * nome - Representa a hashtag em si. Deve ser sempre iniciado com # e sem espaços em branco.
+  
+      **Exemplo**
+      
+      ````
+        {
+          "codAplicativo": 100,
+          "descricao": "string",
+          "nome": "#test"
+        }
+      ```
   
   **Retorno**
   
@@ -674,3 +699,61 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 # Instalações
 
+  Instalações associam um dispositivo à um usuário para seja possível enviar notificações para os aplicativos onde o usuário esteja autenticado.
+
+### Registrar Instalação
+
+  Registra uma instalação em um aplicativo.
+  
+* [`POST - /rest/instalacoes`] 
+
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+  
+    * **body** - Campos com informações sobre a instalação.
+    
+      * codApp - Código do aplicativo no qual a instalação está sendo feita.
+      * codUsuario - Código do usuário associado à instalação. Quando uma notificação for criada ela será enviada para todas as instalações associadas ao usuário.
+      * dataHora - Data e hora da instalação.
+      * deviceOS -  Sistema operacional do dispositivo.
+      * deviceToken - Identificador único de um dispositivo.
+
+      **Exemplo**
+      
+      ````
+        {
+          "codApp": 1,
+          "codUsuario": 27,
+          "dataHora": "2016-05-29T15:27:19.256Z",
+          "deviceOS": "iOS",
+          "deviceToken": "DSJK-DJKA-D312-312N-3213-E232-DSAL"
+        }
+      ```
+  
+  **Retorno**
+  
+    * 201 - Instalação criada com sucesso.
+      
+        Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da instalação no campo **location**. 
+          
+          ```
+            "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/instalacoes/2",
+          ```
+          
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
+      
+    * 404 - Não encontrado
+      
+      Aplicativo com o código passado no campo **codAplicativo** não foi encontrado ou usuário com o código passado no campo **codUsuario** não foi encontrado. 
+
+
+
+
+  
