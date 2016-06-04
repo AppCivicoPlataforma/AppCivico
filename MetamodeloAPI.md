@@ -602,14 +602,75 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   **Parâmetros**
   
-    * codHashtag - Parâmetro de path que representa o código da hashtag a ser buscado.
+    * codHashtag - Parâmetro de path que representa o código da hashtag a ser buscada.
   
   **Retorno**
     
-  
+    * 200 - Ok
+    
+      **Exemplo**
+        
+        ````
+          {
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/hashtags/24"
+              },
+              {
+                "rel": "aplicativo",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/100"
+              }
+            ],
+            "nome": "#test",
+            "descricao": "string"
+          }
+          
+        ```
+      * 404 - Não encontrado
+        Hashtag não encontrada.
+      
 ### Atualizar Hashtag
 
   Altera dados de uma hashtag criada.
   
 * `PUT - /rest/hashtags/{codHashtag}`
+
+  **Parâmetros**
+  
+    **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * codHashtag - Parâmetro de path que representa o código da hashtag a ser alterada.
+
+    * **body** - Campos com informações sobre o grupo.
+    
+      * codAplicativo - Código do aplicativo à qual a hashtag pertence.
+      * descricao - Descrição da hash tag
+      * nome - Representa a hashtag em si. Deve ser sempre iniciado com # e sem espaços em branco.
+  
+  **Retorno**
+  
+    * 200 - Hashtag alterada com sucesso.
+      
+        Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da hashtag no campo **location**. 
+          
+          ```
+              "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/hashtags/24"
+          ```
+          
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou hashtag já está cadastrada.
+      
+    * 404 - Não encontrado
+      
+      Hashtag não encontrada ou aplicativo com o código passado no campo **codAplicativo** não foi encontrado.
+
+# Instalações
 
