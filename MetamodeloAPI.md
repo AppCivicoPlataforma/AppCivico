@@ -41,6 +41,13 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/grupos/{codGrupo}/membros`](#adicionar-membro-em-grupo)
 * [`GET - /rest/grupos/{codGrupo}/membros/{codMembro}`](#encontrar-membro-em-grupo)
 
+### Hashtags
+
+* [`POST - /rest/hashtags`](#criar-hashtag)
+* [`GET - /rest/hashtags/{codHashtag}`](#buscar-hashtag)
+* [`PUT - /rest/hashtags/{codHashtag}`](#atualizar-hashtag)
+
+
 #Aplicativos
 
 ### Buscar Aplicativos
@@ -546,4 +553,11 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 # Hashtags
       
-  
+  Para cada postagem genérica armazenada na plataforma é possível associar **hashtags** à elas. Hashtags são palavras chave com algum significado. As hashtags na plataforma seguem o mesmo princípio de hashtags usadas em redes sociais como [**Twitter**](https://twitter.com/), [**Facebook**](https://www.facebook.com/).
+
+### Criar Hashtag
+  Cria uma hashtag.
+* `POST - /rest/hashtags`
+
+* [`GET - /rest/hashtags/{codHashtag}`](#buscar-hashtag)
+* [`PUT - /rest/hashtags/{codHashtag}`](#atualizar-hashtag)
