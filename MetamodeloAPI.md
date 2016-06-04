@@ -512,7 +512,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   * 400 - Parâmentros incorretos
     
     Falta de parâmetros obrigatórios ou parâmetros incorretos.
-  * 404 - Aplicativo não encontrado
+  * 404 - Não encontrado
   
     Não exite um grupo cadastrado com o código informado ou não existe uma pessoa cadastrada com o código informado no campo **codUsuario**.    
 
@@ -556,8 +556,60 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   Para cada postagem genérica armazenada na plataforma é possível associar **hashtags** à elas. Hashtags são palavras chave com algum significado. As hashtags na plataforma seguem o mesmo princípio de hashtags usadas em redes sociais como [**Twitter**](https://twitter.com/), [**Facebook**](https://www.facebook.com/).
 
 ### Criar Hashtag
-  Cria uma hashtag.
+
+  Cria uma nova hashtag.
+
 * `POST - /rest/hashtags`
 
-* [`GET - /rest/hashtags/{codHashtag}`](#buscar-hashtag)
-* [`PUT - /rest/hashtags/{codHashtag}`](#atualizar-hashtag)
+ **Parâmetros**
+  
+    **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+      
+    * **body** - Campos com informações sobre o grupo.
+    
+      * codAplicativo - Código do aplicativo à qual a hashtag pertence.
+      * descricao - Descrição da hash tag
+      * nome - Representa a hashtag em si. Deve ser sempre iniciado com # e sem espaços em branco.
+  
+  **Retorno**
+  
+    * 201 - Hashtag criada com sucesso.
+      
+        Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da hashtag no campo **location**. 
+          
+          ```
+              "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/hashtags/24"
+          ```
+          
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou hashtag já está cadastrada.
+      
+    * 404 - Não encontrado
+      
+      Aplicativo com o código passado no campo **codAplicativo** não foi encontrado.
+
+### Buscar Hashtag
+  Busca o conteúdo de uma hashtag pelo código da mesma.
+
+* `GET - /rest/hashtags/{codHashtag}`
+
+  **Parâmetros**
+  
+    * codHashtag - Parâmetro de path que representa o código da hashtag a ser buscado.
+  
+  **Retorno**
+    
+  
+### Atualizar Hashtag
+
+  Altera dados de uma hashtag criada.
+  
+* `PUT - /rest/hashtags/{codHashtag}`
+
