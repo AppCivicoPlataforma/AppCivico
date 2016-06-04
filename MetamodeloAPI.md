@@ -50,7 +50,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Instalações
   
 * [`POST - /rest/instalacoes`](#registrar-instalação) 
-
+* [`GET - /rest/instalacoes/{codInstalacao}`](#buscar-instalação)
+* [`PUT - /rest/instalacoes/{codInstalacao}`](#alterar-instalação)
   
 
 #Aplicativos
@@ -618,7 +619,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   **Parâmetros**
   
-    * codHashtag - Parâmetro de path que representa o código da hashtag a ser buscada.
+    * {codHashtag} - Parâmetro de path que representa o código da hashtag a ser buscada.
   
   **Retorno**
     
@@ -658,7 +659,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
     
-    * codHashtag - Parâmetro de path que representa o código da hashtag a ser alterada.
+    * {codHashtag} - Parâmetro de path que representa o código da hashtag a ser alterada.
 
     * **body** - Campos com informações sobre a hashtag.
     
@@ -679,12 +680,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   **Retorno**
   
     * 200 - Hashtag alterada com sucesso.
-      
-        Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da hashtag no campo **location**. 
-          
-          ```
-              "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/hashtags/24"
-          ```
           
     * 401 - Não autorizado.
       
@@ -754,7 +749,50 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       Aplicativo com o código passado no campo **codAplicativo** não foi encontrado ou usuário com o código passado no campo **codUsuario** não foi encontrado. 
 
+### Encontrar Instalação
 
-
-
+  Encontrar dados de uma instalação através do código.
   
+* `GET - /rest/instalacoes/{codInstalacao}`
+
+  **Parâmetros**
+  
+    * {codInstalacao} - Parâmetro de path que representa o código da instalação a ser buscada.
+  
+  **Retorno**
+    
+    * 200 - Ok
+    
+      **Exemplo**
+        
+        ````
+          {
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/instalacoes/3"
+              },
+              {
+                "rel": "aplicativo",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/100"
+              },
+              {
+                "rel": "pessoa",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/27"
+              }
+            ],
+            "deviceOS": "iOS",
+            "dataHora": "2016-05-29T12:27:19BRT",
+            "deviceToken": "78921dd331232131"
+          }
+        ```
+    * 404 - Não encontrado
+        Instalação não encontrada.
+      
+### Alterar Instalação
+
+  Alterar dados de uma instalação.
+  
+* `PUT - /rest/instalacoes/{codInstalacao}`
+
+
