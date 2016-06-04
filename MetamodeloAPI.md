@@ -49,7 +49,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Instalações
   
-* [`POST - /rest/instalacoes`]() 
+* [`POST - /rest/instalacoes`](#registrar-instalação) 
 
   
 
@@ -138,6 +138,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         Falta de parâmetros obrigatórios ou parâmetros incorretos.
     * 404 - Responsável não encontrado
         Não exite uma pessoa cadastrada com o código informado no campo **codResponsavel**.
+        
 ### Informações de Aplicativo
   
   Este *endpoint* retorna informações de um aplicativo especifico buscado por código do mesmo.
