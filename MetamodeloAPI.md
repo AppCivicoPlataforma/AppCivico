@@ -53,6 +53,12 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/instalacoes/{codInstalacao}`](#buscar-instalação)
 * [`PUT - /rest/instalacoes/{codInstalacao}`](#alterar-instalação)
   
+### Notificações
+
+* [`POST - /rest/notificacoes`](#registrar-notificação)
+* [`GET - /rest/notificacoes/{codNotificacao}`](#buscar-notificação)
+* [`PUT - /rest/notificacoes/{codNotificacao}`](#alterar-notificação)
+
 
 #Aplicativos
 
@@ -703,6 +709,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 * [`POST - /rest/instalacoes`] 
 
+  **Parâmetros**
   **aplication/json**
       
     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
@@ -837,5 +844,77 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       Aplicativo com o código passado no campo **codAplicativo** não foi encontrado ou usuário com o código passado no campo **codUsuario** não foi encontrado. 
 
 # Notificações
-
   
+  Através das notificações é possível disparar avisos remotos nos dispositivos no qual um usuário está autenticado. Usando a [`instalação`](#instalações) a plataforma consegue enviar notificações para qualquer dispositivo registrado para o usuário.
+
+### Registrar Notificação
+  
+  Registrar uma notificação.
+  
+* [`POST - /rest/notificacoes`]
+  
+  **Parâmetros**
+  
+    **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * **body** - Campos com informações sobre a notificação.
+    
+      * JSON - Corpo da notificação
+        * autor - **Opcional**
+          * codPessoa - Código do usuário que criou a notificação.
+        * post -  **Opcional**
+          * codPost - Código da postagem associada à notificação.
+        * tipo - Tipo de notificação.
+      * dataHoraLeitura - Data e hora que a notificação foi aberta pelo destinatário.
+      * descricao - Descrição da notificação.
+      * destinatario  
+        * codPessoa - Código do usuário que irá receber a notificação. 
+    
+      **Exemplo**
+      
+      ````
+        {
+          "JSON": {
+            "autor": {
+              "codPessoa": 21
+            },
+            "post": {
+              "codPost": 10
+            },
+            "tipo": "curtida"
+          },
+          "dataHoraLeitura": "2016-05-29T15:27:19.259Z",
+          "descricao": "Descrição",
+          "destinatario": {
+            "codPessoa": 27
+          }
+        }
+      ```
+  
+  **Retorno**
+  
+    * 201 - Notificação criada com sucesso.
+      
+        Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da notificação no campo **location**. 
+          
+          ```
+            "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/notificacoes/5"
+          ```
+          
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
+      
+    * 404 - Não encontrado
+      
+      Usuário com o código passado no campo **autor.codPessoa** não foi encontrado ou usuário com o código passado no campo **destinatario.codPessoa** não foi encontrado.   
+    
+    
+* [`GET - /rest/notificacoes/{codNotificacao}`](#buscar-notificação)
+* [`PUT - /rest/notificacoes/{codNotificacao}`](#alterar-notificação)  
