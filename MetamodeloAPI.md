@@ -795,4 +795,47 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 * `PUT - /rest/instalacoes/{codInstalacao}`
 
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * {codInstalacao} - Parâmetro de path que representa o código da instalação a ser alterada.
+    
+    * **body** - Campos com informações sobre a instalação.
+    
+      * codApp - Código do aplicativo no qual a instalação está sendo feita.
+      * codUsuario - Código do usuário associado à instalação. Quando uma notificação for criada ela será enviada para todas as instalações associadas ao usuário.
+      * dataHora - Data e hora da instalação.
+      * deviceOS -  Sistema operacional do dispositivo.
+      * deviceToken - Identificador único de um dispositivo.
 
+      **Exemplo**
+      
+      ````
+        {
+          "codApp": 1,
+          "codUsuario": 27,
+          "dataHora": "2016-05-29T15:27:19.256Z",
+          "deviceOS": "iOS",
+          "deviceToken": "DSJK-DJKA-D312-312N-3213-E232-DSAL"
+        }
+      ```
+  
+  **Retorno**
+  
+    * 200 - Instalação alterada com sucesso.
+      
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
+      
+    * 404 - Não encontrado
+      
+      Aplicativo com o código passado no campo **codAplicativo** não foi encontrado ou usuário com o código passado no campo **codUsuario** não foi encontrado. 
+
+# Notificações
+
+  
