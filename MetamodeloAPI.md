@@ -914,7 +914,36 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 404 - Não encontrado
       
       Usuário com o código passado no campo **autor.codPessoa** não foi encontrado ou usuário com o código passado no campo **destinatario.codPessoa** não foi encontrado.   
+
+
+### Buscar Notificação
+  
+  Encontrar uma notificação pelo código.
+  
+* `GET - /rest/notificacoes/{codNotificacao}`
+
+  **Parâmetros**
+  
+  * {codNotificacao} - Parâmetro de path que representa o código da notificação a ser buscada.
+  
+  **Retorno**
     
+    * 200 - Ok
     
-* [`GET - /rest/notificacoes/{codNotificacao}`](#buscar-notificação)
+      **Exemplo**
+        
+        ```
+          {
+            "descricao": "string",
+            "destinatario": {
+              "codPessoa": 27
+            },
+            "JSON": {
+              "tipo": "string"
+            }
+          }
+        ```
+    * 404 - Não encontrado
+        Instalação não encontrada.
+
 * [`PUT - /rest/notificacoes/{codNotificacao}`](#alterar-notificação)  
