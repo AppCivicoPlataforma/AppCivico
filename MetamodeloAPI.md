@@ -1339,5 +1339,27 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 * `GET - /rest/pessoas/{codPessoa}/fotoPerfil`
   
+  **Parâmetros** 
+    
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa que irá ser buscada a foto.
+  
+  **Retorno**
+    
+    * 200 - Ok 
+      
+      Retorna no **body** da resposta o conteudo da foto. Retorno no tipo   **"content-type": "image/jpeg"**
 
-* [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`](#cadastrar-foto-de-perfil)
+    * 404 - Não encontrada
+    
+      Usuário não possui foto. Retorno do tipo: **"content-type": "application/json;charset=UTF-8"**
+    
+### Cadastrar foto de perfil
+
+  Cadastra a foto de perfil do usuário. Caso já exista uma foto, a mesma será sobrescrita.
+  
+* `POST - /rest/pessoas/{codPessoa}/fotoPerfil`
+
+  **Parâmetros** 
+    
+    **www-form-urlencoded**
+  
