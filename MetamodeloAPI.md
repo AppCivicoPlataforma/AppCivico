@@ -64,13 +64,13 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/pessoas`](#buscar-pessoa)
 * [`POST - /rest/pessoas`](#cadastrar-pessoa)
 * [`GET - /rest/pessoas/autenticar`](#autenticar)
-* [`POST - /rest/pessoas/redefinirSenha`]()
-* [`GET - /rest/pessoas/{codPessoa}`]()
-* [`POST - /rest/pessoas/{codPessoa}`]()
-* [`DELETE - /rest/pessoas/{codPessoa}`]()
-* [`POST - /rest/pessoas/{codPessoa}/definirNovaSenha`]()
-* [`GET - /rest/pessoas/{codPessoa}/fotoPerfil`]()
-* [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`]()
+* [`POST - /rest/pessoas/redefinirSenha`](#redefinir-senha)
+* [`GET - /rest/pessoas/{codPessoa}`](#encontrar-pessoa)
+* [`POST - /rest/pessoas/{codPessoa}`](#atualizar-pessoa)
+* [`DELETE - /rest/pessoas/{codPessoa}`](#excluir-cadastro)
+* [`POST - /rest/pessoas/{codPessoa}/definirNovaSenha`](#alterar-senha)
+* [`GET - /rest/pessoas/{codPessoa}/fotoPerfil`](#foto-de-perfil)
+* [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`](#cadastrar-foto-de-perfil)
 
 ### Perfis
 
@@ -124,7 +124,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
       
     * **body** - Campos com informações sobre o aplicativo.
       
@@ -213,7 +213,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
     * {codAplicativo} - Parâmetro de path que representa o código do aplicativo a ser alterado.
 
@@ -306,7 +306,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     * {codAplicativo} - Código do aplicativo para qual será criado o novo tipo de perfil.
     * **body** - Campos com informações sobre o tipo de perfil.
       
@@ -391,7 +391,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
       
     * **body** - Campos com informações sobre o grupo.
     
@@ -520,7 +520,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **www-form-urlencoded**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     * {codGrupo} - Parâmetro de path que indica o código do grupo a ser buscado.
     * **body** - Campos com informações do membro
       
@@ -596,7 +596,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
       
     * **body** - Campos com informações sobre a hashtag.
     
@@ -681,7 +681,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
     * {codHashtag} - Parâmetro de path que representa o código da hashtag a ser alterada.
 
@@ -730,7 +730,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   **Parâmetros**
   **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
   
     * **body** - Campos com informações sobre a instalação.
     
@@ -822,7 +822,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     * {codInstalacao} - Parâmetro de path que representa o código da instalação a ser alterada.
     
     * **body** - Campos com informações sobre a instalação.
@@ -875,7 +875,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
     * **body** - Campos com informações sobre a notificação.
     
@@ -892,7 +892,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
       **Exemplo**
       
-      ````
+      ```
         {
           "JSON": {
             "autor": {
@@ -974,7 +974,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
   **aplication/json**
       
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
     * **body** - Campos com informações sobre a notificação.
     
@@ -1006,7 +1006,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Buscar Pessoa
   
-  Busca uma pessoa cadastrada por parâmetros como nome completo ou parte do nome, e-mail, facebookToken, googleToken, twitterToken entre outros.
+  Busca pessoas cadastrada por parâmetros como nome completo ou parte do nome, e-mail, facebookToken, googleToken, twitterToken entre outros.
   
 * `GET - /rest/pessoas`
   
@@ -1107,7 +1107,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
       Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da pessoa no campo **location**.
       
-        ````
+        ```
           "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/438"
         ```
     * 400 - Parâmentros incorretos
@@ -1131,17 +1131,213 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
   **Retorno**
   
-    200 - Ok
+    200 - Autenticado com sucesso
+      Retorna os dados da pessoa no **body** da resposta. E o token de autenticação no campo **header** da resposta .
+      
+      **Header** 
+        ```
+            "apptoken": "v1_BCA83DBAB23B22B1F6510C9D3F947A9B4652CD87448ECE73FD7B99CCC72C2102BBF804D4D42EF841CED193506F905CD332BF57386AF3F52253133F88*********************************************************"
+
+        ```
+        
+      **Body***
+      ```
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/27"
+            }
+          ],
+          "nomeUsuario": "LucianoPP",
+          "nomeCompleto": "string",
+          "cod": 27,
+          "email": "ucb.luciano@gmail.com",
+          "emailVerificado": false
+        }
+        
+      ```
+      
       
     401 - Credenciais inválidas
       
+      Usuário ou senha incorretos.
       
+    400 - Parâmetros incorretos
+      
+      Falta de parâmetros ou parâmetros inconsistentes.
+      
+### Redefinir Senha
+
+  Usado para funcionalidade de esqueci minha senha. O servidor gera uma nova senha aleatória para o usuário e envia para o email do mesmo.
   
+* `POST - /rest/pessoas/redefinirSenha`
+
+  **Parâmetros**
+    
+    * email - E-mail do cadastro que terá a senha resetada.
+    
+  **Retorno**
   
-* [`POST - /rest/pessoas/redefinirSenha`]()
-* [`GET - /rest/pessoas/{codPessoa}`]()
-* [`POST - /rest/pessoas/{codPessoa}`]()
-* [`DELETE - /rest/pessoas/{codPessoa}`]()
-* [`POST - /rest/pessoas/{codPessoa}/definirNovaSenha`]()
-* [`GET - /rest/pessoas/{codPessoa}/fotoPerfil`]()
-* [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`]()
+    * 200 - Senha redefinida com sucesso.
+  
+    * 404 - E-mail informado não se encontra cadastrado.
+
+### Encontrar Pessoa
+
+  Encontra informações de uma pessoa através do código da mesma.
+
+* `GET - /rest/pessoas/{codPessoa}`
+
+  **Parâmetros**
+  
+    * {codPessoa} - Parâmetro de path. Indica o código a ser buscado.
+  
+  **Retorno**
+  
+    * 200 - Ok
+    
+      **Exemplo**
+        
+        ```
+          {
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/27"
+              }
+            ],
+            "nomeUsuario": "LucianoPP",
+            "nomeCompleto": "string",
+            "cod": 27,
+            "email": "ucb.luciano@gmail.com",
+            "emailVerificado": false
+          }
+        ```
+    * 404 - Não encontrado
+        Pessoa não encontrada.
+
+### Atualizar pessoa
+
+  Alterar dados cadastrais de uma pessoa.
+  
+* `POST - /rest/pessoas/{codPessoa}`
+
+  **Parâmetros**
+  
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa a ser alterada.
+
+    * **body** - Campos com informações sobre a pessoa.
+    
+      * CEP - **Opcional**. Representa o CEP do endereço onde a pessoa mora.
+      * biografia - **Opcional**. Pequeno texto sobre a pessoa. Máximo 250 caracteres.
+      * dataNascimento - **Opcional**. Data de nascimento da pessoa no formato yyyy-MM-dd'T'hh:mm:ss.SSSz.
+      * email - **Opcional**. E-mail da pessoa.
+      * latitude - **Opcional**. Referente a latitude da localização da pessoa.
+      * longitude - **Opcional**. Referente a longitude localização da pessoa.
+      * nomeCompleto - **Opcional**. Nome completo da pessoa.
+      * sexo - **Opcional**. Deve ser passado "M" para masculino e "F" para feminino.
+      * tokenFacebook - **Opcional**. Id obtido por autenticação do usuário pela API do facebook para cadastro com facebook.
+      * tokenGoogle - **Opcional**. Id obtido por autenticação do usuário pela API do GooglePlus para cadastro com GooglePlus.
+      * tokenInstagram - **Opcional** Id obtido por autenticação do usuário pela API do Instagram do usuário para cadastro com o Instagram.
+      * tokenTwitter - **Opcional**. Id obtido por autenticação do usuário pela API do Twitter do usuário para cadastro com o Twitter.
+      
+      **Exemplo**
+        
+        ```
+          {
+            "CEP": "7454555",
+            "biografia": "Minha história",
+            "dataNascimento": "2016-06-07T01:33:22.740Z",
+            "email": "email@mail.com",
+            "latitude": 12,
+            "longitude": 10,
+            "nomeCompleto": "José da Silva",
+            "nomeUsuario": "José",
+            "senha": "string",
+            "sexo": "M",
+            "tokenFacebook": "32131423243",
+            "tokenGoogle": "43243243",
+            "tokenInstagram": "423432432423423",
+            "tokenTwitter": "6456546457423904923"
+          }
+        ```
+  **Retorno**
+  
+    * 200 - Ok    
+      
+      Alterado com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Pessoa com o código informada não se encontra cadastrada.
+    
+### Excluir cadastro
+  
+  Exclui permanentemente dados cadastrais de uma pessoa.
+  **Obs:** Essa é uma ação que não pode ser desfeita. Certifique-se de sempre pedir confirmações por parte do usuário.
+  
+* `DELETE - /rest/pessoas/{codPessoa}`
+  
+  **Parâmetros** 
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa a ser excluída.
+  
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Excluído com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Pessoa com o código informada não se encontra cadastrada.
+    
+### Alterar Senha
+  
+  Altera a senha atual do usuário.
+
+* `POST - /rest/pessoas/{codPessoa}/definirNovaSenha`
+
+ **Parâmetros** 
+    
+    **www-form-urlencoded**
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+  
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa que irá alterar a senha.
+  
+    * email - e-mail do usuário que deseja alterar senha.
+    * senhaAtual - Senha atual para autenticação antes da alteração.
+    * novaSenha - Nova senha do usuário.
+    
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Senha alterada com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Pessoa com o código informada não se encontra cadastrada.
+      
+    * 401 - Não autorizado
+        
+        Senha atual incorreta.
+        
+    * 400 - Parâmetros inconsistentes.
+
+### Foto de Perfil
+
+  Buscar foto de perfil.
+  
+* `GET - /rest/pessoas/{codPessoa}/fotoPerfil`
+  
+
+* [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`](#cadastrar-foto-de-perfil)
