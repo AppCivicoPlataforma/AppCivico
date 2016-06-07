@@ -59,6 +59,24 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/notificacoes/{codNotificacao}`](#buscar-notificação)
 * [`PUT - /rest/notificacoes/{codNotificacao}`](#alterar-notificação)
 
+### Pessoas
+
+* [`GET - /rest/pessoas`]()
+* [`POST - /rest/pessoas`]()
+* [`GET - /rest/pessoas/autenticar`]()
+* [`POST - /rest/pessoas/redefinirSenha`]()
+* [`GET - /rest/pessoas/{codPessoa}`]()
+* [`POST - /rest/pessoas/{codPessoa}`]()
+* [`DELETE - /rest/pessoas/{codPessoa}`]()
+* [`POST - /rest/pessoas/{codPessoa}/definirNovaSenha`]()
+* [`GET - /rest/pessoas/{codPessoa}/fotoPerfil`]()
+* [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`]()
+
+### Perfis
+
+
+
+
 
 #Aplicativos
 
@@ -969,7 +987,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
           "dataHoraLeitura": "2016-05-29T15:27:19.259Z"
         }
       ```
-  
+      
   **Retorno**
   
     * 200 - Notificação alterada com sucesso.
@@ -982,3 +1000,40 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
       
+# Pessoas
+
+  A estrutura de pessoa provê juntamente com a estrutura de perfil, o gerenciamento de usuário e suas informações em aplicativos através da plataforma. A estrutura de pessoa permite o cadastro de dados básicos de uma pessoa.
+
+### Buscar Pessoa
+  
+  Busca uma pessoa cadastrada por parâmetros como nome completo ou parte do nome, e-mail, facebookToken, googleToken, twitterToken entre outros.
+  
+* `GET - /rest/pessoas`
+  
+  **Parâmetros**
+  
+    * codAplicativo - Parâmetro de query. **Opcional**. Código do aplicativo onde as pessoas possuem um perfil.
+    * nome - Parâmetro de query. **Opcional**. Nome completo ou parte do nome.
+    * email - Parâmetro de header. **Opcional**. E-mail da pessoa.
+    * facebookToken - Parâmetro de header. **Opcional**. Facebook id que irá buscar a pessoa cadastrada com o mesmo.
+    * googleToken - Parâmetro de header. **Opcional**. GooglePlus id que irá buscar a pessoa cadastrada com o mesmo.
+    * twitterToken - Parâmetro de header. **Opcional**. Twitter id que irá buscar a pessoa cadastrada com o mesmo.
+    * instagramToken - Parâmetro de header. **Opcional**. Instagram id que irá buscar a pessoa cadastrada com o mesmo.
+    * pagina - Parâmetro de query. **Opcional**. Valor padrão 0. 
+    * quantidadeDeItens - 
+    
+
+  
+
+
+### Cadastrar Pessoa
+
+* [`POST - /rest/pessoas`]()
+* [`GET - /rest/pessoas/autenticar`]()
+* [`POST - /rest/pessoas/redefinirSenha`]()
+* [`GET - /rest/pessoas/{codPessoa}`]()
+* [`POST - /rest/pessoas/{codPessoa}`]()
+* [`DELETE - /rest/pessoas/{codPessoa}`]()
+* [`POST - /rest/pessoas/{codPessoa}/definirNovaSenha`]()
+* [`GET - /rest/pessoas/{codPessoa}/fotoPerfil`]()
+* [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`]()
