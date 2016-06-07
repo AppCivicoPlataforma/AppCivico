@@ -74,6 +74,17 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Perfis
 
+* [`GET - /rest/pessoas/{codPessoa}/perfil`]()
+* [`POST - /rest/pessoas/{codPessoa}/perfil`]()
+* [`DELETE - /rest/pessoas/{codPessoa}/perfil`]()
+* [`PUT - /rest/pessoas/{codPessoa}/perfil`]()
+
+### Pessoas e Postagens
+
+* [`/rest/pessoas/{codPessoa}/postagens`]()
+
+### Postagens
+
 
 
 
