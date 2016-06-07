@@ -61,9 +61,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Pessoas
 
-* [`GET - /rest/pessoas`]()
-* [`POST - /rest/pessoas`]()
-* [`GET - /rest/pessoas/autenticar`]()
+* [`GET - /rest/pessoas`](#buscar-pessoa)
+* [`POST - /rest/pessoas`](#cadastrar-pessoa)
+* [`GET - /rest/pessoas/autenticar`](#autenticar)
 * [`POST - /rest/pessoas/redefinirSenha`]()
 * [`GET - /rest/pessoas/{codPessoa}`]()
 * [`POST - /rest/pessoas/{codPessoa}`]()
@@ -1105,7 +1105,39 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     * 201 - Cadastrado com sucesso.
     
-* [`GET - /rest/pessoas/autenticar`]()
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da pessoa no campo **location**.
+      
+        ````
+          "location": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/438"
+        ```
+    * 400 - Parâmentros incorretos
+    
+      Algum parâmetros está inconsistente ou o json está mal formatado. A mensagem de erro vai no corpo da resposta.
+    
+### Autenticar
+
+  Autentica o usuário gerando para o mesmo um token de acesso para realizar operações que exigem autenticação. O token gerado é válido por 7 dias.
+
+* `GET - /rest/pessoas/autenticar`
+  
+  **Parâmetros**
+    
+    * appIdentifier - Parâmetro de header. **Optional**. Código do app, caso a autenticação exija que a pessoa possua um perfil no aplicativo.
+    * email - Parâmetro de header. e-mail da pessoa.
+    * senha - Parâmetro de header. **Optional**. Para login com conta padrão da plataforma. Caso seja um login com alguma rede social, é um parâmetro opcional.
+    * facebookToken - Parâmetro de header. **Optional**. Para login com a API do facebook.
+    * googleToken - Parâmetro de header. **Optional**. Para login com a API do GooglePlus.
+    * twitterToken - Parâmetro de header. **Optional**. Para login com a API do Twitter.
+  
+  **Retorno**
+  
+    200 - Ok
+      
+    401 - Credenciais inválidas
+      
+      
+  
+  
 * [`POST - /rest/pessoas/redefinirSenha`]()
 * [`GET - /rest/pessoas/{codPessoa}`]()
 * [`POST - /rest/pessoas/{codPessoa}`]()
