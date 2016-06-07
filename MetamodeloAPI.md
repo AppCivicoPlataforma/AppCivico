@@ -1361,5 +1361,35 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   **Parâmetros** 
     
-    **www-form-urlencoded**
+    **multipart/form-data**
+    
+     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
   
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa que irá registra a foto.
+    
+    * file - Parâmetro do formuário que representa o conteúdo do arquivo de foto.
+    
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Foto salva com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Pessoa com o código informada não se encontra cadastrada.
+      
+    * 401 - Não autorizado
+        
+        Token inválido ou expirado.
+        
+    * 400 - Parâmetros inconsistentes.
+      
+      Erro ao processar imagem / Tamanho do arquivo superior ao tamanho máximo suportado / Tipo de arquivo inválido
+  
+    * 403 - Usuário incorreto
+      
+      Caso o usuário-alvo da operação não seja igual ao usuário da sessão (autenticado).
+      
+
+# Perfis
