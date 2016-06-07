@@ -1019,16 +1019,77 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * googleToken - Parâmetro de header. **Opcional**. GooglePlus id que irá buscar a pessoa cadastrada com o mesmo.
     * twitterToken - Parâmetro de header. **Opcional**. Twitter id que irá buscar a pessoa cadastrada com o mesmo.
     * instagramToken - Parâmetro de header. **Opcional**. Instagram id que irá buscar a pessoa cadastrada com o mesmo.
-    * pagina - Parâmetro de query. **Opcional**. Valor padrão 0. 
-    * quantidadeDeItens - 
+    * pagina - Parâmetro de query. **Opcional**. Valor padrão 0. Para uma busca paginada.
+    * quantidadeDeItens - Parâmetro de query. **Opcional**. Define o máximo de pessoas retornadas na busca. Valor padrão é 20.
     
-
-  
-
+  **Retorno** 
+    
+    * 200 - Ok 
+    
+      Pessoas com dados que satisfazem os parâmetros de busca encontradas.
+      
+      **Exemplo** 
+      
+        ```
+          [
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/31"
+                }
+              ],
+              "nomeUsuario": "Luciano",
+              "cod": 31,
+              "email": "passos.luciano@outlook.com",
+              "emailVerificado": false
+            }
+          ]
+        ```
+      
+    * 204 - Nenhum dado encontrado
+      
+      Nenhuma pessoa com dados que satisfazem os parâmetros de busca foi encontrada.
+      
+    * 400 - Parâmentros incorretos
+      
+      Parâmetros inconsistentes em tipo ou sintaxe.
 
 ### Cadastrar Pessoa
 
-* [`POST - /rest/pessoas`]()
+  Permite o cadastro de uma pessoa na plataforma.
+
+* `POST - /rest/pessoas`
+
+  **Parâmetros**
+  
+  **aplication/json**
+    
+    * **body** - Campos com informações sobre a pessoa.  
+      
+      
+      
+      **Exemplo**
+        
+        ```
+          {
+            "CEP": "7454555",
+            "biografia": "Minha história",
+            "dataNascimento": "2016-06-07T01:33:22.740Z",
+            "email": "email@mail.com",
+            "emailVerificado": true,
+            "latitude": 12,
+            "longitude": 10,
+            "nomeCompleto": "José da Silva",
+            "nomeUsuario": "José",
+            "senha": "string",
+            "sexo": "M",
+            "tokenFacebook": "32131423243",
+            "tokenGoogle": "43243243",
+            "tokenInstagram": "423432432423423",
+            "tokenTwitter": "6456546457423904923"
+          }
+        ```
 * [`GET - /rest/pessoas/autenticar`]()
 * [`POST - /rest/pessoas/redefinirSenha`]()
 * [`GET - /rest/pessoas/{codPessoa}`]()
