@@ -1067,7 +1067,19 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     * **body** - Campos com informações sobre a pessoa.  
       
-      
+      * CEP - **Opcional**. Representa o CEP do endereço onde a pessoa mora.
+      * biografia - **Opcional**. Pequeno texto sobre a pessoa. Máximo 250 caracteres.
+      * dataNascimento - **Opcional**. Data de nascimento da pessoa no formato yyyy-MM-dd'T'hh:mm:ss.SSSz.
+      * email - E-mail da pessoa.
+      * latitude - **Opcional**. Referente a latitude da localização da pessoa.
+      * longitude - **Opcional**. Referente a longitude localização da pessoa.
+      * nomeCompleto - Nome completo da pessoa.
+      * senha - **Opcional**. Senha de cadastro do usuário. Caso seja um cadastro de uma rede social não é necessário, porém deve ser passado alguém token social para cadastro.
+      * sexo - **Opcional**. Deve ser passado "M" para masculino e "F" para feminino.
+      * tokenFacebook - **Opcional**. Id obtido por autenticação do usuário pela API do facebook para cadastro com facebook.
+      * tokenGoogle - **Opcional**. Id obtido por autenticação do usuário pela API do GooglePlus para cadastro com GooglePlus.
+      * tokenInstagram - **Opcional** Id obtido por autenticação do usuário pela API do Instagram do usuário para cadastro com o Instagram.
+      * tokenTwitter - **Opcional**. Id obtido por autenticação do usuário pela API do Twitter do usuário para cadastro com o Twitter.
       
       **Exemplo**
         
@@ -1077,7 +1089,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
             "biografia": "Minha história",
             "dataNascimento": "2016-06-07T01:33:22.740Z",
             "email": "email@mail.com",
-            "emailVerificado": true,
             "latitude": 12,
             "longitude": 10,
             "nomeCompleto": "José da Silva",
@@ -1090,6 +1101,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
             "tokenTwitter": "6456546457423904923"
           }
         ```
+  **Retorno** 
+    
+    * 201 - Cadastrado com sucesso.
+    
 * [`GET - /rest/pessoas/autenticar`]()
 * [`POST - /rest/pessoas/redefinirSenha`]()
 * [`GET - /rest/pessoas/{codPessoa}`]()
