@@ -1419,9 +1419,91 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * {codPessoa} - Parâmetro de path. Código da pessoa que possui o perfil.
   
   **Retorno**
+    
+    * 200 - Ok
+    
+      Retorna dados do perfil.
+      
+      **Exemplo**
+        
+        ````
+          {
+            "camposAdicionais": "escola: 53012607, serie: 3, ano: 2011, grau: 3",
+            "tipoPerfil": {
+              "codTipoPerfil": 21,
+              "descricao": "aluno"
+            }
+          }
+        ```
+    * 404 - Não encontrado
+      
+      Usuário não cadastrado ou Aplicativo não encontrado ou Perfil não encontrado para o usuário no aplicativo.
+    
+    * 400 - Parâmetros inconsistentes
+      
+      Parâmetro **appIdentifier** não númerico. 
+      
+### Cadastra Perfil 
+
+  Cadastra o perfil de um usuário em determinado aplicativo.
   
+* `POST - /rest/pessoas/{codPessoa}/perfil`
+
+  **Parâmetros**
+  
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa para qual o perfil será criado.
+    
+    * **body** - Campos com informações sobre o perfil.
+    
+      * camposAdicionais - Dados adicionais do perfil. É uma string, logo pode estar em qualquer formato que a aplicação prover. Porém é recomendado usar o formato JSON para uma melhor padronização.
+      * tipoPerfil 
+        * codTipoPerfil - Código do tipo de perfil que já se encontra cadastrado e associado à um aplicativo.
+      
+      **Exemplo**
+      ```
+        {
+          "camposAdicionais": "escola: 53012607, serie: 3, ano: 2011, grau: 3",
+          "tipoPerfil": {
+            "codTipoPerfil": 21,
+          }
+        }
+      ```
+   **Retorno** 
+    
+    * 200 - Cadastrado com sucesso.
+    
+      Retorna os dados cadastrados do perfil em formato **JSON**.
+      
+        **Exemplo**
+        ```
+          {
+            "camposAdicionais": "cod: 23",
+            "tipoPerfil": {
+              "codTipoPerfil": 2,
+              "descricao": "Administrador"
+            }
+          }
+        ```
+    * 400 - Parâmentros incorretos
+    
+      Algum parâmetros está inconsistente ou o json está mal formatado. A mensagem de erro vai no corpo da resposta.
+    
+    * 404 - Não encontrado
+      
+      Usuário não cadastrado ou tipo de perfil não cadastrado.
+  
+### Excluir perfil
+
+  Exclui o perfil de um usuário em determinado aplicativo.
+  
+* `DELETE - /rest/pessoas/{codPessoa}/perfil`
+  
+  **Parâmetros**
     
     
-* [`POST - /rest/pessoas/{codPessoa}/perfil`]()
-* [`DELETE - /rest/pessoas/{codPessoa}/perfil`]()
+  
 * [`PUT - /rest/pessoas/{codPessoa}/perfil`]()
