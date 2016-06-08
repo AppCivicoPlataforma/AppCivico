@@ -1443,7 +1443,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       Parâmetro **appIdentifier** não númerico. 
       
-### Cadastra Perfil 
+### Cadastrar Perfil 
 
   Cadastra o perfil de um usuário em determinado aplicativo.
   
@@ -1495,6 +1495,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 404 - Não encontrado
       
       Usuário não cadastrado ou tipo de perfil não cadastrado.
+      
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
   
 ### Excluir perfil
 
@@ -1521,11 +1525,61 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 400 - Parâmetros inconsistentes
       
       Parâmetro **appIdentifier** não númerico. 
+    
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
 
 ### Alterar perfil
   
   Altera os dados de um perfil já cadastrado.
   
 * `PUT - /rest/pessoas/{codPessoa}/perfil`
+
+  **Parâmetros**
+  
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa para qual o perfil será alterado.
+    
+    * **body** - Campos com informações sobre o perfil.
+    
+      * camposAdicionais - Dados adicionais do perfil. É uma string, logo pode estar em qualquer formato que a aplicação prover. Porém é recomendado usar o formato JSON para uma melhor padronização.
+      * tipoPerfil 
+        * codTipoPerfil - Código do tipo de perfil que já se encontra cadastrado e associado à um aplicativo.
+      * verificado - Boleano obrigatório. Indica que a alteração foi verificada.
+      
+      **Exemplo**
+      
+      ```
+        {
+          "camposAdicionais": "escola: 53012607, serie: 3, ano: 2011, grau: 3",
+          "tipoPerfil": {
+            "codTipoPerfil": 21,
+          },
+          "verificado": true
+        }
+      ```
+  
+ **Retorno** 
+  
+  * 200 - Alterado com sucesso.
+  
+  * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+
+  * 400 - Parâmentros incorretos
+    
+      Algum parâmetros está inconsistente ou o json está mal formatado.
+      Perfil não associado ao usuário.
+    
+  * 404 - Não encontrado
+      
+      Usuário não cadastrado ou tipo de perfil não cadastrado.
+
+### Postagem de pessoa
 
   
