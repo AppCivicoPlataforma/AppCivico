@@ -1404,3 +1404,24 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
 
 # Perfis
+  
+  O perfil é a entidade que associa uma pessoa à um aplicativo. O perfil também armazena dados específicos da pessoa que não estão entre os básicos do cadastro da mesma. 
+
+### Buscar perfil 
+
+  Busca o perfil de uma pessoa em determinado aplicativo.
+  
+* `GET - /rest/pessoas/{codPessoa}/perfil`
+
+  **Parâmetros** 
+    
+    * appIdentifier - Parâmentro de header. Indica o código do aplicativo onde se irá buscar o perfil.
+    * {codPessoa} - Parâmetro de path. Código da pessoa que possui o perfil.
+  
+  **Retorno**
+  
+    
+    
+* [`POST - /rest/pessoas/{codPessoa}/perfil`]()
+* [`DELETE - /rest/pessoas/{codPessoa}/perfil`]()
+* [`PUT - /rest/pessoas/{codPessoa}/perfil`]()
