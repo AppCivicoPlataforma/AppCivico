@@ -74,10 +74,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Perfis
 
-* [`GET - /rest/pessoas/{codPessoa}/perfil`]()
-* [`POST - /rest/pessoas/{codPessoa}/perfil`]()
-* [`DELETE - /rest/pessoas/{codPessoa}/perfil`]()
-* [`PUT - /rest/pessoas/{codPessoa}/perfil`]()
+* [`GET - /rest/pessoas/{codPessoa}/perfil`](#buscar-perfil)
+* [`POST - /rest/pessoas/{codPessoa}/perfil`](#cadastrar-perfil)
+* [`DELETE - /rest/pessoas/{codPessoa}/perfil`](#excluir-perfil)
+* [`PUT - /rest/pessoas/{codPessoa}/perfil`](#alterar-perfil)
 
 ### Pessoas e Postagens
 
@@ -1504,6 +1504,28 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
   **Parâmetros**
     
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
+    * appIdentifier - Parâmentro de header. Indica o código do aplicativo onde se irá buscar o perfil.
+    
+    * {codPessoa} - Parâmetro de path. Código da pessoa que possui o perfil que será excluído.
   
-* [`PUT - /rest/pessoas/{codPessoa}/perfil`]()
+   * 200 - Ok
+    
+      Excluído com sucesso. 
+
+    * 404 - Não encontrado
+      
+      Usuário não cadastrado ou Aplicativo não encontrado ou Perfil não encontrado para o usuário no aplicativo.
+    
+    * 400 - Parâmetros inconsistentes
+      
+      Parâmetro **appIdentifier** não númerico. 
+
+### Alterar perfil
+  
+  Altera os dados de um perfil já cadastrado.
+  
+* `PUT - /rest/pessoas/{codPessoa}/perfil`
+
+  
