@@ -81,9 +81,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Pessoas e Postagens
 
-* [`/rest/pessoas/{codPessoa}/postagens`]()
+* [`GET - /rest/pessoas/{codPessoa}/postagens`](#buscar-postagens-de-pessoa)
 
 ### Postagens
+
 
 
 
@@ -1580,6 +1581,58 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       Usuário não cadastrado ou tipo de perfil não cadastrado.
 
-### Postagem de pessoa
+# Postagem de pessoa
 
+
+### Buscar postagens de pessoa
+
+  Busca paginada de postagens de uma determinada pessoa.
+
+* `GET - /rest/pessoas/{codPessoa}/postagens`
   
+  **Parâmetros**
+    
+    * appIdentifier - **Opcional**. 
+    * codPessoa - Código da pessoa que seram buscadas as postagens. 
+    * pagina - **Opcional**.  Parâmetro de query opcional para uma busca paginada. **Opcional**. Número da página com valor padrão 0.
+    * quantidadeDeItens - Parâmetro de query opcional que define o máximo de escolas retornadas na busca. **Opcional**.Valor padrão é 20.
+    * ordenacao - **Opcional**. 
+  
+  **Retorno**
+    
+    * 200 - Sucesso.
+      
+      Dados buscados com sucesso.
+
+      ````
+      [{
+        "links": [
+          {
+            "rel": "self",
+            "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/302"
+          }
+        ],
+        "codPostagem": 302,
+        "dataHoraPostagem": "2016-05-03T15:50:42BRT",
+        "conteudos": [
+          {
+            "links": [
+              {
+                "rel": "detalhe",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/302/conteudos/267"
+              }
+            ],
+            "codConteudoPostagem": 267
+          }
+        ],
+        "codObjetoDestino": 5301803030121,
+        "codTipoObjetoDestino": 100,
+        "codTipoPostagem": 105
+      }]
+      ```
+    * 400 - Parâmetros incorretos.
+      
+      Algum parâmetro está 'n'va]]]]]]]]]]]]]]]]]
+     
+    * 404 - 
+    * 
