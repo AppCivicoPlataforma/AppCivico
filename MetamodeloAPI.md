@@ -85,8 +85,22 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Postagens
 
+* [`GET - /rest/postagens`](#buscar-postagens)
+* [`POST - /rest/postagens`](#cadastrar-postagem)
+* [`GET - /rest/postagens/{codPostagem}`](#encontrar-postagem)
+* [`DELETE - /rest/postagens/{codPostagem}`](#excluir-postagem)
+
+### Avaliações de Objeto
+
+* [`GET - /rest/postagens/tipopostagem/{codTipoPostagem}/tipoobjeto/{codTipoObjetoDestino}/objeto/{codObjetoDestino}`](#média-de-avaliações)
+
+### Conteudos de Postagens
 
 
+### Tipos de objeto
+
+
+### Tipos de postagem
 
 
 
@@ -1631,7 +1645,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       ```
     * 400 - Parâmetros incorretos.
       
-      Algum parâmetro está incorreto.
+      Algum parâmetros está inconsistente.
      
     * 404 - Não encontrado
       
@@ -1640,4 +1654,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 # Postagens
 
+  A postagem é a entidade mais genérica do metamodelo e que abstrai qualquer informação gerada por um usuário do aplicativo que queria ser armazenada dentro da plataforma. Uma postagem é só a representação básica da entidade, onde o que compõe a mesma são os [**conteúdos**](#conteudos-de-postagens) que podem ser textuais ou arquivos em geral e que serão explicados a seguir. A postagem pode, opcionalmente, estar relacionada à algum objeto e também à uma outra postagem. Um exemplo disso é um modelo de rede social onde se tem um texto publicado e o mesmo possui comentários. Abstraindo isso para o metamodelo, teriamos apenas postagens de tipos diferentes, onde cada comentário em forma de postagem estaria relacionada à uma outra postagem que representa o texto publicado. O relacionamento com objetos funciona com os campos **codObjetoDestino** e **codTipoObjetoDestino**, onde o codTipoObjetoDestino é o código do tipo de objeto que deve estar previamente cadastrado na plataforma e o código do objeto é o identificador único de um objeto qualquer, como por exemplo, uma escola ou estabelecimento de saúde.
 
+* [`GET - /rest/postagens`] 
+
+  
