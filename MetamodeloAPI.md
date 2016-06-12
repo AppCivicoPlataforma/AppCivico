@@ -143,7 +143,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         * codResponsavel - Código do desenvolvedor responsável pelo aplicativo.
         * descricao - Breve descrição do aplicativo. Explicação sobre o que o aplicativo faz, qual àrea de abordagem, e sobre que tipo de informação esse aplicativo armazena na plataforma.
         * nome - Nome do aplicativo.
-        * token - . **Opcional**
+        * token - Identificador único e secreto de um aplicativo. **Opcional**
         
       **Exemplo**
         
@@ -1596,7 +1596,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * codPessoa - Código da pessoa que seram buscadas as postagens. 
     * pagina - **Opcional**.  Parâmetro de query opcional para uma busca paginada. **Opcional**. Número da página com valor padrão 0.
     * quantidadeDeItens - Parâmetro de query opcional que define o máximo de escolas retornadas na busca. **Opcional**.Valor padrão é 20.
-    * ordenacao - **Opcional**. 
   
   **Retorno**
     
@@ -1632,7 +1631,13 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       ```
     * 400 - Parâmetros incorretos.
       
-      Algum parâmetro está 'n'va]]]]]]]]]]]]]]]]]
+      Algum parâmetro está incorreto.
      
-    * 404 - 
-    * 
+    * 404 - Não encontrado
+      
+      Usuário com o código enviado não se encontra cadastrado.
+    
+
+# Postagens
+
+
