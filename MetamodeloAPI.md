@@ -1825,7 +1825,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
         Não foi encontrado um tipo de perfil com esse código nesse aplicativo.
   
-# Excluir Postagem 
+### Excluir Postagem 
   
   Exclui uma postagem e seus conteúdos da plataforma.
       
