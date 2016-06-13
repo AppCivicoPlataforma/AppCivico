@@ -1849,4 +1849,43 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 # Avaliações de Objeto
 
+  A entidade de postagem embora genérica, em muitos aplicativos pode ser usada para armazenar avaliações em geral, seja de estabelecimentos de saúde, escolas, entre outros. Para isso o conteúdo da postagem possui um campo numérico chamado **valor**, que é responsáve por armazenar avaliações em uma escala numérica de acordo com a necessidade da aplicação. Esse campo numérico provê a possibilidade da criação de endpoints que sejam especificos para avaliação dentro da postagem, como por exemplo, média de avaliações em um objeto específico, quantidade de avaliações em um objeto específico, entre outros.
   
+### Média de Avaliações
+
+  Retorna a média numérica das avaliações em determinado objeto e a quantidade de avaliações feitas. **Obs**: A média será retornada de acordo com os valores dos conteúdos de postagens no campo **valor**.
+  
+* `GET - /rest/postagens/tipopostagem/{codTipoPostagem}/tipoobjeto/{codTipoObjetoDestino}/objeto/{codObjetoDestino}`
+
+  **Parâmetros** 
+  
+    * {codTipoPostagem} - Parâmetro de path. Código do tipo da postagem correspondente à avaliação.
+    * {codTipoObjetoDestino} - Código do tipo de objeto que será buscado à média e quantidade.
+    * {codObjetoDestino} - Código do objeto em que foi feita a avaliação.
+  
+  **Retorno** 
+  
+    * 200 - Sucesso
+      
+      **Exemplo**
+      
+        ```
+          {
+            "contagem": 0,
+            "media": 0
+          }
+        ```
+        
+        * media - Média dos valores contidos no conteúdo das postagens e no campo valor.
+        * contagem - Quantidade de avaliações realizadas nesse objeto.
+    
+    * 400 - Parâmentros incorretos
+      
+      Algum dos parâmteros não foi passado incorretamente como um campo não numérico.
+    
+    * 404 - Não encontrado
+    
+      Não há avaliações ou Tipo de objeto de destino inválido ou Tipo de postagem não cadastrado
+      
+# Conteúdos de Postagens
+
