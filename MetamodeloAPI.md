@@ -1795,5 +1795,56 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 * `GET - /rest/postagens/{codPostagem}` 
 
+  **Parâmetros**
+    
+    * {codPostagem} - Parâmetro de path que indica código da postagem a ser buscada.
+    
+  **Retorno**
   
+    * 200 - 0k
+    
+        ```
+          {
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25/tipos-perfil/41"
+              },
+              {
+                "rel": "aplicativo",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25"
+              }
+            ],
+            "codTipoPerfil": 41,
+            "descricao": "administrador",
+            "dataHoraCriacao": "2016-05-29T15:11:00BRT"
+          }
+        ```
+        
+    * 404 - Não encontrado.
+    
+        Não foi encontrado um tipo de perfil com esse código nesse aplicativo.
+  
+# Excluir Postagem 
+  
+  Exclui uma postagem e seus conteúdos da plataforma.
       
+  **Parâmetros** 
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codPostagem} - Parâmetro de path. Indica o código da postagem a ser excluída.
+  
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Excluído com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Postagem com o código informada não se encontra cadastrada.
+
+# Avaliações de Objeto
+
+  
