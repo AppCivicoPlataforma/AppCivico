@@ -1828,7 +1828,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Excluir Postagem 
   
   Exclui uma postagem e seus conteúdos da plataforma.
-      
+
+* `DELETE - /rest/postagens/{codPostagem}
+
   **Parâmetros** 
     
     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
