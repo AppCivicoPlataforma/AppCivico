@@ -1505,7 +1505,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         ```
     * 400 - Parâmentros incorretos
     
-      Algum parâmetros está inconsistente ou o json está mal formatado. A mensagem de erro vai no corpo da resposta.
+      Algum parâmetro está inconsistente ou o json está mal formatado. A mensagem de erro vai no corpo da resposta.
     
     * 404 - Não encontrado
       
@@ -1588,7 +1588,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   * 400 - Parâmentros incorretos
     
-      Algum parâmetros está inconsistente ou o json está mal formatado.
+      Algum parâmetro está inconsistente ou o json está mal formatado.
       Perfil não associado ao usuário.
     
   * 404 - Não encontrado
@@ -1645,7 +1645,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       ```
     * 400 - Parâmetros incorretos.
       
-      Algum parâmetros está inconsistente.
+      Algum parâmetro está inconsistente.
      
     * 404 - Não encontrado
       
@@ -1656,6 +1656,66 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   A postagem é a entidade mais genérica do metamodelo e que abstrai qualquer informação gerada por um usuário do aplicativo que queria ser armazenada dentro da plataforma. Uma postagem é só a representação básica da entidade, onde o que compõe a mesma são os [**conteúdos**](#conteudos-de-postagens) que podem ser textuais ou arquivos em geral e que serão explicados a seguir. A postagem pode, opcionalmente, estar relacionada à algum objeto e também à uma outra postagem. Um exemplo disso é um modelo de rede social onde se tem um texto publicado e o mesmo possui comentários. Abstraindo isso para o metamodelo, teriamos apenas postagens de tipos diferentes, onde cada comentário em forma de postagem estaria relacionada à uma outra postagem que representa o texto publicado. O relacionamento com objetos funciona com os campos **codObjetoDestino** e **codTipoObjetoDestino**, onde o codTipoObjetoDestino é o código do tipo de objeto que deve estar previamente cadastrado na plataforma e o código do objeto é o identificador único de um objeto qualquer, como por exemplo, uma escola ou estabelecimento de saúde.
 
+### Buscar postagens
+
+   Esse **endpoint** provê buscas de postagens podendo-se filtrar por autor, aplicativo, tipo de postagem, entre outros.
+
 * [`GET - /rest/postagens`] 
+
+  **Parâmetros**
+  
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * codAplicativo - Parâmetro de query. **Opcional**. Código do aplicativo do qual serão buscadas as postagens. Caso não seja passado serão retornadas postagens de todos os aplicativos.
+    * codAutor - Parâmetro de query. **Opcional**. Código do autor do qual serão buscadas as postagens. Caso não seja passado serão retornadas postagens de todos as pessoas.
+    * codPostagemRelacionada - Parâmetro de query. **Opcional**. Código da postagem relacionada da qual serão buscadas as postagens.
+    * codTiposPostagem - Parâmetro de query. **Opcional**. Código do tipo de postagem do qual serão buscadas as mesmas. Caso não seja passado serão retornadas postagens de todos os tipos.
+    * hashtag - Parâmetro de query. **Opcional**. Hashtag para busca de todas as postagens que possuam como parâmetro texto em algum de seus conteúdos, o texto da hashtag.
+    * codTipoObjetoDestino - Parâmetro de query. **Opcional**. Código do tipo de objeto do qual a postagem está relacionada. Caso não seja passado serão buscadas postagens relacionadas à todos tipos os objetos.
+    * codObjetoDestino - Parâmetro de query. **Opcional**. Código do objeto do qual a postagem está relacionada. Caso não seja passado serão buscadas postagens relacionadas à todos os objetos.
+    * pagina - **Opcional**. Parâmetro de query opcional para uma busca paginada. **Opcional**. Número da página com valor padrão 0.
+    * quantidadeDeItens - Parâmetro de query opcional que define o máximo de escolas retornadas na busca. **Opcional**.Valor padrão é 20.
+    
+   * 200 - Sucesso.
+      
+      Dados buscados com sucesso.
+
+      ````
+      [{
+        "links": [
+          {
+            "rel": "self",
+            "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/302"
+          }
+        ],
+        "codPostagem": 302,
+        "dataHoraPostagem": "2016-05-03T15:50:42BRT",
+        "conteudos": [
+          {
+            "links": [
+              {
+                "rel": "detalhe",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/302/conteudos/267"
+              }
+            ],
+            "codConteudoPostagem": 267
+          }
+        ],
+        "codObjetoDestino": 5301803030121,
+        "codTipoObjetoDestino": 100,
+        "codTipoPostagem": 105
+      }]
+      ```
+    * 400 - Parâmetros incorretos.
+      
+      Algum parâmetros está inconsistente.
+     
+    * 204 - Não encontrado
+      
+      Nenhuma postagem que se encaixa nos parâmetros passados foi encontrada.
+    
+  
+### Cadastrar Postagem
+
 
   
