@@ -1138,7 +1138,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         ```
     * 400 - Parâmentros incorretos
     
-      Algum parâmetros está inconsistente ou o json está mal formatado. A mensagem de erro vai no corpo da resposta.
+      Algum parâmetros está inconsistente ou o json está mal formatado ou e-mail já se encontra cadastrado. A mensagem de erro vai no corpo da resposta.
     
 ### Autenticar
 
@@ -1683,7 +1683,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       Dados buscados com sucesso.
 
-      ````
+      ```
       [{
         "links": [
           {
@@ -1720,5 +1720,80 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 ### Cadastrar Postagem
 
-
+  Registra uma postagem na plataforma.
   
+* `POST - /rest/postagens` 
+
+  **Parâmetros**
+  
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * appIdentifier - Parâmtro de header. Código do aplicativo que é dono da postagem.
+    
+    * **body** - Campos com informações sobre a postagem.
+        
+      * autor 
+        * codPessoa - Código da pessoa que criou a postagem.
+      * codObjetoDestino - **Opcional**. Código do objeto à qual a postagem está associada.
+      * codTipoObjetoDestino - **Opcional**. Código do tipo de objeto à qual a postagem está relacionada.
+      * postagemRelacionada **Opcional**
+        * codPostagem - Código da postagem relacionada.
+      * tipo 
+        * codTipoPostagem - Código do tipo da postagem.
+  
+      **Exemplo** 
+        
+        ```
+          {
+            "autor": {
+              "codPessoa": 21
+            },
+            "codObjetoDestino": 34397294832,
+            "codTipoObjetoDestino": 1,
+            "postagemRelacionada": {
+              "codPostagem": 23
+            },
+            "tipo": {
+              "codTipoPostagem": 100
+            }
+          }
+          
+        ```
+        
+    **Retorno** 
+    
+      * 201 - Postagem criada com sucesso.
+      
+        Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da postagem no campo **location**. 
+          
+          ```
+            "location": "http://mobile-aceite.tcu.gov.br:80/appCivicoRS/rest/postagens/363"
+          ```
+          
+      * 401 - Não autorizado.
+      
+        O apptoken enviado não é um token válido ou está expirado.
+          
+      * 400 - Parâmentros incorretos
+      
+        Falta de parâmetros obrigatórios ou parâmetros incorretos ou.
+      
+      * 404 - Não encontrado
+      
+        Usuário com o código passado no campo **autor.codPessoa** não foi encontrado ou usuário ou aplicativo não encontrado ou Tipo de objeto destino não cadastrado.  
+      
+      * 403 - Proibido
+      
+        Usuário autor da postagem é diferente do usuário dono do token fornecido.
+      
+
+### Encontrar Postagem
+
+  Busca dados da postagem pelo código do mesmo.
+  
+* `GET - /rest/postagens/{codPostagem}` 
+
+
+      
