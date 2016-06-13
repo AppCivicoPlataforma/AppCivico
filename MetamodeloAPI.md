@@ -1675,8 +1675,11 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * codObjetoDestino - Parâmetro de query. **Opcional**. Código do objeto do qual a postagem está relacionada. Caso não seja passado serão buscadas postagens relacionadas à todos os objetos.
     * pagina - **Opcional**. Parâmetro de query opcional para uma busca paginada. **Opcional**. Número da página com valor padrão 0.
     * quantidadeDeItens - Parâmetro de query opcional que define o máximo de escolas retornadas na busca. **Opcional**.Valor padrão é 20.
-    
-   * 200 - Sucesso.
+  
+  
+  **Retorno**  
+  
+    * 200 - Sucesso.
       
       Dados buscados com sucesso.
 
