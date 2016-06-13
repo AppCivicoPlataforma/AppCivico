@@ -96,11 +96,27 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Conteudos de Postagens
 
+* [`POST - /rest/postagens/{codPostagem}/conteudos`](#criar-conteúdo-de-postagem)
+* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#encontrar-conteudo-de-postagem)
+* [`PUT - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#)
+* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#)
+* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#)
+* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#)
+
 
 ### Tipos de objeto
 
+* [`GET - /rest/tipos-objeto`](#)
+* [`POST - /rest/tipos-objeto`](#)
+* [`GET - /rest/tipos-objeto/{codTipoObjeto}`](#)
+* [`PUT - /rest/tipos-objeto/{codTipoObjeto}`](#)
 
 ### Tipos de postagem
+
+* [`GET - /rest/tipos-postagem`](#)
+* [`POST - /rest/tipos-postagem`](#)
+* [`GET - /rest/tipos-postagem/{codTipoPostagem}`](#)
+* [`PUT - /rest/tipos-postagem/{codTipoPostagem}`](#)
 
 
 
