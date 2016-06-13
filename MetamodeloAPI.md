@@ -1764,29 +1764,29 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         
     **Retorno** 
     
-      * 201 - Postagem criada com sucesso.
+    * 201 - Postagem criada com sucesso.
       
-        Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da postagem no campo **location**. 
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da postagem no campo **location**. 
           
           ```
             "location": "http://mobile-aceite.tcu.gov.br:80/appCivicoRS/rest/postagens/363"
           ```
           
-      * 401 - Não autorizado.
+    * 401 - Não autorizado.
       
-        O apptoken enviado não é um token válido ou está expirado.
+      O apptoken enviado não é um token válido ou está expirado.
           
-      * 400 - Parâmentros incorretos
+    * 400 - Parâmentros incorretos
       
-        Falta de parâmetros obrigatórios ou parâmetros incorretos ou.
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou.
       
-      * 404 - Não encontrado
+    * 404 - Não encontrado
       
-        Usuário com o código passado no campo **autor.codPessoa** não foi encontrado ou usuário ou aplicativo não encontrado ou Tipo de objeto destino não cadastrado.  
+      Usuário com o código passado no campo **autor.codPessoa** não foi encontrado ou usuário ou aplicativo não encontrado ou Tipo de objeto destino não cadastrado.  
       
-      * 403 - Proibido
+    * 403 - Proibido
       
-        Usuário autor da postagem é diferente do usuário dono do token fornecido.
+      Usuário autor da postagem é diferente do usuário dono do token fornecido.
       
 
 ### Encontrar Postagem
@@ -1795,5 +1795,5 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 * `GET - /rest/postagens/{codPostagem}` 
 
-
+  
       
