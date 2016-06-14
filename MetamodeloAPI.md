@@ -98,10 +98,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * [`POST - /rest/postagens/{codPostagem}/conteudos`](#criar-conteúdo-de-postagem)
 * [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#encontrar-conteudo-de-postagem)
-* [`PUT - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#alterar-conteúdo-de-postage)
-* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#excluir-conteúdo-de-postage)
-* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#encontrar-conteúdo-binário-de-postage)
-* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#criar-conteúdo-binário-de-postage)
+* [`PUT - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#alterar-conteúdo-de-postagem)
+* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#excluir-conteúdo-de-postagem)
+* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#encontrar-conteúdo-binário-de-postagem)
+* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#criar-conteúdo-binário-de-postagem)
 
 
 ### Tipos de objeto
@@ -1922,7 +1922,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     * {codPostagem} - Parâmetro de path. Código da postagem à qual será associada o conteúdo.
     
-    * **body** - Campos com informações o conteúdo.
+    * **body** - Campos com informações do conteúdo.
       
       * JSON - String no formato **JSON** representando o conteúdo.
       * texto - Campo textual usado para associar hashtags à postagem. Para associar uma hashtag à postagem basta colocá-la no campo texto com o caracter '#'. Esse campo também pode ser usado para postagem textual simples sem relação com hashtags, para isso basta apenas não utilizar o caracter '#' no início do mesmo.
@@ -1932,15 +1932,15 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       ````
         {
-          "JSON": "string",
-          "texto": "string2",
-          "valor": 0
+          "JSON": "{"campo1" : "valor", "campo2": "valor2"}",
+          "texto": "texto",
+          "valor": 10
         }
       
       ```
   **Retorno** 
   
-     * 201 - Conteúdo adicionado com sucesso.
+    * 201 - Conteúdo adicionado com sucesso.
       
       Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do conteúdo no campo **location**. 
           
@@ -1962,9 +1962,73 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * `GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`
 
+  **Parâmetros**
   
+    * {codPostagem} - Parâmetro de path. Código da postagem do conteúdo.
+    * {codConteudo} - Parâmetro de path. Código do conteúdo a ser buscado.
+  
+  **Retorno** 
+    
+    * 200 - 0k
+    
+        ```
+          {
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25/tipos-perfil/41"
+              },
+              {
+                "rel": "aplicativo",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25"
+              }
+            ],
+            "codTipoPerfil": 41,
+            "descricao": "administrador",
+            "dataHoraCriacao": "2016-05-29T15:11:00BRT"
+          }
+        ```
+        
+    * 404 - Não encontrado.
+    
+        Não foi encontrado um conteúdo com esse código nessa postagem.
 
-* [`PUT - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#alterar-conteúdo-de-postage)
-* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#excluir-conteúdo-de-postage)
-* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#encontrar-conteúdo-binário-de-postage)
-* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#criar-conteúdo-binário-de-postage)
+### Alterar conteúdo de postagem
+  
+  Altera um determinado conteúdo de uma postagem.
+  
+* [`PUT - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#alterar-conteúdo-de-postagem)
+
+  **Parâmetros**
+    
+    **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codPostagem} - Parâmetro de path. Código da postagem do conteúdo.
+    * {codConteudo} - Parâmetro de path. Código do conteúdo a ser aterado.
+    
+    * **body** - Campos com informações do novo conteúdo.
+      
+      * JSON - String no formato **JSON** representando o conteúdo.
+      * texto - Campo textual usado para associar hashtags à postagem. Para associar uma hashtag à postagem basta colocá-la no campo texto com o caracter '#'. Esse campo também pode ser usado para postagem textual simples sem relação com hashtags, para isso basta apenas não utilizar o caracter '#' no início do mesmo.
+      * valor - Campo usado para avaliações em objetos. É recomendado usar esse campo para postagens com o intuito de avaliar algum objeto em uma escala numérica.
+      
+       **Exemplo** 
+      
+      ````
+        {
+          "JSON": "{"campo1" : "valor", "campo2": "valor2"}",
+          "texto": "texto",
+          "valor": 10
+        }
+      
+      ```
+  
+  **Retorno** 
+    
+    
+
+* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#excluir-conteúdo-de-postagem)
+* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#encontrar-conteúdo-binário-de-postagem)
+* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#criar-conteúdo-binário-de-postagem)
