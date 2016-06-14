@@ -2026,9 +2026,21 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       ```
   
   **Retorno** 
+  
+    * 200 - Conteúdo alterado com sucesso.
+      
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos.
+      
+    * 404 - Não encontrado
+      
+        Não foi encontrado um conteúdo com esse código nessa postagem.
     
-    
-
 * [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#excluir-conteúdo-de-postagem)
 * [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#encontrar-conteúdo-binário-de-postagem)
 * [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#criar-conteúdo-binário-de-postagem)
