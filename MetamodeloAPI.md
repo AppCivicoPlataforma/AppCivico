@@ -98,10 +98,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * [`POST - /rest/postagens/{codPostagem}/conteudos`](#criar-conteúdo-de-postagem)
 * [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#encontrar-conteudo-de-postagem)
-* [`PUT - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#)
-* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#)
-* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#)
-* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#)
+* [`PUT - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#alterar-conteúdo-de-postage)
+* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#excluir-conteúdo-de-postage)
+* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#encontrar-conteúdo-binário-de-postage)
+* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#criar-conteúdo-binário-de-postage)
 
 
 ### Tipos de objeto
@@ -1794,7 +1794,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
           
     * 400 - Parâmentros incorretos
       
-      Falta de parâmetros obrigatórios ou parâmetros incorretos ou.
+      Falta de parâmetros obrigatórios ou parâmetros incorretos.
       
     * 404 - Não encontrado
       
@@ -1903,5 +1903,68 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
       Não há avaliações ou Tipo de objeto de destino inválido ou Tipo de postagem não cadastrado
       
+      
 # Conteúdos de Postagens
 
+  Uma postagem pode ser composta por um ou mais conteúdos. Os conteúdos são o corpo da postagem e podem ser apenas textuais ou podem conter arquivos de qualquer extensão. 
+  
+### Criar conteúdo de postagem
+
+  Cria um conteúdo e associa o mesmo à uma postagem.
+  
+* `POST - /rest/postagens/{codPostagem}/conteudos`
+
+  **Parâmetros**
+  
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codPostagem} - Parâmetro de path. Código da postagem à qual será associada o conteúdo.
+    
+    * **body** - Campos com informações o conteúdo.
+      
+      * JSON - String no formato **JSON** representando o conteúdo.
+      * texto - Campo textual usado para associar hashtags à postagem. Para associar uma hashtag à postagem basta colocá-la no campo texto com o caracter '#'. Esse campo também pode ser usado para postagem textual simples sem relação com hashtags, para isso basta apenas não utilizar o caracter '#' no início do mesmo.
+      * valor - Campo usado para avaliações em objetos. É recomendado usar esse campo para postagens com o intuito de avaliar algum objeto em uma escala numérica.
+    
+    **Exemplo** 
+      
+      ````
+        {
+          "JSON": "string",
+          "texto": "string2",
+          "valor": 0
+        }
+      
+      ```
+  **Retorno** 
+  
+     * 201 - Conteúdo adicionado com sucesso.
+      
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do conteúdo no campo **location**. 
+          
+          ```
+            http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/302/conteudos/313
+          ```
+          
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou formato do **JSON** incorreto.
+      
+###  Encontrar conteudo de postagem
+
+  Encontra os dados de um conteúdo pelo código do mesmo.
+
+* `GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`
+
+  
+
+* [`PUT - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#alterar-conteúdo-de-postage)
+* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#excluir-conteúdo-de-postage)
+* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#encontrar-conteúdo-binário-de-postage)
+* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#criar-conteúdo-binário-de-postage)
