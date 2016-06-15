@@ -2041,6 +2041,42 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
         Não foi encontrado um conteúdo com esse código nessa postagem.
     
-* [`DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`](#excluir-conteúdo-de-postagem)
-* [`GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#encontrar-conteúdo-binário-de-postagem)
-* [`POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`](#criar-conteúdo-binário-de-postagem)
+### Excluir conteúdo de postagem
+  
+  Excluí um conteúdo de determinada postagem.
+  
+* `DELETE - /rest/postagens/{codPostagem}/conteudos/{codConteudo}`
+
+  **Parâmetros** 
+    
+    * {codPostagem} - Parâmetro de path. Código da postagem do conteúdo.
+    * {codConteudo} - Parâmetro de path. Código do conteúdo a ser excluído.
+  
+  **Retorno** 
+  
+    * 200 - Conteúdo excluído com sucesso.
+      
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos.
+      
+    * 404 - Não encontrado
+      
+        Não foi encontrado um conteúdo com esse código nessa postagem.
+    
+### Encontrar conteúdo binário de postagem
+   
+  Busca conteúdo binário de uma postagem.
+
+* `GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`
+
+
+### Criar conteúdo binário de postagem
+
+  Registra um arquivo como parte de um conteúdo.
+
+* `POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`
