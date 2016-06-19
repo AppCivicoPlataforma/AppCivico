@@ -2129,5 +2129,18 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         
 
 # Tipos de objeto 
+
+  Tipos de objetos descrevem o que são os objetos relacionados às postagens ou grupos na plataforma.
+  
+### Buscar tipos de objeto
+
+* [`GET - /rest/tipos-objeto`](#)
+
+### Criar tipo de objeto
+  
+* [`POST - /rest/tipos-objeto`](#)
+
+* [`GET - /rest/tipos-objeto/{codTipoObjeto}`](#)
+* [`PUT - /rest/tipos-objeto/{codTipoObjeto}`](#)
   
   
