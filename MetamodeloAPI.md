@@ -2074,9 +2074,60 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * `GET - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`
 
+  **Parâmteros** 
+  
+    * {codPostagem} - Parâmetro de path. Código da postagem do conteúdo.
+    * {codConteudo} - Parâmetro de path. Código do conteúdo que possui um arquivo binário relacionado.
+    
+  **Retorno** 
+    
+    * 200 - Ok
+      
+      Conteudo binário será retornado.
+      
+    * 400 - Parâmentros incorretos
+      
+      Parâmtros de path passados são inválidos.
+      
+    * 404 - Não encontrado
+      
+        Não foi encontrado um conteúdo binário com esse código nessa postagem.
+    
 
 ### Criar conteúdo binário de postagem
 
   Registra um arquivo como parte de um conteúdo.
+  Tamanho máximo do arquivo a ser carregado é de **4MB**.
 
 * `POST - /rest/postagens/{codPostagem}/conteudos/{codConteudo}/conteudoBinario`
+
+  **Parâmetros**
+    
+    **multipart/form-data**
+
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codPostagem} - Parâmetro de path. Código da postagem do conteúdo.
+    * {codConteudo} - Parâmetro de path. Código do conteúdo em que será associado o arquivo binário.
+    
+    * file - Arquivo binário que será registrado. Tamanho máximo do arquivo a ser carregado é de **4MB**.
+  
+  **Retorno**
+    
+    * 201 - Criado com sucesso
+    
+      Arquivo foi registrado e associado à postagem.
+    
+    * 400 - Parâmentros incorretos
+      
+      Parâmtros de path passados são inválidos.
+      
+    * 404 - Não encontrado
+      
+        Não foi encontrado um conteúdo com esse código nessa postagem.
+        
+
+# Tipos de objeto 
+  
+  
