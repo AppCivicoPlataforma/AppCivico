@@ -1972,21 +1972,25 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 200 - 0k
     
         ```
-          {
-            "links": [
-              {
-                "rel": "self",
-                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25/tipos-perfil/41"
+            {
+              "codConteudoPost": 271,
+              "postagem": {
+                "codPostagem": 306,
+                "links": [
+                  {
+                    "rel": "self",
+                    "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/306"
+                  }
+                ]
               },
-              {
-                "rel": "aplicativo",
-                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/25"
-              }
-            ],
-            "codTipoPerfil": 41,
-            "descricao": "administrador",
-            "dataHoraCriacao": "2016-05-29T15:11:00BRT"
-          }
+              "valor": 2,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/306/conteudos/271"
+                }
+              ]
+            }
         ```
         
     * 404 - Não encontrado.
