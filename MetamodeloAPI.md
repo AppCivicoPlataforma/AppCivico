@@ -105,11 +105,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 
 ### Tipos de objeto
-
-* [`GET - /rest/tipos-objeto`](#)
-* [`POST - /rest/tipos-objeto`](#)
-* [`GET - /rest/tipos-objeto/{codTipoObjeto}`](#)
-* [`PUT - /rest/tipos-objeto/{codTipoObjeto}`](#)
+  
+  Tipos de objeto são usuados para relacionar as bases que contém os dados abertos, como por exemplo as bases de remédios, estabelecimentos de saúde, escolas, entre outras. Essa relação é feita através da postagem, pelo campo tipoObjetoDestino, onde se pode criar postagens relacionadas à uma entidade de dados aberto, como por exemplo uma escola. Além desse código do tipo de objeto destino essa relação ainda necessita do código do objeto destino, ou seja, o código único que identifica uma escola, estabelecimento de saúde ou outra entidade qualquer. Essa relação pode ser usada de várias maneiras para contruir aplicações, um bom exemplo disso é um aplicativo que faça avaliações de escolas, essa avaliações podem ser salvas como postagem, onde o código do tipoObjetoDestino é **1**(código do tipo objeto que representa uma escola) e o código objeto destino seria o código identificador da escola.  
 
 ### Tipos de postagem
 
