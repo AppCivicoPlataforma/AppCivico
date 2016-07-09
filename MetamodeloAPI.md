@@ -106,7 +106,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Tipos de objeto
   
-  Tipos de objeto são usuados para relacionar as bases que contém os dados abertos, como por exemplo as bases de remédios, estabelecimentos de saúde, escolas, entre outras. Essa relação é feita através da postagem, pelo campo tipoObjetoDestino, onde se pode criar postagens relacionadas à uma entidade de dados aberto, como por exemplo uma escola. Além desse código do tipo de objeto destino essa relação ainda necessita do código do objeto destino, ou seja, o código único que identifica uma escola, estabelecimento de saúde ou outra entidade qualquer. Essa relação pode ser usada de várias maneiras para contruir aplicações, um bom exemplo disso é um aplicativo que faça avaliações de escolas, essa avaliações podem ser salvas como postagem, onde o código do tipoObjetoDestino é **1**(código do tipo objeto que representa uma escola) e o código objeto destino seria o código identificador da escola.  
+  Tipos de objeto são usuados para relacionar o metamodelo com as bases que contém os dados abertos, como por exemplo, as bases de remédios, estabelecimentos de saúde, escolas, entre outras. Essa relação é feita através da postagem, pelo campo tipoObjetoDestino, onde se pode criar postagens relacionadas à uma entidade de dados aberto, como por exemplo uma escola. Além desse código do tipo de objeto destino essa relação ainda necessita do código do objeto destino, ou seja, o código único que identifica uma escola, estabelecimento de saúde ou outra entidade qualquer. Essa relação pode ser usada de várias maneiras para contruir aplicações, um bom exemplo disso é um aplicativo que faça avaliações de escolas, essa avaliações podem ser salvas como postagem, onde o código do tipoObjetoDestino é **1**(código do tipo objeto que representa uma escola) e o código objeto destino seria o código identificador da escola.  
 
 ### Tipos de postagem
 
@@ -758,7 +758,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 # Instalações
 
-  Instalações associam um dispositivo à um usuário para seja possível enviar notificações para os aplicativos onde o usuário esteja autenticado.
+  Instalações associam um dispositivo à um usuário para seja possível manter um histórico de pessoas que baixaram e estão usando os aplicativos.
 
 ### Registrar Instalação
 
@@ -902,7 +902,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 # Notificações
   
-  Através das notificações é possível disparar avisos remotos nos dispositivos no qual um usuário está autenticado. Usando a [`instalação`](#instalações) a plataforma consegue enviar notificações para qualquer dispositivo registrado para o usuário.
+  Através das notificações é possível armazenar ações feitas pelos usuários dentro dos aplicativos para que se possa mostrar posteriormente. É importante lembrar que a estrutura de notificação **não** fornece o serviço de #[Push Notifications](http://fabricadeaplicativos.com.br/fabrica/o-que-e-e-como-funciona-a-notificacao-push/), os endpoits de notificação são apenas para armazenamento. 
 
 ### Registrar Notificação
   
@@ -927,7 +927,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       * dataHoraLeitura - Data e hora que a notificação foi aberta pelo destinatário.
       * descricao - Descrição da notificação.
       * destinatario  
-        * codPessoa - Código do usuário que irá receber a notificação. 
+        * codPessoa - Código do usuário que será direcionada a notificação. 
     
       **Exemplo**
       
