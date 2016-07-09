@@ -37,6 +37,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * [`POST - /rest/grupos`](#criar-grupo)
 * [`GET - /rest/grupos/{codGrupo}`](#encontrar-grupo)
+* [`DELETE - /rest/grupos/{codGrupo}`](#excluir-grupo)
 * [`GET - /rest/grupos/{codGrupo}/membros`](#membros-por-grupo)
 * [`POST - /rest/grupos/{codGrupo}/membros`](#adicionar-membro-em-grupo)
 * [`GET - /rest/grupos/{codGrupo}/membros/{codMembro}`](#encontrar-membro-em-grupo)
@@ -512,7 +513,36 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       ```
       
     * 404 - Grupo não encontrado.
+
+### Excluir Grupo
+
+  Esse *endpoint* exclui determinado grupo por código.
+  
+* `DELETE - /rest/grupos/{codGrupo}`
+  
+   **Parâmetros** 
     
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codGrupo} - Parâmetro de path. Indica o código do grupo a ser excluído.
+  
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Excluído com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Grupo com o código informada não se encontra cadastrada.
+
+    * 401 - Não autorizado
+        
+        Senha atual incorreta.
+        
+    * 400 - Parâmetros inconsistentes.
+
+
 ### Membros por Grupo
 
   Este *endpoint* retorna o membros de determinado grupo.
@@ -1337,6 +1367,12 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 404 - Não encontrado.
       
       Pessoa com o código informada não se encontra cadastrada.
+
+    * 401 - Não autorizado
+        
+        Senha atual incorreta.
+        
+    * 400 - Parâmetros inconsistentes.
     
 ### Alterar Senha
   
