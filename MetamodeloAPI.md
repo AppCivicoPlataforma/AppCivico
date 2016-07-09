@@ -47,6 +47,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/hashtags`](#criar-hashtag)
 * [`GET - /rest/hashtags/{codHashtag}`](#buscar-hashtag)
 * [`PUT - /rest/hashtags/{codHashtag}`](#atualizar-hashtag)
+* [`DELETE - /rest/hashtags/{codHashtag}`](#excluir-hashtag)
 
 ### Instalações
   
@@ -785,6 +786,14 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 404 - Não encontrado
       
       Hashtag não encontrada ou aplicativo com o código passado no campo **codAplicativo** não foi encontrado.
+
+### Excluir Hashtag
+  
+  
+
+* `DELETE - /rest/hashtags/{codHashtag}`
+
+
 
 # Instalações
 
