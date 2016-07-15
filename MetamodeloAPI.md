@@ -538,9 +538,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       Grupo com o código informada não se encontra cadastrada.
 
     * 401 - Não autorizado
-        
-        Senha atual incorreta.
-        
+      
+      O apptoken enviado não é um token válido ou está expirado.
+
     * 400 - Parâmetros inconsistentes.
 
 
@@ -707,6 +707,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       Aplicativo com o código passado no campo **codAplicativo** não foi encontrado.
 
 ### Buscar Hashtag
+
   Busca o conteúdo de uma hashtag pelo código da mesma.
 
 * `GET - /rest/hashtags/{codHashtag}`
@@ -789,9 +790,31 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Excluir Hashtag
   
-  
+  Permite a exclusão de uma hashtag desde que não tenha postagens relacionadas.
 
 * `DELETE - /rest/hashtags/{codHashtag}`
+  
+    **Parâmetros** 
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codHashtag} - Parâmetro de path. Indica o código da hashtag a ser excluída.
+  
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Excluído com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Hashtag com o código informada não se encontra cadastrada.
+
+    * 401 - Não autorizado
+        
+      O apptoken enviado não é um token válido ou está expirado.
+  
+    * 400 - Parâmetros inconsistentes.
 
 
 
@@ -1855,6 +1878,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   **Parâmetros**
     
+     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
     * {codPostagem} - Parâmetro de path que indica código da postagem a ser buscada.
     
   **Retorno**
@@ -1883,6 +1908,11 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
         Não foi encontrado um tipo de perfil com esse código nesse aplicativo.
   
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    
 ### Excluir Postagem 
   
   Exclui uma postagem e seus conteúdos da plataforma.
@@ -2006,6 +2036,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   **Parâmetros**
   
+     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
     * {codPostagem} - Parâmetro de path. Código da postagem do conteúdo.
     * {codConteudo} - Parâmetro de path. Código do conteúdo a ser buscado.
   
@@ -2038,7 +2070,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 404 - Não encontrado.
     
         Não foi encontrado um conteúdo com esse código nessa postagem.
-
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
 ### Alterar conteúdo de postagem
   
   Altera um determinado conteúdo de uma postagem.
