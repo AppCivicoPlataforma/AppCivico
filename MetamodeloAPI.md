@@ -2226,7 +2226,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   **Retorno** 
   
-     * 200 - Criado com sucesso
+     * 200 - Sucesso
         
       **Exemplo** 
       
@@ -2242,11 +2242,47 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
 ### Registrar tipo de postagem
   
+  Cria um novo tipo de postagem.
+  
 * `POST - /rest/tipos-postagem`
 
+  **Parâmetros**
+    
+    **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * **body** - Campos com informações do novo tipo de postagem.
+      
+      * codAplicativo - Código do aplicativo à qual pertencerá o tipo de postagem.
+      * codTipoPostagemPai - *Opcional*. Se o tipo de postagem estiver relacionado ao outro tipo. Exemplo: Um tipo de postagem comentário tem relação com uma post também um tipo de postagem.  
+      * descricao - Descrição do tipo de postagem.
+    
+  **Retorno** 
+  
+    * 201 - Tipo de postagem criado com sucesso.
+      
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do tipo de postagem no campo **location**. 
+          
+          ```
+            http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-postagem/313
+          ```
+          
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou formato do **JSON** incorreto.
+      
 ### Encontrar tipo de postagem
 
+  Encontrar tipo de postagem por código.
+
 * `GET - /rest/tipos-postagem/{codTipoObjeto}`
+
+  
 
 ### Alterar tipo de postagem
 
