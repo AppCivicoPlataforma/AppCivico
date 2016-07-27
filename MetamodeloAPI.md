@@ -2216,8 +2216,30 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 ### Buscar tipos de postagem
 
-* `GET - /rest/tipos-postagem`
+  Buscar todos os tipos de postagem registrados por todos os usuários.
 
+* `GET - /rest/tipos-postagem`
+  
+  **Parâmetros**
+    
+    Não existem parâmetros.
+
+  **Retorno** 
+  
+     * 200 - Criado com sucesso
+        
+      **Exemplo** 
+      
+      ````
+        {
+          "JSON": "{"campo1" : "valor", "campo2": "valor2"}",
+          "texto": "texto",
+          "valor": 10
+        }
+      
+      ```
+      
+      
 ### Registrar tipo de postagem
   
 * `POST - /rest/tipos-postagem`
