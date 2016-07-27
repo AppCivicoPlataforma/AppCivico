@@ -116,6 +116,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/tipos-postagem`](#registrar-tipo-de-postagem)
 * [`GET - /rest/tipos-postagem/{codTipoPostagem}`](#encontrar-tipo-de-postagem)
 * [`PUT - /rest/tipos-postagem/{codTipoPostagem}`](#alterar-tipo-de-postagem)
+* [`DELETE - /rest/tipos-postagem/{codTipoPostagem}`](#excluir-tipo-de-postagem)
 
 
 
@@ -2215,18 +2216,21 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 ### Buscar tipos de postagem
 
-* [`GET - /rest/tipos-postagem`]
+* `GET - /rest/tipos-postagem`
 
-### Registrar tipo de objeto
+### Registrar tipo de postagem
   
-* [`POST - /rest/tipos-postagem`]
+* `POST - /rest/tipos-postagem`
 
-### Encontrar tipo de objeto
+### Encontrar tipo de postagem
 
-* [`GET - /rest/tipos-postagem/{codTipoObjeto}`]
+* `GET - /rest/tipos-postagem/{codTipoObjeto}`
 
-### Alterar tipo de objeto
+### Alterar tipo de postagem
 
-* [`PUT - /rest/tipos-postagem/{codTipoObjeto}`]
-  
+* `PUT - /rest/tipos-postagem/{codTipoObjeto}`
+
+### Excluir tipo de postagem
+
+* `DELETE - /rest/tipos-postagem/{codTipoPostagem}`
   
