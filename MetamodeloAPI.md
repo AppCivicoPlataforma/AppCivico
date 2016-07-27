@@ -112,10 +112,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Tipos de postagem
 
-* [`GET - /rest/tipos-postagem`](#)
-* [`POST - /rest/tipos-postagem`](#)
-* [`GET - /rest/tipos-postagem/{codTipoPostagem}`](#)
-* [`PUT - /rest/tipos-postagem/{codTipoPostagem}`](#)
+* [`GET - /rest/tipos-postagem`](#buscar-tipos-de-postagem)
+* [`POST - /rest/tipos-postagem`](#registrar-tipo-de-postagem)
+* [`GET - /rest/tipos-postagem/{codTipoPostagem}`](#encontrar-tipo-de-postagem)
+* [`PUT - /rest/tipos-postagem/{codTipoPostagem}`](#alterar-tipo-de-postagem)
 
 
 
@@ -2209,19 +2209,24 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         Não foi encontrado um conteúdo com esse código nessa postagem.
         
 
-# Tipos de objeto 
+# Tipos de Postagem 
 
-  Tipos de objetos descrevem o que são os objetos relacionados às postagens ou grupos na plataforma.
+  Tipos de postagem descrevem o que significa cada postagem.
   
-### Buscar tipos de objeto
+### Buscar tipos de postagem
 
-* [`GET - /rest/tipos-objeto`](#)
+* [`GET - /rest/tipos-postagem`]
 
-### Criar tipo de objeto
+### Registrar tipo de objeto
   
-* [`POST - /rest/tipos-objeto`](#)
+* [`POST - /rest/tipos-postagem`]
 
-* [`GET - /rest/tipos-objeto/{codTipoObjeto}`](#)
-* [`PUT - /rest/tipos-objeto/{codTipoObjeto}`](#)
+### Encontrar tipo de objeto
+
+* [`GET - /rest/tipos-postagem/{codTipoObjeto}`]
+
+### Alterar tipo de objeto
+
+* [`PUT - /rest/tipos-postagem/{codTipoObjeto}`]
   
   
