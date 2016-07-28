@@ -55,12 +55,14 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/instalacoes`](#registrar-instalação) 
 * [`GET - /rest/instalacoes/{codInstalacao}`](#buscar-instalação)
 * [`PUT - /rest/instalacoes/{codInstalacao}`](#alterar-instalação)
+* [`DELETE - /rest/instalacoes/{codInstalacao}`](#excluir-instalação)
   
 ### Notificações
 
 * [`POST - /rest/notificacoes`](#registrar-notificação)
 * [`GET - /rest/notificacoes/{codNotificacao}`](#buscar-notificação)
 * [`PUT - /rest/notificacoes/{codNotificacao}`](#alterar-notificação)
+* [`DELETE - /rest/notificacoes/{codNotificacao}`](#excluir-notificação)
 
 ### Pessoas
 
@@ -545,7 +547,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
     * 400 - Parâmetros inconsistentes.
       
-      O grupo não pode ser excluído pois possui associação com outros objetos.
+      O grupo não pode ser excluído pois possui outros objetos associados.
 
 ### Membros por Grupo
 
@@ -826,7 +828,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * `DELETE - /rest/hashtags/{codHashtag}`
   
-    **Parâmetros** 
+  **Parâmetros** 
     
     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
@@ -993,6 +995,35 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 404 - Não encontrado
       
       Aplicativo com o código passado no campo **codAplicativo** não foi encontrado ou usuário com o código passado no campo **codUsuario** não foi encontrado. 
+
+### Excluir instalação
+
+  Excluí o registro de instalação de um dispositivo.
+  
+* `DELETE - /rest/instalacoes/{codInstalacao}`(#excluir-instalação)
+
+  **Parâmetros** 
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codInstalacao} - Parâmetro de path. Indica o código da instalação a ser excluída.
+  
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Excluído com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Instalação com o código informada não se encontra cadastrada.
+
+    * 401 - Não autorizado
+        
+      O apptoken enviado não é um token válido ou está expirado.
+  
+    * 400 - Parâmetros inconsistentes.
+
 
 # Notificações
   
