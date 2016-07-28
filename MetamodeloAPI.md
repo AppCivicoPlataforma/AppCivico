@@ -1000,7 +1000,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   Excluí o registro de instalação de um dispositivo.
   
-* `DELETE - /rest/instalacoes/{codInstalacao}`(#excluir-instalação)
+* `DELETE - /rest/instalacoes/{codInstalacao}`
 
   **Parâmetros** 
     
@@ -1163,7 +1163,37 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 400 - Parâmentros incorretos
       
       Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
+
+### Excluir notificação
+
+  Excluí uma notificação.  
+  
+* `DELETE - /rest/notificacoes/{codNotificacao}`
+
+  **Parâmetros** 
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codNotificacao} - Parâmetro de path. Indica o código da notificação a ser excluída.
+  
+  **Retorno**
+    
+    * 200 - Ok    
       
+      Excluído com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Notificação com o código informada não se encontra cadastrada.
+
+    * 401 - Não autorizado
+        
+      O apptoken enviado não é um token válido ou está expirado.
+  
+    * 400 - Parâmetros inconsistentes.
+
+
+
 # Pessoas
 
   A estrutura de pessoa provê juntamente com a estrutura de perfil, o gerenciamento de usuário e suas informações em aplicativos através da plataforma. A estrutura de pessoa permite o cadastro de dados básicos de uma pessoa.
