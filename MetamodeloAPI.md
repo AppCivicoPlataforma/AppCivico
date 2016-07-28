@@ -544,7 +544,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       O apptoken enviado não é um token válido ou está expirado.
 
     * 400 - Parâmetros inconsistentes.
-
+      
+      O grupo não pode ser excluído pois possui associação com outros objetos.
 
 ### Membros por Grupo
 
