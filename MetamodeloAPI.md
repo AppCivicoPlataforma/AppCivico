@@ -2258,6 +2258,16 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       * codTipoPostagemPai - *Opcional*. Se o tipo de postagem estiver relacionado ao outro tipo. Exemplo: Um tipo de postagem comentário tem relação com uma post também um tipo de postagem.  
       * descricao - Descrição do tipo de postagem.
     
+       **Exemplo** 
+       
+       ```
+          {
+            "codAplicativo": 1,
+            "codTipoPostagemPai": 1,
+            "descricao": "Tipo de postagem"
+          }
+       ```
+    
   **Retorno** 
   
     * 201 - Tipo de postagem criado com sucesso.
@@ -2282,13 +2292,109 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * `GET - /rest/tipos-postagem/{codTipoObjeto}`
 
+  **Parâmetros** 
+    
+    * {codTipoObjeto} - Parâmetro de path. Código do tipo de perfil.
   
+  **Retorno**
+    
+    * 200 - Ok
+    
+      Retorna dados do tipo perfil.
+      
+      **Exemplo**
+        
+        ```
+          {  
+             "cod":1,
+             "descricao":"Tipo 1",
+             "links":[  
+                {  
+                   "rel":"self",
+                   "href":"http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-postagem/1"
+                },
+                {  
+                   "rel":"aplicativo",
+                   "href":"http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/1"
+                }
+             ]
+          }
+        ```
+        
+    * 404 - Não encontrado
+      
+      Usuário tipo de perfil não encontrado.
+    
+    * 400 - Parâmetros inconsistentes
+    
+      O código passado não é numérico.
 
 ### Alterar tipo de postagem
+  
+  Altera dados de um tipo de perfil.
 
 * `PUT - /rest/tipos-postagem/{codTipoObjeto}`
 
+  **Parâmetros**
+    
+    **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codTipoObjeto} - Parâmetro de path. Código do tipo de perfil.
+
+    
+    * **body** - Campos com informações do novo tipo de postagem.
+      
+      * codAplicativo - Código do aplicativo à qual pertencerá o tipo de postagem.
+      * codTipoPostagemPai - *Opcional*. Se o tipo de postagem estiver relacionado ao outro tipo. Exemplo: Um tipo de postagem comentário tem relação com uma post também um tipo de postagem.  
+      * descricao - Descrição do tipo de postagem.
+    
+      **Exemplo** 
+       
+       ```
+          {
+            "codAplicativo": 1,
+            "codTipoPostagemPai": 1,
+            "descricao": "Tipo de postagem alterada"
+          }
+       ``` 
+  **Retorno** 
+  
+    * 200 - Tipo de postagem alterada com sucesso.
+
+    
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou formato do **JSON** incorreto.
+
 ### Excluir tipo de postagem
 
+  Exclui um tipo de postagem registrado.
+
 * `DELETE - /rest/tipos-postagem/{codTipoPostagem}`
+  
+  **Parâmetros**
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codTipoObjeto} - Parâmetro de path. Código do tipo de perfil.
+    
+  **Retorno** 
+  
+    * 200 - Tipo de postagem excluída com sucesso.
+
+    
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Possui associações com outros objetos
+      
+      O tipo de postagem não pode ser excluído por que possui postagens associadas.
+
   
