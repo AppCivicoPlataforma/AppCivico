@@ -41,7 +41,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/grupos/{codGrupo}/membros`](#membros-por-grupo)
 * [`POST - /rest/grupos/{codGrupo}/membros`](#adicionar-membro-em-grupo)
 * [`GET - /rest/grupos/{codGrupo}/membros/{codMembro}`](#encontrar-membro-em-grupo)
-* [`DELETE - /rest/grupos/{codGrupo}/membros/{codMembro}`](#excluir-membro-em-grupo)
 
 ### Hashtags
 
@@ -55,14 +54,12 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/instalacoes`](#registrar-instalação) 
 * [`GET - /rest/instalacoes/{codInstalacao}`](#buscar-instalação)
 * [`PUT - /rest/instalacoes/{codInstalacao}`](#alterar-instalação)
-* [`DELETE - /rest/instalacoes/{codInstalacao}`](#excluir-instalação)
   
 ### Notificações
 
 * [`POST - /rest/notificacoes`](#registrar-notificação)
 * [`GET - /rest/notificacoes/{codNotificacao}`](#buscar-notificação)
 * [`PUT - /rest/notificacoes/{codNotificacao}`](#alterar-notificação)
-* [`DELETE - /rest/notificacoes/{codNotificacao}`](#excluir-notificação)
 
 ### Pessoas
 
@@ -119,7 +116,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/tipos-postagem`](#registrar-tipo-de-postagem)
 * [`GET - /rest/tipos-postagem/{codTipoPostagem}`](#encontrar-tipo-de-postagem)
 * [`PUT - /rest/tipos-postagem/{codTipoPostagem}`](#alterar-tipo-de-postagem)
-* [`DELETE - /rest/tipos-postagem/{codTipoPostagem}`](#excluir-tipo-de-postagem)
 
 
 
@@ -546,8 +542,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       O apptoken enviado não é um token válido ou está expirado.
 
     * 400 - Parâmetros inconsistentes.
-      
-      O grupo não pode ser excluído pois possui outros objetos associados.
+
 
 ### Membros por Grupo
 
@@ -656,35 +651,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         ```
     * 404 - Não encontrado
       Grupo com código especificado não encontrado ou pessoa com o código especificado não encontrada ou a pessoa não é membro desse grupo.
-
-### Excluir membro em grupo
-
-  Remove um usuário de um grupo.
-  
-* `DELETE - /rest/grupos/{codGrupo}/membros/{codMembro}`
-
-  **Parâmetros** 
-    
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
-    
-    * {codGrupo} - Parâmetro de path. Indica o código do grupo.
-    * {codMembro} - Parâmetro de path que representa o código do membro que será removido do grupo.
-
-  **Retorno**
-    
-    * 200 - Ok    
-      
-      Excluído com sucesso.
-      
-    * 404 - Não encontrado.
-      
-      Grupo com o código informado não se encontra cadastrada ou pessoa informada não é membro do grupo.
-
-    * 401 - Não autorizado
-      
-      O apptoken enviado não é um token válido ou está expirado.
-
-    * 400 - Parâmetros inconsistentes.
 
 # Hashtags
       
@@ -828,7 +794,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * `DELETE - /rest/hashtags/{codHashtag}`
   
-  **Parâmetros** 
+    **Parâmetros** 
     
     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
@@ -996,35 +962,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       Aplicativo com o código passado no campo **codAplicativo** não foi encontrado ou usuário com o código passado no campo **codUsuario** não foi encontrado. 
 
-### Excluir instalação
-
-  Excluí o registro de instalação de um dispositivo.
-  
-* `DELETE - /rest/instalacoes/{codInstalacao}`
-
-  **Parâmetros** 
-    
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
-    
-    * {codInstalacao} - Parâmetro de path. Indica o código da instalação a ser excluída.
-  
-  **Retorno**
-    
-    * 200 - Ok    
-      
-      Excluído com sucesso.
-      
-    * 404 - Não encontrado.
-      
-      Instalação com o código informada não se encontra cadastrada.
-
-    * 401 - Não autorizado
-        
-      O apptoken enviado não é um token válido ou está expirado.
-  
-    * 400 - Parâmetros inconsistentes.
-
-
 # Notificações
   
   Através das notificações é possível armazenar ações feitas pelos usuários dentro dos aplicativos para que se possa mostrar posteriormente. É importante lembrar que a estrutura de notificação **não** fornece o serviço de #[Push Notifications](http://fabricadeaplicativos.com.br/fabrica/o-que-e-e-como-funciona-a-notificacao-push/), os endpoits de notificação são apenas para armazenamento. 
@@ -1163,37 +1100,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 400 - Parâmentros incorretos
       
       Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
-
-### Excluir notificação
-
-  Excluí uma notificação.  
-  
-* `DELETE - /rest/notificacoes/{codNotificacao}`
-
-  **Parâmetros** 
-    
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
-    
-    * {codNotificacao} - Parâmetro de path. Indica o código da notificação a ser excluída.
-  
-  **Retorno**
-    
-    * 200 - Ok    
       
-      Excluído com sucesso.
-      
-    * 404 - Não encontrado.
-      
-      Notificação com o código informada não se encontra cadastrada.
-
-    * 401 - Não autorizado
-        
-      O apptoken enviado não é um token válido ou está expirado.
-  
-    * 400 - Parâmetros inconsistentes.
-
-
-
 # Pessoas
 
   A estrutura de pessoa provê juntamente com a estrutura de perfil, o gerenciamento de usuário e suas informações em aplicativos através da plataforma. A estrutura de pessoa permite o cadastro de dados básicos de uma pessoa.
@@ -2308,185 +2215,26 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
 ### Buscar tipos de postagem
 
-  Buscar todos os tipos de postagem registrados por todos os usuários.
-
 * `GET - /rest/tipos-postagem`
-  
-  **Parâmetros**
-    
-    Não existem parâmetros.
 
-  **Retorno** 
   
-     * 200 - Sucesso
-        
-      **Exemplo** 
-      
-      ````
-        {
-          "JSON": "{"campo1" : "valor", "campo2": "valor2"}",
-          "texto": "texto",
-          "valor": 10
-        }
-      
-      ```
-      
-      
-### Registrar tipo de postagem
-  
-  Cria um novo tipo de postagem.
+
+### Registrar tipo de objeto
   
 * `POST - /rest/tipos-postagem`
-
-  **Parâmetros**
-    
-    **aplication/json**
-      
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
-    
-    * **body** - Campos com informações do novo tipo de postagem.
-      
-      * codAplicativo - Código do aplicativo à qual pertencerá o tipo de postagem.
-      * codTipoPostagemPai - *Opcional*. Se o tipo de postagem estiver relacionado ao outro tipo. Exemplo: Um tipo de postagem comentário tem relação com uma post também um tipo de postagem.  
-      * descricao - Descrição do tipo de postagem.
-    
-       **Exemplo** 
-       
-       ```
-          {
-            "codAplicativo": 1,
-            "codTipoPostagemPai": 1,
-            "descricao": "Tipo de postagem"
-          }
-       ```
-    
-  **Retorno** 
   
-    * 201 - Tipo de postagem criado com sucesso.
-      
-      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do tipo de postagem no campo **location**. 
-          
-          ```
-            http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-postagem/313
-          ```
-          
-    * 401 - Não autorizado.
-      
-      O apptoken enviado não é um token válido ou está expirado.
-          
-    * 400 - Parâmentros incorretos
-      
-      Falta de parâmetros obrigatórios ou parâmetros incorretos ou formato do **JSON** incorreto.
-      
-### Encontrar tipo de postagem
+  
 
-  Encontrar tipo de postagem por código.
+### Encontrar tipo de objeto
 
 * `GET - /rest/tipos-postagem/{codTipoObjeto}`
 
-  **Parâmetros** 
-    
-    * {codTipoObjeto} - Parâmetro de path. Código do tipo de perfil.
   
-  **Retorno**
-    
-    * 200 - Ok
-    
-      Retorna dados do tipo perfil.
-      
-      **Exemplo**
-        
-        ```
-          {  
-             "cod":1,
-             "descricao":"Tipo 1",
-             "links":[  
-                {  
-                   "rel":"self",
-                   "href":"http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-postagem/1"
-                },
-                {  
-                   "rel":"aplicativo",
-                   "href":"http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/1"
-                }
-             ]
-          }
-        ```
-        
-    * 404 - Não encontrado
-      
-      Usuário tipo de perfil não encontrado.
-    
-    * 400 - Parâmetros inconsistentes
-    
-      O código passado não é numérico.
 
-### Alterar tipo de postagem
-  
-  Altera dados de um tipo de perfil.
+### Alterar tipo de objeto
 
 * `PUT - /rest/tipos-postagem/{codTipoObjeto}`
-
-  **Parâmetros**
-    
-    **aplication/json**
-      
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
-    
-    * {codTipoObjeto} - Parâmetro de path. Código do tipo de perfil.
-
-    
-    * **body** - Campos com informações do novo tipo de postagem.
-      
-      * codAplicativo - Código do aplicativo à qual pertencerá o tipo de postagem.
-      * codTipoPostagemPai - *Opcional*. Se o tipo de postagem estiver relacionado ao outro tipo. Exemplo: Um tipo de postagem comentário tem relação com uma post também um tipo de postagem.  
-      * descricao - Descrição do tipo de postagem.
-    
-      **Exemplo** 
-       
-       ```
-          {
-            "codAplicativo": 1,
-            "codTipoPostagemPai": 1,
-            "descricao": "Tipo de postagem alterada"
-          }
-       ``` 
-  **Retorno** 
   
-    * 200 - Tipo de postagem alterada com sucesso.
-
-    
-    * 401 - Não autorizado.
-      
-      O apptoken enviado não é um token válido ou está expirado.
-          
-    * 400 - Parâmentros incorretos
-      
-      Falta de parâmetros obrigatórios ou parâmetros incorretos ou formato do **JSON** incorreto.
-
-### Excluir tipo de postagem
-
-  Exclui um tipo de postagem registrado.
-
-* `DELETE - /rest/tipos-postagem/{codTipoPostagem}`
   
-  **Parâmetros**
-    
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
-    
-    * {codTipoObjeto} - Parâmetro de path. Código do tipo de perfil.
-    
-  **Retorno** 
   
-    * 200 - Tipo de postagem excluída com sucesso.
-
-    
-    * 401 - Não autorizado.
-      
-      O apptoken enviado não é um token válido ou está expirado.
-          
-    * 400 - Possui associações com outros objetos
-      
-      O tipo de postagem não pode ser excluído por que possui postagens associadas.
-
   
