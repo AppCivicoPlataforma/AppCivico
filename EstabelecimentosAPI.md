@@ -21,7 +21,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Assistência Social
 
-* [`GET - /rest/assistenciasocial/cras`](#)
+* [`GET - /rest/assistenciasocial/cras`](#CRAS-por-município)
 * [`GET- /rest/assistenciasocial/cras/id/{idCras}`]()
 * [`GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
 * [`GET- /rest/assistenciasocial/creas`]()
@@ -380,3 +380,27 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     * ultimaAlteracao - Data da ultima alteração desses dados na base.
     
 Para mais referências sobre os dados dos remédios, entre no site da [Agência Nacional de Vigilância Sanitária(ANVISA)](http://portal.anvisa.gov.br/wps/content/Anvisa+Portal/Anvisa/Pos+-+Comercializacao+-+Pos+-+Uso/Regulacao+de+Marcado/Assunto+de+Interesse/Mercado+de+Medicamentos/Listas+de+Precos+de+Medicamentos+03).
+
+
+## Postos de atendimento do Centros de Referência de Assistência Social (CRAS)
+
+    O Centro de Referência de Assistência Social (Cras) é o sistema governamental responsável pela organização e oferta de serviços da Proteção Social Básica nas áreas de vulnerabilidade e risco social.
+
+    Por meio do Cras, as famílias em situação de extrema pobreza passam a ter acesso a serviços como cadastramento e acompanhamento em programas de transferência de renda. O País conta, atualmente, 7.669 unidades distribuídas pelo território nacional.
+
+### CRAS por Município
+
+    Busca as unidades do CRAS por município.
+    
+* `GET - /rest/assistenciasocial/cras` 
+    
+    **Parâmetros**
+    
+    * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    
+    **Retorno**
+    
