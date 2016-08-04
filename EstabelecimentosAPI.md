@@ -597,7 +597,7 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     
-    ** Retorno**
+    **Retorno**
         
     * 200 - Sucesso
         Dados retornados com sucesso.
