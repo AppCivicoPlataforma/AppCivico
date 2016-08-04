@@ -21,8 +21,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Assistência Social
 
-* [`GET - /rest/assistenciasocial/cras`](#CRAS-por-município)
-* [`GET- /rest/assistenciasocial/cras/id/{idCras}`]()
+* [`GET - /rest/assistenciasocial/cras`](#cras-por-município)
+* [`GET- /rest/assistenciasocial/cras/id/{idCras}`](#cras-por-código)
 * [`GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
 * [`GET- /rest/assistenciasocial/creas`]()
 * [`GET- /rest/assistenciasocial/creas/id/{idCreas}`]()
@@ -404,6 +404,21 @@ Por meio do Cras, as famílias em situação de extrema pobreza passam a ter ace
     
     **Retorno**
     
+    * 200 - Sucesso
+            Dados retornados com sucesso.
+            
+            **Exemplo**
+                
+                ```
+                ```
+             
+    * 204 - Não encontrado
+            
+        Não há nenhuma unidade do CRAS nesse município.
+            
+    * 400 - Parâmetros inconsistêntes
+            
+        O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
 
 ### CRAS por código
 
@@ -436,3 +451,23 @@ Buscar dados de uma unidade do CRAS por código.
             
             O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
             
+
+### CRAS Georreferênciado
+
+Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado.
+
+* `GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+
+    **Parâmetros**
+    
+    * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
+    * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
+    * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
+    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    
+    ** Retorno**
+        
+    
