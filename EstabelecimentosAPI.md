@@ -400,6 +400,9 @@ Busca as unidades do CRAS por município.
     * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
     * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
+        cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
+
+
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
@@ -431,6 +434,8 @@ Buscar dados de uma unidade do CRAS por código.
     
     * {idCras} - Parâmetro de query. Código da unidade que será buscado.
     * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
         
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco.     
 
@@ -465,6 +470,8 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
     * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
     * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
         
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
@@ -506,7 +513,9 @@ Busca as unidades do CREAS por município.
     
     * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
     * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
-        
+       
+         bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
+
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
@@ -539,6 +548,8 @@ Buscar dados de uma unidade do CREAS por código.
     * {idCreas} - Parâmetro de query. Código da unidade que será buscado.
     * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
+        bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
+        
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco.     
 
     **Retorno**
@@ -557,7 +568,7 @@ Buscar dados de uma unidade do CREAS por código.
             
     * 400 - Parâmetros inconsistêntes
             
-        O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
+        O parâmetro de campos está em formato inválido ou o idCreas não é um valor numérico.
             
 
 ### CREAS Georreferênciado
@@ -572,6 +583,8 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
     * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
     * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
         
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
