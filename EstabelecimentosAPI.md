@@ -15,7 +15,25 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/especialidades/unidade/{codUnidade}`](#especialidades)
 * [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais)
 * [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
+
+### Remédios
 * [`GET - /rest/remedios`](#remédios)
+
+### Assistência Social
+
+* [`GET - /rest/assistenciasocial/cras`](#)
+* [`GET- /rest/assistenciasocial/cras/id/{idCras}`]()
+* [`GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
+* [`GET- /rest/assistenciasocial/creas`]()
+* [`GET- /rest/assistenciasocial/creas/id/{idCreas}`]()
+* [`GET- /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
+
+
+### Empregos
+
+* [`GET- /rest/emprego`]()
+* [`GET- /rest/emprego/cod/{codPosto}`]()
+* [`GET- /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
