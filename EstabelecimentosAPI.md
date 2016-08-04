@@ -547,7 +547,6 @@ Buscar dados de uma unidade do CREAS por código.
 
 * `GET- /rest/assistenciasocial/creas/id/{idCeras}`
 
-
     **Parâmetros**
     
     * {idCreas} - Parâmetro de query. Código da unidade que será buscado.
@@ -616,3 +615,68 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
     * 400 - Parâmetros inconsistêntes
             
         O parâmetro de campos está em formato inválido.
+
+## Postos do SINE
+
+O  Site Nacional de Empregos(SINE) - é um serviço de utilidade pública e atua como um classificado online de vagas de emprego, em todo o Brasil. Desenvolvido pelo BNE - Banco Nacional de Empregos, o Sine é um site gratuito e confiável que busca contribuir socialmente com o mercado de trabalho, promovendo o contato direto entre empregador e trabalhador. 
+Para mais informações visite o site do [SINE](http://www.sine.com.br/).
+
+### SINE por município
+
+Busca postos do SINE em um município.
+
+* `/rest/emprego`
+
+    **Parâmetros**
+    
+    * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * quantidade - Parâmetro de query.**Opcional**. Define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    
+    **Retorno**
+    
+    * 200 - Sucesso    
+        
+        **Exemplo**
+        
+        ```
+            {
+            }
+        ```
+        
+    * 204 - Nada encontrado
+        
+        Não foi encontrada nenhuma unidade do SINE no município informado.
+        
+    * 400 - Parâmetros inconsistêntes
+
+### Posto do SINE por código
+
+Busca posto do SINE por código.
+
+* `/rest/emprego/cod/{codPosto}`
+
+    **Parâmetros** 
+    
+    * {codPosto} - Parâmetro de query. Código do posto que será buscado.
+    
+    **Retorno**
+    
+    * 200 - Sucesso
+        Dados retornados com sucesso.
+            
+        **Exemplo**
+                
+            ````
+            ```
+             
+    * 404 - Não encontrado
+            
+        Não há nenhum posto do SINE com o código buscado.
+            
+    * 400 - Parâmetros inconsistêntes
+            
+        O parâmetro codPosto não é um valor numérico.
+            
+
+
+    
