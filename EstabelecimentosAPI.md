@@ -70,9 +70,10 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 
 ### Estabelecimentos
 
+Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
+
 * `GET - /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
-    Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
     **Parâmetros**
   * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
   * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
@@ -625,7 +626,7 @@ Para mais informações visite o site do [SINE](http://www.sine.com.br/).
 
 Busca postos do SINE em um município.
 
-* `/rest/emprego`
+* `GET - /rest/emprego`
 
     **Parâmetros**
     
@@ -653,7 +654,7 @@ Busca postos do SINE em um município.
 
 Busca posto do SINE por código.
 
-* `/rest/emprego/cod/{codPosto}`
+* `GET - /rest/emprego/cod/{codPosto}`
 
     **Parâmetros** 
     
@@ -678,5 +679,41 @@ Busca posto do SINE por código.
         O parâmetro codPosto não é um valor numérico.
             
 
+### Postos do SINE Georreferênciados
 
+Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio de distância.
+
+* `GET - /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
     
+    **Parâmetros** 
+    
+    * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
+    * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
+    * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os estabelecimentos.
+    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+  
+        bairro,cep,codPosto,endereco,entidadeConveniada,id,lat,long,municipio,nome,telefone,uf.
+        
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    * quantidade - Parâmetro de query define a quantidade máxima de postos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    
+     **Retorno**
+        
+    * 200 - Sucesso
+    
+        Dados retornados com sucesso.
+            
+        **Exemplo**
+                
+            ```
+                {
+                }
+            ```
+             
+    * 204 - Não encontrado
+            
+        Não há nenhuma unidade do SINE ao redor desse ponto com o raio informado.
+            
+    * 400 - Parâmetros inconsistêntes
+            
+        O parâmetro de campos está em formato inválido.
