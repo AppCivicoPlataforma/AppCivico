@@ -23,8 +23,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * [`GET - /rest/assistenciasocial/cras`](#cras-por-município)
 * [`GET- /rest/assistenciasocial/cras/id/{idCras}`](#cras-por-código)
-* [`GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
-* [`GET- /rest/assistenciasocial/creas`]()
+* [`GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#cras-georreferênciado)
+* [`GET- /rest/assistenciasocial/creas`](#)
 * [`GET- /rest/assistenciasocial/creas/id/{idCreas}`]()
 * [`GET- /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
 
@@ -388,9 +388,10 @@ O Centro de Referência de Assistência Social (Cras) é o sistema governamental
 
 Por meio do Cras, as famílias em situação de extrema pobreza passam a ter acesso a serviços como cadastramento e acompanhamento em programas de transferência de renda. O País conta, atualmente, 7.669 unidades distribuídas pelo território nacional.
 
+Para mais informações visite o portal do [Centros de Referência de Assistência Social (CRAS)](http://www.brasil.gov.br/cidadania-e-justica/2011/10/conheca-o-centro-de-referencia-de-assistencia-social)
 ### CRAS por Município
 
-    Busca as unidades do CRAS por município.
+Busca as unidades do CRAS por município.
     
 * `GET - /rest/assistenciasocial/cras` 
     
@@ -418,7 +419,7 @@ Por meio do Cras, as famílias em situação de extrema pobreza passam a ter ace
             
     * 400 - Parâmetros inconsistêntes
             
-        O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
+        O parâmetro de campos está em formato inválido.
 
 ### CRAS por código
 
@@ -435,21 +436,21 @@ Buscar dados de uma unidade do CRAS por código.
 
     **Retorno**
     
-        * 200 - Sucesso
-            Dados retornados com sucesso.
+    * 200 - Sucesso
+        Dados retornados com sucesso.
             
-            **Exemplo**
+        **Exemplo**
                 
-                ````
-                ```
+            ````
+            ```
              
-        * 404 - Não encontrado
+    * 404 - Não encontrado
             
-            Não há nenhuma unidade do CRAS com o código buscado.
+        Não há nenhuma unidade do CRAS com o código buscado.
             
-        * 400 - Parâmetros inconsistêntes
+    * 400 - Parâmetros inconsistêntes
             
-            O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
+        O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
             
 
 ### CRAS Georreferênciado
@@ -468,6 +469,29 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
+    
     ** Retorno**
         
+    * 200 - Sucesso
+            Dados retornados com sucesso.
+            
+            **Exemplo**
+                
+                ```
+                ```
+             
+    * 204 - Não encontrado
+            
+        Não há nenhuma unidade do CRAS ao redor desse ponto com o raio informado.
+            
+    * 400 - Parâmetros inconsistêntes
+            
+        O parâmetro de campos está em formato inválido.   
     
+## Postos de atendimento do Centro de Referência Especializado de Assistência Social - Creas
+
+O Centro de Referência Especializado de Assistência Social (Creas) é uma unidade pública da política de Assistência Social onde são atendidas famílias e pessoas que estão em situação de risco social ou tiveram seus direitos violados.
+A unidade deve, obrigatoriamente, ofertar o Serviço de Proteção e Atendimento Especializado a Famílias e Indivíduos (PAEFI), podendo ofertar outros serviços, como Abordagem Social e Serviço para Pessoas com Deficiência, Idosas e suas famílias. É unidade de oferta ainda do serviço de Medidas Socioeducativas em Meio Aberto.
+
+Para mais informações visite o portal do [Centro de Referência Especializado de Assistência Social - Creas
+](http://mds.gov.br/assuntos/assistencia-social/unidades-de-atendimento/creas)  
