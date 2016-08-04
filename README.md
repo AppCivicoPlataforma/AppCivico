@@ -23,4 +23,8 @@ O objetivo é fazer com que mais desenvolvedores, interessados em desenvolver ap
   
   [API do Metamodelo](/MetamodeloAPI.md)
   
-  [API de Postos ]
+  [API de Centros de Referência de Assistência Social (CRAS)](/EstabelecimentosAPI.md#postos-de-atendimento-do-centros-de-referência-de-assistência-social(cras))
+  
+  [API de Centros de Referência Especializado de Assistência Social - Creas](/EstabelecimentoAPI.md#postos-de-atendimento-do-centro-de-referência-especializado-de-assistência-social-creas)
+  
+  [API de Postos do Site Nacional de Empregos](/EstabelecimentoAPI.md#postos-do-sine)
