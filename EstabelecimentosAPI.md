@@ -31,9 +31,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Empregos
 
-* [`GET- /rest/emprego`]()
-* [`GET- /rest/emprego/cod/{codPosto}`]()
-* [`GET- /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
+* [`GET- /rest/emprego`](#sine-por-município)
+* [`GET- /rest/emprego/cod/{codPosto}`](#posto-do-sine-por-código)
+* [`GET- /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#postos-do-sine-georreferênciados)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
@@ -384,7 +384,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
 Para mais referências sobre os dados dos remédios, entre no site da [Agência Nacional de Vigilância Sanitária(ANVISA)](http://portal.anvisa.gov.br).
 
 
-## Postos de atendimento do Centros de Referência de Assistência Social (CRAS)
+## Postos de atendimento do Centros de Referência de Assistência Social
 
 O Centro de Referência de Assistência Social (Cras) é o sistema governamental responsável pela organização e oferta de serviços da Proteção Social Básica nas áreas de vulnerabilidade e risco social.
 
@@ -498,7 +498,7 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
             
         O parâmetro de campos está em formato inválido.   
     
-## Postos de atendimento do Centro de Referência Especializado de Assistência Social - Creas
+## Postos de atendimento do Centro de Referência Especializado de Assistência Social
 
 O Centro de Referência Especializado de Assistência Social (Creas) é uma unidade pública da política de Assistência Social onde são atendidas famílias e pessoas que estão em situação de risco social ou tiveram seus direitos violados.
 A unidade deve, obrigatoriamente, ofertar o Serviço de Proteção e Atendimento Especializado a Famílias e Indivíduos (PAEFI), podendo ofertar outros serviços, como Abordagem Social e Serviço para Pessoas com Deficiência, Idosas e suas famílias. É unidade de oferta ainda do serviço de Medidas Socioeducativas em Meio Aberto.
