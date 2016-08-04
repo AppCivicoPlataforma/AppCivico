@@ -24,9 +24,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/assistenciasocial/cras`](#cras-por-município)
 * [`GET- /rest/assistenciasocial/cras/id/{idCras}`](#cras-por-código)
 * [`GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#cras-georreferênciado)
-* [`GET- /rest/assistenciasocial/creas`](#)
-* [`GET- /rest/assistenciasocial/creas/id/{idCreas}`]()
-* [`GET- /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]()
+* [`GET- /rest/assistenciasocial/creas`](#creas-por-município)
+* [`GET- /rest/assistenciasocial/creas/id/{idCreas}`](#creas-por-código)
+* [`GET- /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#creas-georreferênciado)
 
 
 ### Empregos
