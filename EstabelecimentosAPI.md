@@ -527,9 +527,12 @@ Busca as unidades do CREAS por município.
         Dados retornados com sucesso.
             
         **Exemplo**
-                
+        
+            ```
+                {
+                }
+            ```    
             
-             
     * 204 - Não encontrado
             
         Não há nenhuma unidade do CREAS nesse município.
@@ -561,7 +564,9 @@ Buscar dados de uma unidade do CREAS por código.
             
         **Exemplo**
                 
-            ````
+            ```
+                {
+                }
             ```
              
     * 404 - Não encontrado
@@ -600,6 +605,8 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
             **Exemplo**
                 
                 ```
+                    {
+                    }
                 ```
              
     * 204 - Não encontrado
