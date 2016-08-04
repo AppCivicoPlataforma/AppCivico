@@ -267,7 +267,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     **Retorno**
     
     **Exemplo**
-    ```
+    ````
        [
           {
             "descricaoClassificacaoServico": "SERVICO DE ATENCAO A DSTHIVAIDS",
@@ -384,9 +384,9 @@ Para mais referências sobre os dados dos remédios, entre no site da [Agência 
 
 ## Postos de atendimento do Centros de Referência de Assistência Social (CRAS)
 
-    O Centro de Referência de Assistência Social (Cras) é o sistema governamental responsável pela organização e oferta de serviços da Proteção Social Básica nas áreas de vulnerabilidade e risco social.
+O Centro de Referência de Assistência Social (Cras) é o sistema governamental responsável pela organização e oferta de serviços da Proteção Social Básica nas áreas de vulnerabilidade e risco social.
 
-    Por meio do Cras, as famílias em situação de extrema pobreza passam a ter acesso a serviços como cadastramento e acompanhamento em programas de transferência de renda. O País conta, atualmente, 7.669 unidades distribuídas pelo território nacional.
+Por meio do Cras, as famílias em situação de extrema pobreza passam a ter acesso a serviços como cadastramento e acompanhamento em programas de transferência de renda. O País conta, atualmente, 7.669 unidades distribuídas pelo território nacional.
 
 ### CRAS por Município
 
@@ -397,10 +397,42 @@ Para mais referências sobre os dados dos remédios, entre no site da [Agência 
     **Parâmetros**
     
     * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
-    * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
     
+
+### CRAS por código
+
+Buscar dados de uma unidade do CRAS por código.
+
+* `GET- /rest/assistenciasocial/cras/id/{idCras}`
+
+    **Parâmetros**
+    
+    * {idCras} - Parâmetro de query. Código da unidade que será buscado.
+    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco.     
+
+    **Retorno**
+    
+        * 200 - Sucesso
+            Dados retornados com sucesso.
+            
+            **Exemplo**
+                
+                ````
+                ```
+             
+        * 404 - Não encontrado
+            
+            Não há nenhuma unidade do CRAS com o código buscado.
+            
+        * 400 - Parâmetros inconsistêntes
+            
+            O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
+            
