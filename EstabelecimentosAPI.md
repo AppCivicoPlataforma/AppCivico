@@ -411,12 +411,12 @@ Busca as unidades do CRAS por município.
     **Retorno**
     
     * 200 - Sucesso
-            Dados retornados com sucesso.
+        Dados retornados com sucesso.
             
-            **Exemplo**
+        **Exemplo**
                 
-                ```
-                ```
+            ```
+            ```
              
     * 204 - Não encontrado
             
@@ -482,12 +482,12 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
     ** Retorno**
         
     * 200 - Sucesso
-            Dados retornados com sucesso.
+        Dados retornados com sucesso.
             
-            **Exemplo**
+        **Exemplo**
                 
-                ```
-                ```
+        ```
+        ```
              
     * 204 - Não encontrado
             
@@ -528,10 +528,10 @@ Busca as unidades do CREAS por município.
             
         **Exemplo**
         
-            ```
-                {
-                }
-            ```    
+        ```
+            {
+            }
+        ```    
             
     * 204 - Não encontrado
             
@@ -600,14 +600,14 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
     ** Retorno**
         
     * 200 - Sucesso
-            Dados retornados com sucesso.
+        Dados retornados com sucesso.
             
-            **Exemplo**
+        **Exemplo**
                 
-                ```
-                    {
-                    }
-                ```
+            ```
+                {
+                }
+            ```
              
     * 204 - Não encontrado
             
