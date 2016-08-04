@@ -267,6 +267,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     **Retorno**
     
     **Exemplo**
+    
     ````
        [
           {
@@ -404,6 +405,7 @@ Busca as unidades do CRAS por município.
 
 
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+        
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
@@ -522,12 +524,11 @@ Busca as unidades do CREAS por município.
     **Retorno**
     
     * 200 - Sucesso
-            Dados retornados com sucesso.
+        Dados retornados com sucesso.
             
-            **Exemplo**
+        **Exemplo**
                 
-                ```
-                ```
+            
              
     * 204 - Não encontrado
             
@@ -542,6 +543,7 @@ Busca as unidades do CREAS por município.
 Buscar dados de uma unidade do CREAS por código.
 
 * `GET- /rest/assistenciasocial/creas/id/{idCeras}`
+
 
     **Parâmetros**
     
