@@ -25,6 +25,6 @@ O objetivo é fazer com que mais desenvolvedores, interessados em desenvolver ap
   
   [API de Centros de Referência de Assistência Social (CRAS)](/EstabelecimentosAPI.md#postos-de-atendimento-do-centros-de-referência-de-assistência-social)
   
-  [API de Centros de Referência Especializado de Assistência Social - Creas](/EstabelecimentoAPI.md#postos-de-atendimento-do-centro-de-referência-especializado-de-assistência-social)
+  [API de Centros de Referência Especializado de Assistência Social - Creas](/EstabelecimentosAPI.md#postos-de-atendimento-do-centro-de-referência-especializado-de-assistência-social)
   
-  [API de Postos do Site Nacional de Empregos](/EstabelecimentoAPI.md#postos-do-sine)
+  [API de Postos do Site Nacional de Empregos](/EstabelecimentosAPI.md#postos-do-sine)
