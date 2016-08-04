@@ -375,11 +375,11 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     * pmc18Alc - Preço Máximo ao Consumidor com alíquotas de ICMS 18% em áreas de Livre Comércio.
     * pmc20 - Preço Máximo ao Consumidor com alíquotas de ICMS 20%.
     * restricao - Indica se o medicamento possui restrição hospitalar ou não.
-    * cap - Indica se o preço do medicamento está sujeito ao [Coeficiente de Adequação de Preços – CAP](http://portal.anvisa.gov.br/wps/content/Anvisa+Portal/Anvisa/Pos+-+Comercializacao+-+Pos+-+Uso/Regulacao+de+Marcado/Assunto+de+Interesse/Compras+Publicas/Perguntas+e+Respostas+-+Compras+Publicas)
-    * confaz87 - Indica se o medicamento está sujeito à isenção de ICMS pelo [CONVÊNIO ICMS 87/02](https://www.confaz.fazenda.gov.br/legislacao/convenios/2002/cv087_02)
+    * cap - Indica se o preço do medicamento está sujeito ao Coeficiente de Adequação de Preços – CAP
+    * confaz87 - Indica se o medicamento está sujeito à isenção de ICMS pelo CONVÊNIO ICMS 87/02
     * ultimaAlteracao - Data da ultima alteração desses dados na base.
     
-Para mais referências sobre os dados dos remédios, entre no site da [Agência Nacional de Vigilância Sanitária(ANVISA)](http://portal.anvisa.gov.br/wps/content/Anvisa+Portal/Anvisa/Pos+-+Comercializacao+-+Pos+-+Uso/Regulacao+de+Marcado/Assunto+de+Interesse/Mercado+de+Medicamentos/Listas+de+Precos+de+Medicamentos+03).
+Para mais referências sobre os dados dos remédios, entre no site da [Agência Nacional de Vigilância Sanitária(ANVISA)](http://portal.anvisa.gov.br).
 
 
 ## Postos de atendimento do Centros de Referência de Assistência Social (CRAS)
@@ -495,3 +495,102 @@ A unidade deve, obrigatoriamente, ofertar o Serviço de Proteção e Atendimento
 
 Para mais informações visite o portal do [Centro de Referência Especializado de Assistência Social - Creas
 ](http://mds.gov.br/assuntos/assistencia-social/unidades-de-atendimento/creas)  
+
+### CREAS por Município
+
+Busca as unidades do CREAS por município.
+    
+* `GET - /rest/assistenciasocial/creas` 
+    
+    **Parâmetros**
+    
+    * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    
+    **Retorno**
+    
+    * 200 - Sucesso
+            Dados retornados com sucesso.
+            
+            **Exemplo**
+                
+                ```
+                ```
+             
+    * 204 - Não encontrado
+            
+        Não há nenhuma unidade do CREAS nesse município.
+            
+    * 400 - Parâmetros inconsistêntes
+            
+        O parâmetro de campos está em formato inválido.
+
+### CREAS por código
+
+Buscar dados de uma unidade do CREAS por código.
+
+* `GET- /rest/assistenciasocial/creas/id/{idCeras}`
+
+    **Parâmetros**
+    
+    * {idCreas} - Parâmetro de query. Código da unidade que será buscado.
+    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco.     
+
+    **Retorno**
+    
+    * 200 - Sucesso
+        Dados retornados com sucesso.
+            
+        **Exemplo**
+                
+            ````
+            ```
+             
+    * 404 - Não encontrado
+            
+        Não há nenhuma unidade do CREAS com o código buscado.
+            
+    * 400 - Parâmetros inconsistêntes
+            
+        O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
+            
+
+### CREAS Georreferênciado
+
+Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindado.
+
+* `GET- /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+
+    **Parâmetros**
+    
+    * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
+    * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
+    * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
+    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    
+    
+    ** Retorno**
+        
+    * 200 - Sucesso
+            Dados retornados com sucesso.
+            
+            **Exemplo**
+                
+                ```
+                ```
+             
+    * 204 - Não encontrado
+            
+        Não há nenhuma unidade do CREAS ao redor desse ponto com o raio informado.
+            
+    * 400 - Parâmetros inconsistêntes
+            
+        O parâmetro de campos está em formato inválido.
