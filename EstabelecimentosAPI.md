@@ -417,6 +417,23 @@ Busca as unidades do CRAS por município.
         **Exemplo**
                 
             ```
+            
+               {
+                   "gid": 89,
+                   "nomeCras": "CRAS SANTOS DUMONT",
+                   "tipoLogradouro": "Rua",
+                   "endereco": "ADALBERTO BELLINI",
+                   "numero": 212,
+                   "cep": "7152440",
+                   "nomeMunicipio": "GUARULHOS",
+                   "codIbgeMun": "351880",
+                   "uf": "SP",
+                   "idCras": "35188001800",
+                   "theGeom": "POINT (-46.4704573 -23.4034054)",
+                   "lat": -23.403405,
+                   "long": -46.470457
+               }
+               
             ```
              
     * 204 - Não encontrado
@@ -449,7 +466,23 @@ Buscar dados de uma unidade do CRAS por código.
             
         **Exemplo**
                 
-            ````
+            ```
+               {
+                   "gid": 89,
+                   "nomeCras": "CRAS SANTOS DUMONT",
+                   "tipoLogradouro": "Rua",
+                   "endereco": "ADALBERTO BELLINI",
+                   "numero": 212,
+                   "cep": "7152440",
+                   "nomeMunicipio": "GUARULHOS",
+                   "codIbgeMun": "351880",
+                   "uf": "SP",
+                   "idCras": "35188001800",
+                   "theGeom": "POINT (-46.4704573 -23.4034054)",
+                   "lat": -23.403405,
+                   "long": -46.470457
+               }
+               
             ```
              
     * 404 - Não encontrado
@@ -487,8 +520,25 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
             
         **Exemplo**
                 
-        ```
-        ```
+            ```
+            
+               {
+                   "gid": 89,
+                   "nomeCras": "CRAS SANTOS DUMONT",
+                   "tipoLogradouro": "Rua",
+                   "endereco": "ADALBERTO BELLINI",
+                   "numero": 212,
+                   "cep": "7152440",
+                   "nomeMunicipio": "GUARULHOS",
+                   "codIbgeMun": "351880",
+                   "uf": "SP",
+                   "idCras": "35188001800",
+                   "theGeom": "POINT (-46.4704573 -23.4034054)",
+                   "lat": -23.403405,
+                   "long": -46.470457
+               }
+               
+            ```
              
     * 204 - Não encontrado
             
