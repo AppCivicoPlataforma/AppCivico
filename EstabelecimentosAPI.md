@@ -416,7 +416,7 @@ Busca as unidades do CRAS por município.
             
         **Exemplo**
                 
-            ```
+         ```
             
                {
                    "gid": 89,
@@ -434,7 +434,7 @@ Busca as unidades do CRAS por município.
                    "long": -46.470457
                }
                
-            ```
+         ```
              
     * 204 - Não encontrado
             
@@ -459,14 +459,14 @@ Buscar dados de uma unidade do CRAS por código.
         
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco.     
 
-    **Retorno**
+   **Retorno**
     
     * 200 - Sucesso
         Dados retornados com sucesso.
             
         **Exemplo**
                 
-            ```
+         ```
                {
                    "gid": 89,
                    "nomeCras": "CRAS SANTOS DUMONT",
@@ -483,7 +483,7 @@ Buscar dados de uma unidade do CRAS por código.
                    "long": -46.470457
                }
                
-            ```
+         ```
              
     * 404 - Não encontrado
             
@@ -520,7 +520,7 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
             
         **Exemplo**
                 
-            ```
+         ```
             
                {
                    "gid": 89,
@@ -538,7 +538,7 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
                    "long": -46.470457
                }
                
-            ```
+         ```
              
     * 204 - Não encontrado
             
