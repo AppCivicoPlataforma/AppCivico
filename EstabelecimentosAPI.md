@@ -581,6 +581,23 @@ Busca as unidades do CREAS por município.
         
         ```
             {
+                "idCreas": 12300901513,
+                "codigoIbge": "2300903",
+                "regiao": "Região Nordeste",
+                "uf": "CE",
+                "municipio": "APUIARES",
+                "porteCenso2010": "Pequeno I",
+                "populacaoCenso2010": 13925,
+                "nomeCreas": "CREAS - Centro de Referência Especializado de Assistência Social",
+                "tipoLogradouro": "Avenida",
+                "logradouro": "GOMES DA SILVA, 329",
+                "numero": 329,
+                "bairro": "CENTRO",
+                "cep": "62630000",
+                "dataImplantacao": "2005-10-31 00:00:00",
+                "localizacaoCreas": "Urbano central",
+                "lat": -3.9428051,
+                "long": -39.4284658
             }
         ```    
             
@@ -614,10 +631,27 @@ Buscar dados de uma unidade do CREAS por código.
             
         **Exemplo**
                 
-            ```
-                {
-                }
-            ```
+           ```
+               {
+                   "idCreas": 12300901513,
+                   "codigoIbge": "2300903",
+                   "regiao": "Região Nordeste",
+                   "uf": "CE",
+                   "municipio": "APUIARES",
+                   "porteCenso2010": "Pequeno I",
+                   "populacaoCenso2010": 13925,
+                   "nomeCreas": "CREAS - Centro de Referência Especializado de Assistência Social",
+                   "tipoLogradouro": "Avenida",
+                   "logradouro": "GOMES DA SILVA, 329",
+                   "numero": 329,
+                   "bairro": "CENTRO",
+                   "cep": "62630000",
+                   "dataImplantacao": "2005-10-31 00:00:00",
+                   "localizacaoCreas": "Urbano central",
+                   "lat": -3.9428051,
+                   "long": -39.4284658
+               }
+           ```
              
     * 404 - Não encontrado
             
@@ -654,10 +688,27 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
             
         **Exemplo**
                 
-            ```
-                {
-                }
-            ```
+           ```
+               {
+                   "idCreas": 12300901513,
+                   "codigoIbge": "2300903",
+                   "regiao": "Região Nordeste",
+                   "uf": "CE",
+                   "municipio": "APUIARES",
+                   "porteCenso2010": "Pequeno I",
+                   "populacaoCenso2010": 13925,
+                   "nomeCreas": "CREAS - Centro de Referência Especializado de Assistência Social",
+                   "tipoLogradouro": "Avenida",
+                   "logradouro": "GOMES DA SILVA, 329",
+                   "numero": 329,
+                   "bairro": "CENTRO",
+                   "cep": "62630000",
+                   "dataImplantacao": "2005-10-31 00:00:00",
+                   "localizacaoCreas": "Urbano central",
+                   "lat": -3.9428051,
+                   "long": -39.4284658
+               }
+           ```
              
     * 204 - Não encontrado
             
