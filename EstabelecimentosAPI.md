@@ -638,11 +638,22 @@ Busca postos do SINE em um município.
     * 200 - Sucesso    
         
         **Exemplo**
-        
-        ```
-            {
-            }
-        ```
+                  
+            ```
+               {
+                   "codPosto": "2334007-0",
+                   "nome": "PREFEITURA MUNICIPAL DE BEBERIBE/CE",
+                   "entidadeConveniada": "Sine Estadual - Ceara",
+                   "endereco": "RUA MARIA CALADO, S/N, SL 1008",
+                   "bairro": "CENTRO",
+                   "cep": "62840000",
+                   "telefone": "33382594",
+                   "municipio": "Beberibe",
+                   "uf": "Ceará",
+                   "lat": -4.1828786,
+                   "long": -38.1300362
+               }
+            ```
         
     * 204 - Nada encontrado
         
@@ -667,7 +678,20 @@ Busca posto do SINE por código.
             
         **Exemplo**
                 
-            ````
+            ```
+               {
+                   "codPosto": "2334007-0",
+                   "nome": "PREFEITURA MUNICIPAL DE BEBERIBE/CE",
+                   "entidadeConveniada": "Sine Estadual - Ceara",
+                   "endereco": "RUA MARIA CALADO, S/N, SL 1008",
+                   "bairro": "CENTRO",
+                   "cep": "62840000",
+                   "telefone": "33382594",
+                   "municipio": "Beberibe",
+                   "uf": "Ceará",
+                   "lat": -4.1828786,
+                   "long": -38.1300362
+               }
             ```
              
     * 404 - Não encontrado
@@ -706,8 +730,19 @@ Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio
         **Exemplo**
                 
             ```
-                {
-                }
+               {
+                   "codPosto": "2334007-0",
+                   "nome": "PREFEITURA MUNICIPAL DE BEBERIBE/CE",
+                   "entidadeConveniada": "Sine Estadual - Ceara",
+                   "endereco": "RUA MARIA CALADO, S/N, SL 1008",
+                   "bairro": "CENTRO",
+                   "cep": "62840000",
+                   "telefone": "33382594",
+                   "municipio": "Beberibe",
+                   "uf": "Ceará",
+                   "lat": -4.1828786,
+                   "long": -38.1300362
+               }
             ```
              
     * 204 - Não encontrado
