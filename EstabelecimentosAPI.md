@@ -631,27 +631,27 @@ Buscar dados de uma unidade do CREAS por código.
             
         **Exemplo**
                 
-           ```
-               {
-                   "idCreas": 12300901513,
-                   "codigoIbge": "2300903",
-                   "regiao": "Região Nordeste",
-                   "uf": "CE",
-                   "municipio": "APUIARES",
-                   "porteCenso2010": "Pequeno I",
-                   "populacaoCenso2010": 13925,
-                   "nomeCreas": "CREAS - Centro de Referência Especializado de Assistência Social",
-                   "tipoLogradouro": "Avenida",
-                   "logradouro": "GOMES DA SILVA, 329",
-                   "numero": 329,
-                   "bairro": "CENTRO",
-                   "cep": "62630000",
-                   "dataImplantacao": "2005-10-31 00:00:00",
-                   "localizacaoCreas": "Urbano central",
-                   "lat": -3.9428051,
-                   "long": -39.4284658
-               }
-           ```
+         ```
+         {   
+            "idCreas": 12300901513,
+            "codigoIbge": "2300903",
+            "regiao": "Região Nordeste",
+            "uf": "CE",
+            "municipio": "APUIARES",
+            "porteCenso2010": "Pequeno I",
+            "populacaoCenso2010": 13925,
+            "nomeCreas": "CREAS - Centro de Referência Especializado de Assistência Social",
+            "tipoLogradouro": "Avenida",
+            "logradouro": "GOMES DA SILVA, 329",
+            "numero": 329,
+            "bairro": "CENTRO",
+            "cep": "62630000",
+            "dataImplantacao": "2005-10-31 00:00:00",
+            "localizacaoCreas": "Urbano central",
+            "lat": -3.9428051,
+            "long": -39.4284658
+         }
+         ```
              
     * 404 - Não encontrado
             
@@ -688,27 +688,28 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
             
         **Exemplo**
                 
-           ```
-               {
-                   "idCreas": 12300901513,
-                   "codigoIbge": "2300903",
-                   "regiao": "Região Nordeste",
-                   "uf": "CE",
-                   "municipio": "APUIARES",
-                   "porteCenso2010": "Pequeno I",
-                   "populacaoCenso2010": 13925,
-                   "nomeCreas": "CREAS - Centro de Referência Especializado de Assistência Social",
-                   "tipoLogradouro": "Avenida",
-                   "logradouro": "GOMES DA SILVA, 329",
-                   "numero": 329,
-                   "bairro": "CENTRO",
-                   "cep": "62630000",
-                   "dataImplantacao": "2005-10-31 00:00:00",
-                   "localizacaoCreas": "Urbano central",
-                   "lat": -3.9428051,
-                   "long": -39.4284658
-               }
-           ```
+         ```
+         {   
+            "idCreas": 12300901513,
+            "codigoIbge": "2300903",
+            "regiao": "Região Nordeste",
+            "uf": "CE",
+            "municipio": "APUIARES",
+            "porteCenso2010": "Pequeno I",
+            "populacaoCenso2010": 13925,
+            "nomeCreas": "CREAS - Centro de Referência Especializado de Assistência Social",
+            "tipoLogradouro": "Avenida",
+            "logradouro": "GOMES DA SILVA, 329",
+            "numero": 329,
+            "bairro": "CENTRO",
+            "cep": "62630000",
+            "dataImplantacao": "2005-10-31 00:00:00",
+            "localizacaoCreas": "Urbano central",
+            "lat": -3.9428051,
+            "long": -39.4284658
+         }
+         ```
+             
              
     * 204 - Não encontrado
             
@@ -740,7 +741,7 @@ Busca postos do SINE em um município.
         
         **Exemplo**
                   
-            ```
+         ```
                {
                    "codPosto": "2334007-0",
                    "nome": "PREFEITURA MUNICIPAL DE BEBERIBE/CE",
@@ -754,7 +755,7 @@ Busca postos do SINE em um município.
                    "lat": -4.1828786,
                    "long": -38.1300362
                }
-            ```
+         ```
         
     * 204 - Nada encontrado
         
@@ -779,7 +780,7 @@ Busca posto do SINE por código.
             
         **Exemplo**
                 
-            ```
+         ```
                {
                    "codPosto": "2334007-0",
                    "nome": "PREFEITURA MUNICIPAL DE BEBERIBE/CE",
@@ -793,7 +794,7 @@ Busca posto do SINE por código.
                    "lat": -4.1828786,
                    "long": -38.1300362
                }
-            ```
+         ```
              
     * 404 - Não encontrado
             
@@ -830,7 +831,7 @@ Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio
             
         **Exemplo**
                 
-            ```
+         ```
                {
                    "codPosto": "2334007-0",
                    "nome": "PREFEITURA MUNICIPAL DE BEBERIBE/CE",
@@ -844,7 +845,7 @@ Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio
                    "lat": -4.1828786,
                    "long": -38.1300362
                }
-            ```
+         ```
              
     * 204 - Não encontrado
             
