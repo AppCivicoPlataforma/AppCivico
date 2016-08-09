@@ -2435,6 +2435,31 @@ Retorna os tipos de postagem registrados para um aplicativo.
 
 ### Excluir Tipo de Postagem
 
-A 
+Exclui um tipo de postagem cadastrado.
 
 * `DELETE - /rest/tipos-postagem/{codTipoPostagem}`
+
+  **Parâmetros** 
+    
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codTipoPostagem} - Código do tipo de postagem a ser excluída.
+  
+  **Retorno**
+    
+    * 200 - Excluído com sucesso
+    
+    * 404 - Não encontrado
+    
+      Tipo de postagem não se encontra cadastrado.
+    
+    * 400 - Tipo de postagem não pode ser excluída porque possui postagens relacionadas ou é um tipo de postagem pai em relação à outra postagem.
+    
+    * 403 - Não habilitado
+      
+      O usuário à qual pertence o token que está tentando alterar o tipo de postagem não é o que criou a postagem, portanto não está autorizado à excluí-la. 
+    
+    * 401 - Não autorizado
+      
+      O apptoken enviado não é um token válido ou está expirado.      
+  
