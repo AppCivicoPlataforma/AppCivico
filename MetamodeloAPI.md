@@ -116,6 +116,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/tipos-postagem`](#registrar-tipo-de-postagem)
 * [`GET - /rest/tipos-postagem/{codTipoPostagem}`](#encontrar-tipo-de-postagem)
 * [`PUT - /rest/tipos-postagem/{codTipoPostagem}`](#alterar-tipo-de-postagem)
+* [`GET - /rest/tipos-postagem/aplicativo/{codAplicativo}`](#tipo-de-postagem-por-aplicativo)
+* [`DELETE - /rest/tipos-postagem/{codTipoPostagem}`](#excluir-tipo-de-postagem)
 
 
 
@@ -1789,7 +1791,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         "codTipoObjetoDestino": 100,
         "codTipoPostagem": 105
       }]
+    
       ```
+      
     * 400 - Parâmetros incorretos.
       
       Algum parâmetros está inconsistente.
@@ -2211,30 +2215,145 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 # Tipos de Postagem 
 
-  Tipos de postagem descrevem o que significa cada postagem.
+  Tipos de postagem descrevem o que significa cada postagem. É importante que estaja bem descrita para que se possa entender sobre a informação que está sendo gerada.
   
 ### Buscar tipos de postagem
 
+Retorna todos os tipos de postagem registrados na plataforma.
+
 * `GET - /rest/tipos-postagem`
 
+  **Parâmetro** 
+    
+    Não há parâmetros.
+    
+  **Retorno** 
   
+     * 200 - OK
+      
+      **Exemplo**
+      
+      ````
+        [
+          {
+            "cod": 21,
+            "descricao": "Avaliação de escola",
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-postagem/21"
+              },
+              {
+                "rel": "aplicativo",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/1"
+              }
+            ]
+          }
+        ]
+        
+      ``` 
 
-### Registrar tipo de objeto
+### Registrar tipo de postagem
+  
+Cadastra um novo tipo de postagem na plataforma. 
   
 * `POST - /rest/tipos-postagem`
   
+  **Parâmetros**
+
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * **body** - Campos com informações do novo tipo de postagem.
+      
+      * codAplicativo - Código do aplicativo à qual o tipo de postagem está associado.
+      * codTipoPostagemPai - **Opcional**. 
+      * descricao - Breve descrição do tipo de postagem. Máximo 20 caracteres.
+      * textoFormatoJson -  Descrição detalhada sobre o tipo de conteúdo que será armazenado nesse tipo de postagem. É importante descrever de forma bem delhada o cada campo dos conteúdos significa e qual a finalidade de armazenar cada um. Máximo 1000 cracteres.
+      
+      **Exemplo** 
+      
+        ```
+        {
+            "codAplicativo": 23,
+            "codTipoPostagemPai": 21,
+            "descricao": "Meu tipo de postagem",
+            "textoFormatoJson": "Os conteúdos desse tipo de postagem serão armazenados no formato: {"campo1":"valor", "campo2": "valor"}. Onde campo um significa ... e campo2 é ..."
+        }
+        ```
+        
+    **Retorno** 
   
+    * 201 - Tipo de postagem adicionado com sucesso.
+      
+      Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados do conteúdo no campo **location**. 
+          
+          ```
+            http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-postagem/33
+          ```
+          
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou formato do **JSON** incorreto.
+      
+      
+### Encontrar tipo de postagem
 
-### Encontrar tipo de objeto
+Encontra um tipo de postagem por código.
 
-* `GET - /rest/tipos-postagem/{codTipoObjeto}`
+* `GET - /rest/tipos-postagem/{codTipoPostagem}`
 
+  **Parâmetros**
   
+    * {codTipoPostagem} - Código do tipo de postagem a ser buscada.
+    
+  **Retorno** 
+    
+    * 200 - Ok
+    
+      **Exemplo**
+        
+        ```
+          {
+              "cod": 26,
+              "descricao": "Postagem de Sugestão",
+              "dataHoraCriacao": "2016-06-07T14:46:40BRT",
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-postagem/26"
+                },
+                {
+                  "rel": "aplicativo",
+                  "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/1"
+                }
+              ]
+            }
+        ```
+    * 404 - Não encontrado
+        Pessoa não encontrada.
 
-### Alterar tipo de objeto
+
+### Alterar tipo de postagem
+
+
 
 * `PUT - /rest/tipos-postagem/{codTipoObjeto}`
   
   
+### Tipo de postagem por Aplicativo
   
-  
+
+
+* `GET - /rest/tipos-postagem/aplicativo/{codAplicativo}`
+
+### Excluir Tipo de Postagem
+
+
+
+* `DELETE - /rest/tipos-postagem/{codTipoPostagem}`
