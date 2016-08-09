@@ -1767,7 +1767,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       Dados buscados com sucesso.
 
       ```
-      [{
+        [{
         "links": [
           {
             "rel": "self",
@@ -1790,7 +1790,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         "codObjetoDestino": 5301803030121,
         "codTipoObjetoDestino": 100,
         "codTipoPostagem": 105
-      }]
+        }]
     
       ```
       
@@ -1854,7 +1854,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       Retorna no *header* da resposta o link onde se pode ter acesso aos dados cadastrados da postagem no campo **location**. 
           
           ```
-            "location": "http://mobile-aceite.tcu.gov.br:80/appCivicoRS/rest/postagens/363"
+          
+          "location": "http://mobile-aceite.tcu.gov.br:80/appCivicoRS/rest/postagens/363"
+          
           ```
           
     * 401 - Não autorizado.
@@ -2006,7 +2008,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     **Exemplo** 
       
-      ````
+      ```
         {
           "JSON": "{"campo1" : "valor", "campo2": "valor2"}",
           "texto": "texto",
@@ -2101,7 +2103,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
        **Exemplo** 
       
-      ````
+      ```
         {
           "JSON": "{"campo1" : "valor", "campo2": "valor2"}",
           "texto": "texto",
@@ -2341,11 +2343,56 @@ Encontra um tipo de postagem por código.
 
 ### Alterar tipo de postagem
 
-
+Altera dados de um tipo de postagem já cadastrado.
 
 * `PUT - /rest/tipos-postagem/{codTipoObjeto}`
   
+  **Parâmetros** 
+    
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codTipoPostagem} - Código do tipo de postagem a ser alterada.
+
+    * **body** - Campos com informações do novo tipo de postagem.
+      
+      * codAplicativo - Código do aplicativo à qual o tipo de postagem está associado.
+      * codTipoPostagemPai - **Opcional**. 
+      * descricao - Breve descrição do tipo de postagem. Máximo 20 caracteres.
+      * textoFormatoJson -  Descrição detalhada sobre o tipo de conteúdo que será armazenado nesse tipo de postagem. É importante descrever de forma bem delhada o cada campo dos conteúdos significa e qual a finalidade de armazenar cada um. Máximo 1000 cracteres.
+      
+      **Exemplo** 
+      
+        ```
+        {
+            "codAplicativo": 23,
+            "codTipoPostagemPai": 21,
+            "descricao": "Meu tipo de postagem",
+            "textoFormatoJson": "Os conteúdos desse tipo de postagem serão armazenados no formato: {"campo1":"valor", "campo2": "valor"}. Onde campo um significa ... e campo2 é ..."
+        }
+        ```
+        
+    **Retorno** 
   
+    * 200 - Tipo de postagem alterado com sucesso.
+          
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou formato do **JSON** incorreto.
+      
+    * 404 - Não encontrado
+    
+      Aplicativo não cadastrado ou tipo de postagem relacionada não cadastrado.
+
+    * 403 - Não habilitado
+      
+      O usuário à qual pertence o token que está tentando alterar o tipo de postagem não é o que criou a postagem, portanto não está autorizado à alterá-la. 
+      
 ### Tipo de postagem por Aplicativo
   
 
