@@ -277,6 +277,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
               "token": ""
             }
         ```
+        
   **Retorno**
   
     * 200 - Alterado com sucesso.
@@ -2395,12 +2396,45 @@ Altera dados de um tipo de postagem já cadastrado.
       
 ### Tipo de postagem por Aplicativo
   
-
+Retorna os tipos de postagem registrados para um aplicativo.
 
 * `GET - /rest/tipos-postagem/aplicativo/{codAplicativo}`
 
+
+  **Parâmetro** 
+    
+    * {codAplicativo} - Parâmetro de path. Código do aplicativo do qual serão buscados os tipos de postagem.
+  
+  **Retorno** 
+  
+    * 200 - OK 
+      
+      OBS: Se não houver tipos de postagem para esse aplicativo será retornado uma coleção vazia. 
+      
+      **Exemplo**
+      
+      ````
+        [
+          {
+            "cod": 21,
+            "descricao": "Avaliação de escola",
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/tipos-postagem/21"
+              },
+              {
+                "rel": "aplicativo",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/1"
+              }
+            ]
+          }
+        ]
+        
+      ``` 
+
 ### Excluir Tipo de Postagem
 
-
+A 
 
 * `DELETE - /rest/tipos-postagem/{codTipoPostagem}`
