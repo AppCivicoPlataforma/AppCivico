@@ -1,4 +1,4 @@
-# AppCivico
+# AppCivico / Nuvem Cívica
 Documentação de Endpoints para acesso à plataforma de AppCivicos do TCU.
 ## Dados Abertos
 Visando facilitar o acesso à dados abertos do governo para a comunidade de desenvolvedores o Tribunal de Contas da União criou a plataforma AppCívico, que fornece através de uma API de serviços REST informações abertas. Exemplo:
