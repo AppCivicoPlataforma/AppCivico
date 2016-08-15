@@ -15,7 +15,7 @@ Com o seu perfil cadastrado, você terá acesso ao Portal do Desenvolvedor, onde
 
 ### Aplicativos
 
-* Para cada aplicativo criado, será gerado um código, que será usado por você nas chamadas das API's do metamodelo. Esse código é muito importante, é com ele que você irá registrar e buscar postagens, grupos, instalações e notificações dentro da plataforma. Para mais informações acesse a sessão de [Aplicativos](/Metamodelo/#aplicativos) na documentação do metamodelo.
+* Para cada aplicativo criado, será gerado um código, que será usado por você nas chamadas das API's do metamodelo. Esse código é muito importante, é com ele que você irá registrar e buscar postagens, grupos, instalações e notificações dentro da plataforma. Para mais informações acesse a sessão de [Aplicativos](/Metamodelo.md/#aplicativos) na documentação do metamodelo.
 
 ### Tipo de Perfil
 
