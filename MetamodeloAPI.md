@@ -265,8 +265,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         * codResponsavel - Código do desenvolvedor responsável pelo aplicativo.
         * descricao - Breve descrição do aplicativo. Explicação sobre o que o aplicativo faz, qual àrea de abordagem, e sobre que tipo de informação esse aplicativo armazena na plataforma.
         * nome - Nome do aplicativo.
-        * token - . **Opcional**
-        
+
       **Exemplo**
         
         ```
@@ -274,7 +273,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
               "codResponsavel": 1,
               "descricao": "Aplicativo para visualizar informações sobre estabelecimentos de saúde",
               "nome": "Mapa da Saúde",
-              "token": ""
             }
         ```
         
@@ -394,6 +392,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     * {codAplicativo} - Parâmetro de path que indica código do aplicativo.
     * {codTipoPerfil} - Parâmtro de path que indica código do tipo de perfil a ser buscado.
+    
   **Retorno**
   
     * 200 - 0k
@@ -1823,7 +1822,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       * autor 
         * codPessoa - Código da pessoa que criou a postagem.
       * codObjetoDestino - **Opcional**. Código do objeto à qual a postagem está associada.
-      * codTipoObjetoDestino - **Opcional**. Código do tipo de objeto à qual a postagem está relacionada.
       * postagemRelacionada **Opcional**
         * codPostagem - Código da postagem relacionada.
       * tipo 
@@ -1837,7 +1835,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
               "codPessoa": 21
             },
             "codObjetoDestino": 34397294832,
-            "codTipoObjetoDestino": 1,
             "postagemRelacionada": {
               "codPostagem": 23
             },
@@ -2273,6 +2270,7 @@ Cadastra um novo tipo de postagem na plataforma.
       * codAplicativo - Código do aplicativo à qual o tipo de postagem está associado.
       * codTipoPostagemPai - **Opcional**. 
       * descricao - Breve descrição do tipo de postagem. Máximo 20 caracteres.
+      * codTipoObjetoDestino - Representa o tipo de objeto à qual esse tipo de postagem está relacionada.
       * textoFormatoJson -  Descrição detalhada sobre o tipo de conteúdo que será armazenado nesse tipo de postagem. É importante descrever de forma bem delhada o cada campo dos conteúdos significa e qual a finalidade de armazenar cada um. Máximo 1000 cracteres.
       
       **Exemplo** 
@@ -2282,6 +2280,7 @@ Cadastra um novo tipo de postagem na plataforma.
             "codAplicativo": 23,
             "codTipoPostagemPai": 21,
             "descricao": "Meu tipo de postagem",
+            "codTipoObjetoDestino" : 100,
             "textoFormatoJson": "Os conteúdos desse tipo de postagem serão armazenados no formato: {"campo1":"valor", "campo2": "valor"}. Onde campo um significa ... e campo2 é ..."
         }
         ```
@@ -2361,6 +2360,7 @@ Altera dados de um tipo de postagem já cadastrado.
       * codAplicativo - Código do aplicativo à qual o tipo de postagem está associado.
       * codTipoPostagemPai - **Opcional**. 
       * descricao - Breve descrição do tipo de postagem. Máximo 20 caracteres.
+      * codTipoObjetoDestino - Representa o tipo de objeto à qual esse tipo de postagem está relacionada.
       * textoFormatoJson -  Descrição detalhada sobre o tipo de conteúdo que será armazenado nesse tipo de postagem. É importante descrever de forma bem delhada o cada campo dos conteúdos significa e qual a finalidade de armazenar cada um. Máximo 1000 cracteres.
       
       **Exemplo** 
@@ -2370,6 +2370,7 @@ Altera dados de um tipo de postagem já cadastrado.
             "codAplicativo": 23,
             "codTipoPostagemPai": 21,
             "descricao": "Meu tipo de postagem",
+            "codTipoObjetoDestino" : 100,
             "textoFormatoJson": "Os conteúdos desse tipo de postagem serão armazenados no formato: {"campo1":"valor", "campo2": "valor"}. Onde campo um significa ... e campo2 é ..."
         }
         ```
