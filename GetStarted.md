@@ -39,5 +39,15 @@ Para mais informações acesse a sessão de [Hashtags](/MetamodeloAPI.md/#hashta
 
 ## Algum end-point do metamodelo não está funcionando corretamente?
 
-Se você percebeu algum problema em um dos webservices do metamodelo ou no [Portal do Desenvolvedor](http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/), por favor verifique na sessão de [*issues*](https://github.com/AppCivicoPlataforma/AppCivico/issues) se há algo à respeito. Se não houver, registre seu problema para que possamos verificar e dar um retorno assim que possível.
+Se você percebeu algum problema em um dos webservices do metamodelo ou no [Portal do Desenvolvedor](http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/), por favor verifique na sessão de [*issues*](https://github.com/AppCivicoPlataforma/AppCivico/issues) se há algo à respeito. Se não houver, registre seu problema para que possamos verificar e dar um retorno assim que possível. 
+
+## Alguma parte da documentação ficou faltando ou não ficou clara?
+
+Você poderá colaborar com a documentação editando os arquivos e fazendo pull request para que possamos melhorar cada vez mais a plataforma. A sua colaboração é muito importante, pois ajuda na melhoria do da plataforma.
+
+## Alguma sugestão ?
+
+Se tiver alguma sugestão de melhoria nos serviços, dê seu *feedback* através do e-mail [appcivico@tcu.gov.br](mailto:appcivico@tcu.gov.br). 
+
+
 
