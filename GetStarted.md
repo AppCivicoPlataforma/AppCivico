@@ -41,4 +41,3 @@ Para mais informações acesse a sessão de [Hashtags](/MetamodeloAPI.md/#hashta
 
 Se você percebeu algum problema em um dos webservices do metamodelo ou no [Portal do Desenvolvedor](http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/), por favor verifique na sessão de [*issues*](https://github.com/AppCivicoPlataforma/AppCivico/issues) se há algo à respeito. Se não houver, registre seu problema para que possamos verificar e dar um retorno assim que possível.
 
-
