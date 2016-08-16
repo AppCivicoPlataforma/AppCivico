@@ -28,7 +28,7 @@ Com o seu perfil cadastrado, você terá acesso ao Portal do Desenvolvedor, que 
     * Tipo de postagem pai, que é o tipo de postagem associada. 
     * Um tipo de objeto relacionado, que pode um dos objetos já pré cadastrados. São os dados abertos disponibilizados como por exemplo, estabelecimentos de saúde, escolas, remédios, entre outros.
     * Descrição simples e descrição detalhada dos campos e dados que serão armazenados nas postagens desse tipo.
-    * 
+    
 Para mais informações acesse a sessão de [Tipos de Postagem](/MetamodeloAPI.md/#tipos-de-postagem) na documentação do metamodelo.
 
 ### Hashtags
