@@ -49,5 +49,8 @@ Você poderá colaborar com a documentação editando os arquivos e fazendo pull
 
 Se tiver alguma sugestão de melhoria nos serviços, dê seu *feedback* através do e-mail [appcivico@tcu.gov.br](mailto:appcivico@tcu.gov.br). 
 
+## Sou um Desenvolvedores iOS
 
-
+Para desenvolvedores iOS existe uma framework com métodos de conveniência para acesso aos endpoints do metamodelo.
+O framework não está completo, porém você pode colaborar no desenvolvimento e na melhora do mesmo. 
+Clique aqui para acessar o repositório do [APCSDK](https://github.com/neneds/APCSDK2).
