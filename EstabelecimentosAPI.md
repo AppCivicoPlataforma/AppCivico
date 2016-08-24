@@ -298,6 +298,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
     * produto - Parâmetro de query que realiza busca pelo nome do produto.
     * codBarraEan - Parâmetro de query que realiza busca pelo [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13), que é um código representado por 13 dígitos.
     * apresentacao - Parâmetro de query que realiza busca pela descrição do remédio.
+    * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
     * quantidade - Parâmetro de query que indica quantidade máxima de remédios a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
