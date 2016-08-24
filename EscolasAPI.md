@@ -11,6 +11,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 * [`GET - rest/escolas`](#escolas)
+* [`GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#escolas-georeferênciadas)
 * [`GET - /rest/escolas/{codEscola}`](#encontrar-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes`](#avaliações-de-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`](#avaliações-de-escola-por-ano)
@@ -87,15 +88,110 @@ Cada escola está representado pelos seguintes dados.
     * ofereceAlimentacao - Indica se a escola oferece alimentação.
     * atendeEducacaoEspecializada - Indica se a escola possui atendimento à educação especial.
 
-###Escolas
+### Escolas 
 
-  * `GET - rest/escolas`
+* `GET - /rest/escolas/`
+
+   Busca dados de escolas por Município, UF, Situacao Funcionamento e Categoria Escola Privada. 
+
+   **Parâmetros**
+   
+      * municipio - Município onde se encontra a escola.
+      * uf - Estado onde se encontra a escola.
+      * situacaoFuncionamento - Filtra por situação de funcionamento. Os parâmetros válidos são: Em Atividade, Paralisada ou Extinta.
+      * categoriaEscolaPrivada - Filtra a categoria da escola privada. Os parâmtros válidos são: Particular, Comunitária, Confessional ou Filantrópica.
+      * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados.
+      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20. 
+   
+   **Retorno** 
+      
+      * 400 - Combinação inválida de parâmetros ou parâmetros incorretos.
+
+      * 200 - Ok
+      
+         **Exemplo**
+         
+         ````
+            [
+               {
+                "links": [
+                  {
+                    "rel": "self",
+                    "href": "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/11001399"
+                  }
+                ],
+                "codEscola": 11001399,
+                "nome": "EMEF LEOCADIO PARDO",
+                "rede": "Pública",
+                "email": "NESC.SEMED@GMAIL.COM",
+                "esferaAdministrativa": "Municipal",
+                "categoriaEscolaPrivada": "Não é privada",
+                "situacaoFuncionamento": "Em Atividade",
+                "seFimLucrativo": "N",
+                "seConveniadaSetorPublico": "N",
+                "qtdSalasExistentes": 3,
+                "qtdSalasUtilizadas": 2,
+                "qtdFuncionarios": 4,
+                "qtdComputadores": 0,
+                "qtdComputadoresPorAluno": 0,
+                "qtdAlunos": 26,
+                "endereco": {
+                  "cep": "76801000",
+                  "descricao": "TERRA CAIDA BAIXO MADEIRA S/NSAO CARLOS",
+                  "bairro": "ZONA RURAL",
+                  "municipio": "Porto Velho                                       ",
+                  "uf": "RO"
+                },
+                "zona": "RURAL",
+                "infraestrutura": {
+                  "temQuadraEsporteCoberta": "N",
+                  "temQuadraEsporteDescoberta": "N",
+                  "temInternet": "N",
+                  "temBandaLarga": "N",
+                  "temLaboratorioInformatica": "N",
+                  "temLaboratorioCiencias": "N",
+                  "temRefeitorio": "S",
+                  "temAuditorio": "N",
+                  "temDespensa": "S",
+                  "temAlmoxarifado": "N",
+                  "temPatioCoberto": "N",
+                  "temPatioDescoberto": "N",
+                  "temParqueInfantil": "N",
+                  "temCozinha": "S",
+                  "temBiblioteca": "N",
+                  "temBercario": "N",
+                  "temSanitarioNoPredio": "S",
+                  "temSanitarioForaPredio": "N",
+                  "temSalaLeitura": "N",
+                  "temAreaVerde": "S",
+                  "temAguaFiltrada": "S",
+                  "temAcessibilidade": "N",
+                  "temCreche": "N",
+                  "temEnsinoFundamental": "S",
+                  "temEnsinoMedio": "N",
+                  "temEnsinoMedioNormal": "N",
+                  "temEnsinoMedioProfissional": "N",
+                  "temEnsinoMedioIntegrado": "N",
+                  "temEducacaoJovemAdulto": "N",
+                  "temEducacaoIndigena": "N",
+                  "banheiroTemChuveiro": "N",
+                  "ofereceAlimentacao": "S",
+                  "atendeEducacaoEspecializada": "N"
+                }
+              }
+            ]
+         ```
+            
+   
+### Escolas Georeferênciadas
+
+  * `GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
   
       Busca dados de escolas próximas à uma coordenada de referência possibilitando também uma busca por nome.
 
    **Parâmetros**
    
-      * nome - Parâmetro de query opcional que pode ser completo ou parte do nome para busca.
       * latitude - Parâmetro de query que recebe a latitude para busca georeferênciada.
       * longitude - Parâmetro de query que recebe a longitude para busca georeferênciada.
       * raio - Parâmetro de query que recebe o limite em quilometros a partir das coordenadas de referência que as  escolas serão buscadas.
