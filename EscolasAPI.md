@@ -192,15 +192,17 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * latitude - Parâmetro de query que recebe a latitude para busca georeferênciada.
-      * longitude - Parâmetro de query que recebe a longitude para busca georeferênciada.
-      * raio - Parâmetro de query que recebe o limite em quilometros a partir das coordenadas de referência que as  escolas serão buscadas.
+      * latitude - Parâmetro de path que recebe a latitude para busca georeferênciada.
+      * longitude - Parâmetro de path que recebe a longitude para busca georeferênciada.
+      * raio - Parâmetro de path que recebe o limite em quilometros a partir das coordenadas de referência que as  escolas serão buscadas.
+      * rede - Parâmetro de query opcional para filtrar o tipo de rede da escola: Pública ou Privada.
+      * situacaoFuncionamento - Parâmetro de query opcional para filtrar a situação de funcionamento da escola: se ela está em atividade, paralisada ou se foi extinta.
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
       * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
    **Retorno**
       
-      * 400 - Combinação inválida de parâmetros. As combinações válidas são: nenhum parâmetro OU (nome) OU (latitude, longitude, raio). 
+      * 400 - Combinação inválida de parâmetros. A combinação válida é: (latitude, longitude, raio). 
       * 200 - Ok
       
          **Exemplo**
