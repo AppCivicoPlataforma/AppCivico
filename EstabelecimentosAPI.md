@@ -11,7 +11,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 
-* [`GET - /rest/especialidades/unidade/{codUnidade}`](#especialidades)
 * [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
 
 ### Assistência Social
@@ -28,6 +27,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/emprego`](#sine-por-município)
 * [`GET - /rest/emprego/cod/{codPosto}`](#posto-do-sine-por-código)
 * [`GET - /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#postos-do-sine-georreferenciados)
+
+### Especialidades de um Estabelecimento
+
+* [`GET - /rest/especialidades/unidade/{codUnidade}`](#especialidades)
 
 ### Estabelecimentos de Saúde
 
