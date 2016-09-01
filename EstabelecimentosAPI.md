@@ -10,30 +10,30 @@ Esses *endpoints* são responsáveis por fornecer dados sobre os estabelecimento
 Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.gov.br/appCivicoRS/swagger/index.html?url=/mapa-da-saude/v2/api-docs) 
 
 ## Docs
+
 * [`GET - /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
 * [`GET - /rest/estabelecimentos/unidade/{codUnidade}`](#encontrar-estabelecimento)
 * [`GET - /rest/especialidades/unidade/{codUnidade}`](#especialidades)
 * [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais)
 * [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
 
-### Remédios
-* [`GET - /rest/remedios`](#remédios)
-
 ### Assistência Social
 
 * [`GET - /rest/assistenciasocial/cras`](#cras-por-município)
-* [`GET- /rest/assistenciasocial/cras/id/{idCras}`](#cras-por-código)
-* [`GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#cras-georreferênciado)
-* [`GET- /rest/assistenciasocial/creas`](#creas-por-município)
-* [`GET- /rest/assistenciasocial/creas/id/{idCreas}`](#creas-por-código)
-* [`GET- /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#creas-georreferênciado)
-
+* [`GET - /rest/assistenciasocial/cras/id/{idCras}`](#cras-por-código)
+* [`GET - /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#cras-georreferênciado)
+* [`GET - /rest/assistenciasocial/creas`](#creas-por-município)
+* [`GET - /rest/assistenciasocial/creas/id/{idCreas}`](#creas-por-código)
+* [`GET - /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#creas-georreferênciado)
 
 ### Empregos
 
-* [`GET- /rest/emprego`](#sine-por-município)
-* [`GET- /rest/emprego/cod/{codPosto}`](#posto-do-sine-por-código)
-* [`GET- /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#postos-do-sine-georreferênciados)
+* [`GET - /rest/emprego`](#sine-por-município)
+* [`GET - /rest/emprego/cod/{codPosto}`](#posto-do-sine-por-código)
+* [`GET - /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#postos-do-sine-georreferênciados)
+
+### Remédios
+* [`GET - /rest/remedios`](#remédios)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
@@ -449,7 +449,7 @@ Busca as unidades do CRAS por município.
 
 Buscar dados de uma unidade do CRAS por código.
 
-* `GET- /rest/assistenciasocial/cras/id/{idCras}`
+* `GET - /rest/assistenciasocial/cras/id/{idCras}`
 
     **Parâmetros**
     
@@ -499,7 +499,7 @@ Buscar dados de uma unidade do CRAS por código.
 
 Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado.
 
-* `GET- /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+* `GET - /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     **Parâmetros**
     
@@ -614,7 +614,7 @@ Busca as unidades do CREAS por município.
 
 Buscar dados de uma unidade do CREAS por código.
 
-* `GET- /rest/assistenciasocial/creas/id/{idCeras}`
+* `GET - /rest/assistenciasocial/creas/id/{idCeras}`
 
     **Parâmetros**
     
@@ -667,7 +667,7 @@ Buscar dados de uma unidade do CREAS por código.
 
 Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindado.
 
-* `GET- /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+* `GET - /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     **Parâmetros**
     
