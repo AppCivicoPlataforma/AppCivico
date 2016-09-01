@@ -892,7 +892,7 @@ Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio
     
         bairro,cep,codPosto,endereco,entidadeConveniada,id,lat,long,municipio,nome,telefone,uf.
         
-    **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.    
     * quantidade - Parâmetro de query define a quantidade máxima de postos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
