@@ -27,7 +27,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Tipos de Avaliação 
 
-* [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação)
+* [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação-1)
 
 ## Dados disponíveis
 Cada escola está representado pelos seguintes dados.
