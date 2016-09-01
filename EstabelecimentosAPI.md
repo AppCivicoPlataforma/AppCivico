@@ -72,6 +72,61 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 * long - Referênte à geolocalização do estabelecimento indicando latitude.
 
 
+### Estabelecimentos
+
+* `GET - /rest/estabelecimentos`
+
+    Busca estabelecimento de saúde, utilizando-se de alguns filtros de pesquisa.
+    
+    **Parâmetros**
+    * municipio - Parâmetro de query **opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * campos - Parâmetros de query **opicionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+        codCnes, codUnidade, codIbge, nomeFantasia, tipoUnidade, esferaAdministrativa, vinculoSus, temCentroCirurgico, temNeoNatal, uf, entre outros.
+    **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    
+    **Retorno**
+    
+    **Exemplo**
+    ````
+        [
+           {
+             "codCnes": 5089824,
+             "codUnidade": "4205405089824",
+             "codIbge": 420540,
+             "nomeFantasia": "COMPLEXO REGULADOR REGIONAL LESTE",
+             "natureza": "Administração Direta da Saúde",
+             "tipoUnidade": "CENTRAL DE REGULAÇÃO",
+             "esferaAdministrativa": "Municipal",
+             "vinculoSus": "Sim",
+             "retencao": "Unidade Pública",
+             "fluxoClientela": "Atendimento de demanda referenciada",
+             "origemGeografica": "CNES_GEO",
+             "temAtendimentoUrgencia": "Não",
+             "temAtendimentoAmbulatorial": "Não",
+             "temCentroCirurgico": "Não",
+             "temObstetra": "Não",
+             "temNeoNatal": "Não",
+             "temDialise": "Sim",
+             "descricaoCompleta": "COMPLEXO REGULADOR REGIONAL LESTE  ADMINISTRACAO DIRETA DA SAUDE (MS,SES e SMS)     MEDICO CLINICO  ",
+             "tipoUnidadeCnes": "CENTRAL DE REGULACAO DO ACESSO",
+             "categoriaUnidade": "UNIDADE ADMINISTRATIVA",
+             "logradouro": "RUA JOSE HENRIQUE VERAS",
+             "numero": "203",
+             "bairro": "TRINDADE",
+             "cidade": "FLORIANOPOLIS",
+             "uf": "SC",
+             "cep": "88062030",
+             "telefone": "(48) 32349557",
+             "turnoAtendimento": "Atendimento nos turnos da manhã e à tarde.",
+             "lat": -27.58864,
+             "long": -48.51824
+           },
+           ....
+        ]
+    
+    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) localizado no topo do documento.
+
 ### Estabelecimentos Georreferenciados
 
 Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
