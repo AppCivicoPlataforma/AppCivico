@@ -454,13 +454,13 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
 Para mais referências sobre os dados dos remédios, entre no site da [Agência Nacional de Vigilância Sanitária(ANVISA)](http://portal.anvisa.gov.br).
 
 
-## Postos de atendimento do Centros de Referência de Assistência Social
+## Postos de atendimento do Centro de Referência de Assistência Social
 
 O Centro de Referência de Assistência Social (Cras) é o sistema governamental responsável pela organização e oferta de serviços da Proteção Social Básica nas áreas de vulnerabilidade e risco social.
 
-Por meio do Cras, as famílias em situação de extrema pobreza passam a ter acesso a serviços como cadastramento e acompanhamento em programas de transferência de renda. O País conta, atualmente, 7.669 unidades distribuídas pelo território nacional.
+Por meio do Cras, as famílias em situação de extrema pobreza passam a ter acesso a serviços como cadastramento e acompanhamento em programas de transferência de renda. O País conta, atualmente, com 7.669 unidades distribuídas pelo território nacional.
 
-Para mais informações visite o portal do [Centros de Referência de Assistência Social (CRAS)](http://www.brasil.gov.br/cidadania-e-justica/2011/10/conheca-o-centro-de-referencia-de-assistencia-social)
+Para mais informações visite o portal do [Centro de Referência de Assistência Social (CRAS)](http://www.brasil.gov.br/cidadania-e-justica/2011/10/conheca-o-centro-de-referencia-de-assistencia-social)
 
 ### CRAS por Município
 
@@ -472,11 +472,9 @@ Busca as unidades do CRAS por município.
     
     * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
     * campos - Parâmetros de query. **Opicional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
-        
         cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
-
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
-        
+    * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
