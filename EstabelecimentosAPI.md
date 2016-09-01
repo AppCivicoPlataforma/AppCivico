@@ -33,7 +33,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#postos-do-sine-georreferênciados)
 
 ### Remédios
-* [`GET - /rest/remedios`](#remédios)
+* [`GET - /rest/remedios`](#remédios-1)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
