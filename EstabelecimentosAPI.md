@@ -124,6 +124,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
            },
            ....
         ]
+    ````
     
     Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) localizado no topo do documento.
 
