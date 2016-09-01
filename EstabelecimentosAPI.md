@@ -80,6 +80,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     
     **Parâmetros**
     * municipio - Parâmetro de query **opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * uf - Parâmetro de query **opcional**. É a sigla do estado onde se encontra o estabelecimento.
     * campos - Parâmetros de query **opicionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         codCnes, codUnidade, codIbge, nomeFantasia, tipoUnidade, esferaAdministrativa, vinculoSus, temCentroCirurgico, temNeoNatal, uf, entre outros.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
@@ -122,7 +123,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
              "lat": -27.58864,
              "long": -48.51824
            },
-           ....
+           ...
         ]
     ````
     
