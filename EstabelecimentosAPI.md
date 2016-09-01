@@ -141,6 +141,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
   * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os estabelecimentos.
   * texto - Parâmetro de query que é utilizado para busca textual livre em cima de diversos dados relativos a estabelecimentos, como por exemplo: especialidades, serviços e profissionais.
   * categoria - Parâmetro de query utilizado para filtrar os estabelecimentos de saúdes por categorias específicas. As categorias possíveis para filtro são:
+
       * HOSPITAL 
       * POSTO DE SAÚDE 
       * URGÊNCIA 
@@ -153,6 +154,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
       * ATENÇÃO ESPECÍFICA 
       * UNIDADE ADMINISTRATIVA 
       * ATENDIMENTO DOMICILIAR 
+
     **Observação:** O valor para filtro deve ser passado todo em maíusculo e com acentos, exatamente iguais à listagem acima.
   * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
        codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
