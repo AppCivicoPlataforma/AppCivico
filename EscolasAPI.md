@@ -10,6 +10,9 @@ Esses *endpoints* são responsáveis por fornecer dados sobre escolas públicas 
 Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.gov.br/appCivicoRS/swagger/index.html?url=/nossaEscolaRS/v2/api-docs) 
 
 ## Docs
+
+### Escolas
+
 * [`GET - rest/escolas`](#buscar-escolas)
 * [`GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#escolas-georeferênciadas)
 * [`GET - /rest/escolas/{codEscola}`](#encontrar-escola)
@@ -21,6 +24,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/media`](#média-de-avaliações-de-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}`](#avaliações-de-escola-por-tipo)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/tipo/{tipo}/media`](#média-de-avaliações-de-escola-por-tipo)
+
+### Tipos de Avaliação 
+
 * [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação)
 
 ## Dados disponíveis
