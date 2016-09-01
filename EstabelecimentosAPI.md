@@ -804,6 +804,7 @@ Busca postos do SINE em um município.
     **Parâmetros**
     
     * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.
     * quantidade - Parâmetro de query. **Opcional**. Define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
