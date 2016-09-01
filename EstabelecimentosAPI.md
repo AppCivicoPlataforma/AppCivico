@@ -289,8 +289,9 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
     **Dados retornados**
     * descricaoHabilitacao - Descrição da especialidade.
     * descricaoGrupo - Grupo que a especialidade pertence.
-        
+
 ### Profissionais
+
 * `GET - /rest/profissionais/unidade/{codUnidade}`
     
     Busca tipos de profissionais disponíveis em um estabelecimento de saúde identificado pelo código unidade.
@@ -318,8 +319,8 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
     
     **Dados retornados**
         
-    * descricaoAtividadeProfissional - Descrição da atividade profissional disponível.
-    * quantidadeProfissionais - Quantidade de profissionais que atual nessa àrea no estabelecimento.
+    * descricaoAtividadeProfissional - Descrição da atividade do profissional disponível.
+    * quantidadeProfissionais - Quantidade de profissionais que atuam nessa àrea no estabelecimento.
         
 ### Serviços Especializados
 
@@ -362,10 +363,11 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
 
      **Parâmetros**
     
-    * produto - Parâmetro de query que realiza busca pelo nome do produto.
-    * codBarraEan - Parâmetro de query que realiza busca pelo [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13), que é um código representado por 13 dígitos.
-    * apresentacao - Parâmetro de query que realiza busca pela descrição do remédio.
-    * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+    * produto - Parâmetro de query. **Opicional**. Realiza busca pelo nome do produto.
+    * codBarraEan - Parâmetro de query. **Opicional**. Realiza busca pelo [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13), que é um código representado por 13 dígitos.
+    * apresentacao - Parâmetro de query. **Opicional**. Realiza busca pela descrição do remédio.
+    * campos - Parâmetros de query. **Opicional**. Representa a lista de campos a serem retornados.
+    * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.
     * quantidade - Parâmetro de query que indica quantidade máxima de remédios a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
@@ -468,11 +470,10 @@ Busca as unidades do CRAS por município.
     
     **Parâmetros**
     
-    * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
-    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * campos - Parâmetros de query. **Opicional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
-
 
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
         
@@ -633,8 +634,8 @@ Busca as unidades do CREAS por município.
     
     **Parâmetros**
     
-    * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
-    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * campos - Parâmetros de query. **Opicional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
        
          bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
 
@@ -801,8 +802,8 @@ Busca postos do SINE em um município.
 
     **Parâmetros**
     
-    * municipio - Parâmetro de query.**Opcional**. O nome do múnicipio que se deseja buscar as unidades.
-    * quantidade - Parâmetro de query.**Opcional**. Define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * quantidade - Parâmetro de query. **Opcional**. Define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
     
