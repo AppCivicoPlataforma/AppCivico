@@ -12,8 +12,22 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ## Docs
 
 * [`GET - /rest/especialidades/unidade/{codUnidade}`](#especialidades)
-* [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais)
 * [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
+
+### Assistência Social
+
+* [`GET - /rest/assistenciasocial/cras`](#cras-por-município)
+* [`GET - /rest/assistenciasocial/cras/id/{idCras}`](#cras-por-código)
+* [`GET - /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#cras-georreferenciado)
+* [`GET - /rest/assistenciasocial/creas`](#creas-por-município)
+* [`GET - /rest/assistenciasocial/creas/id/{idCreas}`](#creas-por-código)
+* [`GET - /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#creas-georreferenciado)
+
+### Empregos
+
+* [`GET - /rest/emprego`](#sine-por-município)
+* [`GET - /rest/emprego/cod/{codPosto}`](#posto-do-sine-por-código)
+* [`GET - /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#postos-do-sine-georreferenciados)
 
 ### Estabelecimentos de Saúde
 
@@ -21,20 +35,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos-georreferenciados)
 * [`GET - /rest/estabelecimentos/unidade/{codUnidade}`](#estabelecimento-por-código)
 
-### Assistência Social
+### Profissionais
 
-* [`GET - /rest/assistenciasocial/cras`](#cras-por-município)
-* [`GET - /rest/assistenciasocial/cras/id/{idCras}`](#cras-por-código)
-* [`GET - /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#cras-georreferênciado)
-* [`GET - /rest/assistenciasocial/creas`](#creas-por-município)
-* [`GET - /rest/assistenciasocial/creas/id/{idCreas}`](#creas-por-código)
-* [`GET - /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#creas-georreferênciado)
-
-### Empregos
-
-* [`GET - /rest/emprego`](#sine-por-município)
-* [`GET - /rest/emprego/cod/{codPosto}`](#posto-do-sine-por-código)
-* [`GET - /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#postos-do-sine-georreferênciados)
+* [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais)
 
 ### Remédios
 * [`GET - /rest/remedios`](#remédios-1)
@@ -352,6 +355,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
     * descricao - Descrição do serviço especializado.
 
 ### Remédios
+
 * `GET - /rest/remedios`
     
     Pesquisa dados de medicamentos fabricados no Brasil e registrados pela ANVISA.
@@ -727,7 +731,7 @@ Buscar dados de uma unidade do CREAS por código.
         O parâmetro de campos está em formato inválido ou o idCreas não é um valor numérico.
             
 
-### CREAS Georreferênciado
+### CREAS Georreferenciado
 
 Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindado.
 
