@@ -14,7 +14,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Escolas
 
 * [`GET - rest/escolas`](#buscar-escolas)
-* [`GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#escolas-georeferenciadas)
+* [`GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#escolas-georreferenciadas)
 * [`GET - /rest/escolas/{codEscola}`](#encontrar-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes`](#avaliações-de-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`](#avaliações-de-escola-por-ano)
@@ -193,7 +193,7 @@ Cada escola está representado pelos seguintes dados.
          ```
             
    
-### Escolas Georeferenciadas
+### Escolas Georreferenciadas
 
   * `GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
   
