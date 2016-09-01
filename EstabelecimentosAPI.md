@@ -205,7 +205,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
     
     Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) localizado no topo do documento.
     
-### Estabelecimento por código
+### Estabelecimento por Código
 
 * `GET - /rest/estabelecimentos/unidade/{codUnidade}`
 
@@ -318,7 +318,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
     * descricaoAtividadeProfissional - Descrição da atividade profissional disponível.
     * quantidadeProfissionais - Quantidade de profissionais que atual nessa àrea no estabelecimento.
         
-### Serviços especializados
+### Serviços Especializados
 
 * `GET - /rest/servicos/unidade/{codUnidade}` 
     
@@ -509,7 +509,7 @@ Busca as unidades do CRAS por município.
             
         O parâmetro de campos está em formato inválido.
 
-### CRAS por código
+### CRAS por Código
 
 Buscar dados de uma unidade do CRAS por código.
 
@@ -674,7 +674,7 @@ Busca as unidades do CREAS por município.
             
         O parâmetro de campos está em formato inválido.
 
-### CREAS por código
+### CREAS por Código
 
 Buscar dados de uma unidade do CREAS por código.
 
@@ -789,7 +789,7 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
 O  Site Nacional de Empregos(SINE) - é um serviço de utilidade pública e atua como um classificado online de vagas de emprego, em todo o Brasil. Desenvolvido pelo BNE - Banco Nacional de Empregos, o Sine é um site gratuito e confiável que busca contribuir socialmente com o mercado de trabalho, promovendo o contato direto entre empregador e trabalhador. 
 Para mais informações visite o site do [SINE](http://www.sine.com.br/).
 
-### SINE por município
+### SINE por Município
 
 Busca postos do SINE em um município.
 
@@ -870,7 +870,7 @@ Busca posto do SINE por código.
         O parâmetro codPosto não é um valor numérico.
             
 
-### Postos do SINE Georreferênciados
+### Postos do SINE Georreferenciados
 
 Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio de distância.
 
