@@ -264,7 +264,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
 
 * `GET - /rest/especialidades/unidade/{codUnidade}`
     
-    Busca especialidades disponíveis em um estabelecimento de saúde identificado pelo código unidade.
+    Busca especialidades disponíveis em um estabelecimento de saúde identificado pelo código da unidade.
     
     **Parâmetros**
     
