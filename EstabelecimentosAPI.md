@@ -803,7 +803,7 @@ Busca postos do SINE em um município.
 
     **Parâmetros**
     
-    * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * municipio - Parâmetro de query. **Opcional**. Nome do múnicipio do qual se deseja buscar as unidades.
     * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.
     * quantidade - Parâmetro de query. **Opcional**. Define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
@@ -889,10 +889,11 @@ Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
     * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os estabelecimentos.
     * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
-  
+    
         bairro,cep,codPosto,endereco,entidadeConveniada,id,lat,long,municipio,nome,telefone,uf.
         
-        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+    * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.    
     * quantidade - Parâmetro de query define a quantidade máxima de postos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
      **Retorno**
