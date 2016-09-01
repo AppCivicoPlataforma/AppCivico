@@ -11,11 +11,15 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 
-* [`GET - /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos)
-* [`GET - /rest/estabelecimentos/unidade/{codUnidade}`](#encontrar-estabelecimento)
 * [`GET - /rest/especialidades/unidade/{codUnidade}`](#especialidades)
 * [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais)
 * [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
+
+### Estabelecimentos de Saúde
+
+* [`GET - /rest/estabelecimentos`](#estabelecimentos)
+* [`GET - /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#estabelecimentos-georreferenciados)
+* [`GET - /rest/estabelecimentos/unidade/{codUnidade}`](#estabelecimento-por-código)
 
 ### Assistência Social
 
@@ -68,7 +72,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 * long - Referênte à geolocalização do estabelecimento indicando latitude.
 
 
-### Estabelecimentos
+### Estabelecimentos Georreferenciados
 
 Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
 
@@ -78,7 +82,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
   * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
   * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
   * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os estabelecimentos.
-  * texto - Parâmetro de query que é utilizado para busca textual livre em cima de diversos dados relativos a estabelecimentos, como por exemplo, especialidades, serviços e profissionais.
+  * texto - Parâmetro de query que é utilizado para busca textual livre em cima de diversos dados relativos a estabelecimentos, como por exemplo: especialidades, serviços e profissionais.
   * categoria - Parâmetro de query utilizado para filtrar os estabelecimentos de saúdes por categorias específicas. As categorias possíveis para filtro são:
       * HOSPITAL 
       * POSTO DE SAÚDE 
@@ -97,7 +101,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
        codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     
-    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) topo do documento.
+    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) no topo do documento.
   * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
 
     **Retorno**
@@ -140,9 +144,9 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
         ]    
     ```
     
-    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) topo do documento.
+    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) localizado no topo do documento.
     
-### Encontrar estabelecimento
+### Estabelecimento por código
 
 * `GET - /rest/estabelecimentos/unidade/{codUnidade}`
 
@@ -192,7 +196,7 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
         ]    
     ```
     
-    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) topo do documento.
+    Para referência do significado de cada campo veja na sessão de [`Dados disponíveis`](#dados-disponíveis) localizado no topo do documento.
     
 ### Especialidades
 
@@ -392,6 +396,7 @@ O Centro de Referência de Assistência Social (Cras) é o sistema governamental
 Por meio do Cras, as famílias em situação de extrema pobreza passam a ter acesso a serviços como cadastramento e acompanhamento em programas de transferência de renda. O País conta, atualmente, 7.669 unidades distribuídas pelo território nacional.
 
 Para mais informações visite o portal do [Centros de Referência de Assistência Social (CRAS)](http://www.brasil.gov.br/cidadania-e-justica/2011/10/conheca-o-centro-de-referencia-de-assistencia-social)
+
 ### CRAS por Município
 
 Busca as unidades do CRAS por município.
@@ -495,7 +500,7 @@ Buscar dados de uma unidade do CRAS por código.
         O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
             
 
-### CRAS Georreferênciado
+### CRAS Georreferenciado
 
 Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado.
 
