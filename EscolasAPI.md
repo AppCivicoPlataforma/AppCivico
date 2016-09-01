@@ -14,7 +14,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Escolas
 
 * [`GET - rest/escolas`](#buscar-escolas)
-* [`GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#escolas-georeferênciadas)
+* [`GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#escolas-georeferenciadas)
 * [`GET - /rest/escolas/{codEscola}`](#encontrar-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes`](#avaliações-de-escola)
 * [`GET - /rest/escolas/{codEscola}/avaliacoes/ano/{ano}`](#avaliações-de-escola-por-ano)
@@ -98,15 +98,18 @@ Cada escola está representado pelos seguintes dados.
 
 * `GET - /rest/escolas/`
 
-   Busca dados de escolas por Município, UF, Situacao Funcionamento e Categoria Escola Privada. 
+   Busca dados de escolas a partir do nome da escola, do tipo de rede, do município, da UF, da situação de funcionamento e a partir da categoria, caso seja uma escola privada.
 
    **Parâmetros**
    
-      * municipio - Município onde se encontra a escola.
-      * uf - Estado onde se encontra a escola.
+      * nome - Nome da escola.
+      * rede - Se a rede é pública ou privada.
+      * municipio - Município onde se encon1tra a escola.
+      * uf - Sigla do estado onde se encontra a escola.
       * situacaoFuncionamento - Filtra por situação de funcionamento. Os parâmetros válidos são: Em Atividade, Paralisada ou Extinta.
       * categoriaEscolaPrivada - Filtra a categoria da escola privada. Os parâmtros válidos são: Particular, Comunitária, Confessional ou Filantrópica.
-      * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados.
+      * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Deve-se separar cada campo apenas por vírgula, sem espaço em branco. Exemplo:
+         endereco,qtdAlunos,qtdFuncionarios
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
       * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20. 
    
@@ -190,11 +193,11 @@ Cada escola está representado pelos seguintes dados.
          ```
             
    
-### Escolas Georeferênciadas
+### Escolas Georeferenciadas
 
   * `GET - /rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
   
-      Busca dados de escolas próximas à uma coordenada de referência possibilitando também uma busca por nome.
+      Busca dados de escolas próximas a uma coordenada de referência possibilitando também uma busca por nome.
 
    **Parâmetros**
    
@@ -203,6 +206,8 @@ Cada escola está representado pelos seguintes dados.
       * raio - Parâmetro de path que recebe o limite em quilometros a partir das coordenadas de referência que as  escolas serão buscadas.
       * rede - Parâmetro de query opcional para filtrar o tipo de rede da escola: Pública ou Privada.
       * situacaoFuncionamento - Parâmetro de query opcional para filtrar a situação de funcionamento da escola: se ela está em atividade, paralisada ou se foi extinta.
+      * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Deve-se separar cada campo apenas por vírgula, sem espaço em branco. Exemplo: 
+         endereco,qtdAlunos,qtdFuncionarios
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
       * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
@@ -288,11 +293,14 @@ Cada escola está representado pelos seguintes dados.
 
   * `GET - /rest/escolas/{codEscola}`
       
-      Busca dados de uma escola a partir do se código identificação único.
+      Busca dados de uma escola a partir do seu código único de identificação.
 
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      * campos - Lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos informados devem ser separados apenas por vírgula, sem espaços em branco nem com acentuação, mas devem ser escritos exatamente como foram declarados no modelo. Por exemplo, para retornar cnpj, endereço e quantidade de alunos da escola: 
+         cnpj,endereco,qtdAlunos
+      
       
    **Retorno**
       
@@ -380,7 +388,7 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      * {codEscola} - Parâmetro de path que representa o código da escola referente.
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
       * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
@@ -423,7 +431,7 @@ Cada escola está representado pelos seguintes dados.
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {ano} - Parâmetro de path que representa o ano à ser buscado.
+      * {ano} - Parâmetro de path que representa o ano a ser buscado.
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
       * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
@@ -493,7 +501,7 @@ Cada escola está representado pelos seguintes dados.
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
       * {ano} - Parâmetro de path que representa o ano à ser buscado.
-      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada.
+      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
       
       
    **Retorno**
@@ -538,7 +546,7 @@ Cada escola está representado pelos seguintes dados.
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
       * {ano} - Parâmetro de path que representa o ano à ser buscado.
-      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada.
+      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
       
    **Retorno**
       
@@ -561,7 +569,7 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+      * {codEscola} - Parâmetro de path que representa o código da escola.
       
    **Retorno**
       
@@ -585,7 +593,7 @@ Cada escola está representado pelos seguintes dados.
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada.
+      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
       * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
@@ -629,7 +637,7 @@ Cada escola está representado pelos seguintes dados.
    **Parâmetros**
    
       * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada.
+      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
 
    **Retorno**
       
@@ -644,7 +652,7 @@ Cada escola está representado pelos seguintes dados.
             }
          ```
 
-## Tipos de Avaliação
+### Tipos de Avaliação
 
    * `GET /rest/tiposavaliacao`
    
