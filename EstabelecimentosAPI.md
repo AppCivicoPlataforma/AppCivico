@@ -37,7 +37,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Profissionais
 
-* [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais)
+* [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais-1)
 
 ### Remédios
 * [`GET - /rest/remedios`](#remédios-1)
