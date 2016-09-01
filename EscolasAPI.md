@@ -654,7 +654,7 @@ Cada escola está representado pelos seguintes dados.
 
 ### Tipos de Avaliação
 
-   * `GET /rest/tiposavaliacao`
+   * `GET - /rest/tiposavaliacao`
    
       Busca todos os tipos de avaliações disponíveis.
    
