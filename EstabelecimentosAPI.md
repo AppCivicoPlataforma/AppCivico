@@ -11,8 +11,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ## Docs
 
-* [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
-
 ### Assistência Social
 
 * [`GET - /rest/assistenciasocial/cras`](#cras-por-município)
@@ -43,7 +41,12 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/profissionais/unidade/{codUnidade}`](#profissionais-1)
 
 ### Remédios
+
 * [`GET - /rest/remedios`](#remédios-1)
+
+### Serviços Especializados
+
+* [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
@@ -82,7 +85,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 
 * `GET - /rest/estabelecimentos`
 
-    Busca estabelecimento de saúde, utilizando-se de alguns filtros de pesquisa.
+    Busca estabelecimento de saúde a partir de filtros que pesquisam pelo município ou pela UF dos estabelecimentos em questão.
     
     **Parâmetros**
     * municipio - Parâmetro de query **opcional**. O nome do múnicipio que se deseja buscar as unidades.
