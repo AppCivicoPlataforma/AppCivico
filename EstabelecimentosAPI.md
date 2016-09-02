@@ -526,7 +526,7 @@ Buscar dados de uma unidade do CRAS por código.
 
     **Parâmetros**
     
-    * {idCras} - Parâmetro de query **obrigatório**. Código da unidade que será buscado.
+    * {idCras} - Parâmetro de path **obrigatório**. Código da unidade que será buscado.
     * campos - Parâmetros de query **opcionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
@@ -583,7 +583,9 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
         
         cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
         
-        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco.
+        
+    * pagina - Parâmetro de query **opcional** para uma busca paginada. Número da página com valor padrão igual a 0.
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     
@@ -638,12 +640,14 @@ Busca as unidades do CREAS por município.
     
     **Parâmetros**
     
-    * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
+    * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio do qual se deseja buscar as unidades.
     * campos - Parâmetros de query. **Opcional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
        
          bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
 
-        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco.
+        
+    * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
@@ -691,8 +695,8 @@ Buscar dados de uma unidade do CREAS por código.
 
     **Parâmetros**
     
-    * {idCreas} - Parâmetro de query. Código da unidade que será buscado.
-    * campos - Parâmetros de query.**Opcional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * {idCreas} - Parâmetro de path. Código da unidade que será buscado.
+    * campos - Parâmetros de query. **Opcional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
         
@@ -747,11 +751,13 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
     * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
-    * campos - Parâmetros de query.**Opcional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * campos - Parâmetros de query. **Opcional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
         
-        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
+        **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco.
+        
+    * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     
@@ -846,7 +852,7 @@ Busca posto do SINE por código.
 
     **Parâmetros** 
     
-    * {codPosto} - Parâmetro de query. Código do posto que será buscado.
+    * {codPosto} - Parâmetro de path. Código do posto que será buscado.
     
     **Retorno**
     
