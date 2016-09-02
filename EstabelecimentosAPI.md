@@ -46,7 +46,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Serviços Especializados
 
-* [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados)
+* [`GET - /rest/servicos/unidade/{codUnidade}`](#serviços-especializados-1)
 
 ## Dados disponíveis
 Cada estabelecimento de saúde está representado pelos seguintes dados.
