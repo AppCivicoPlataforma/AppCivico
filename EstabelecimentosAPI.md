@@ -90,7 +90,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     **Parâmetros**
     * municipio - Parâmetro de query **opcional**. O nome do múnicipio que se deseja buscar as unidades.
     * uf - Parâmetro de query **opcional**. É a sigla do estado onde se encontra o estabelecimento.
-    * campos - Parâmetros de query **opicionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * campos - Parâmetros de query **opcionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         codCnes, codUnidade, codIbge, nomeFantasia, tipoUnidade, esferaAdministrativa, vinculoSus, temCentroCirurgico, temNeoNatal, uf, entre outros.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
@@ -369,10 +369,10 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
 
      **Parâmetros**
     
-    * produto - Parâmetro de query. **Opicional**. Realiza busca pelo nome do produto.
-    * codBarraEan - Parâmetro de query. **Opicional**. Realiza busca pelo [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13), que é um código representado por 13 dígitos.
-    * apresentacao - Parâmetro de query. **Opicional**. Realiza busca pela descrição do remédio.
-    * campos - Parâmetros de query. **Opicional**. Representa a lista de campos a serem retornados.
+    * produto - Parâmetro de query. **Opcional**. Realiza busca pelo nome do produto.
+    * codBarraEan - Parâmetro de query. **Opcional**. Realiza busca pelo [código de barras EAN-13](http://www.mgitech.com.br/blog/bid/112017/O-que-o-c-digo-de-barras-EAN-13), que é um código representado por 13 dígitos.
+    * apresentacao - Parâmetro de query. **Opcional**. Realiza busca pela descrição do remédio.
+    * campos - Parâmetros de query. **Opcional**. Representa a lista de campos a serem retornados.
     * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.
     * quantidade - Parâmetro de query que indica quantidade máxima de remédios a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
@@ -476,12 +476,12 @@ Busca as unidades do CRAS por município.
     
     **Parâmetros**
     
-    * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
-    * campos - Parâmetros de query. **Opicional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio do qual se deseja buscar as unidades.
+    * campos - Parâmetros de query. **Opcional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
         **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
     * pagina - Parâmetro de query **opcional** para uma busca paginada, número da página com valor padrão 0.
-    * quantidade - Parâmetro de query define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
+    * quantidade - Parâmetro de query **opcional** que define a quantidade máxima de estabelecimentos a serem retornados. Caso não seja informado, utiliza valor padrão igual a 30.
     
     **Retorno**
     
@@ -526,8 +526,8 @@ Buscar dados de uma unidade do CRAS por código.
 
     **Parâmetros**
     
-    * {idCras} - Parâmetro de query. Código da unidade que será buscado.
-    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * {idCras} - Parâmetro de query **obrigatório**. Código da unidade que será buscado.
+    * campos - Parâmetros de query **opcionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
         
@@ -565,7 +565,7 @@ Buscar dados de uma unidade do CRAS por código.
             
     * 400 - Parâmetros inconsistêntes
             
-        O parâmetro de campos está em formato inválido ou o idCRAS não é um valor numérico.
+        O parâmetro de campos está em formato inválido ou o idCras não é um valor numérico.
             
 
 ### CRAS Georreferenciado
@@ -579,7 +579,7 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
     * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
-    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * campos - Parâmetros de query **opcionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
         
@@ -639,7 +639,7 @@ Busca as unidades do CREAS por município.
     **Parâmetros**
     
     * municipio - Parâmetro de query. **Opcional**. O nome do múnicipio que se deseja buscar as unidades.
-    * campos - Parâmetros de query. **Opicional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * campos - Parâmetros de query. **Opcional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
        
          bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
 
@@ -692,7 +692,7 @@ Buscar dados de uma unidade do CREAS por código.
     **Parâmetros**
     
     * {idCreas} - Parâmetro de query. Código da unidade que será buscado.
-    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * campos - Parâmetros de query.**Opcional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
         
@@ -747,7 +747,7 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
     * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
-    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * campos - Parâmetros de query.**Opcional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
         
@@ -891,7 +891,7 @@ Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
     * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os estabelecimentos.
-    * campos - Parâmetros de query.**Opicional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
+    * campos - Parâmetros de query.**Opcional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
     
         bairro,cep,codPosto,endereco,entidadeConveniada,id,lat,long,municipio,nome,telefone,uf.
         
