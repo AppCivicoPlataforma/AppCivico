@@ -42,6 +42,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/grupos/{codGrupo}/membros`](#membros-por-grupo)
 * [`POST - /rest/grupos/{codGrupo}/membros`](#adicionar-membro-em-grupo)
 * [`GET - /rest/grupos/{codGrupo}/membros/{codMembro}`](#encontrar-membro-em-grupo)
+* [`DELETE - /rest/grupos/{codGrupo}/membros/{codMembro}`](#excluir-membro-em-grupo)
 
 ### Hashtags
 
@@ -695,6 +696,37 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         ```
     * 404 - Não encontrado
       Grupo com código especificado não encontrado ou pessoa com o código especificado não encontrada ou a pessoa não é membro desse grupo.
+      
+      
+### Excluir Membro em Grupo
+
+  Esse *endpoint* exclui determinado membro de um grupo por código.
+  
+* `DELETE - /rest/grupos/{codGrupo}/membros/{codMembro}`
+  
+   **Parâmetros** 
+    
+    * appToken - Parâmetro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * {codGrupo} - Parâmetro de path. Indica o código do grupo.
+    
+    * {codPessoa} - Parâmetro de path. Indica o código do membro a ser excluído.
+  
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Excluído com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Grupo ou membro com o código informado não se encontra cadastrado.
+
+    * 401 - Não autorizado
+      
+      O apptoken enviado não é um token válido ou está expirado.
+
+    * 400 - Parâmetros inconsistentes.
 
 # Hashtags
       
