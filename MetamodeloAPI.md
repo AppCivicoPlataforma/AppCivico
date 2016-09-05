@@ -23,6 +23,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Aplicativos
 
 * [`GET - /rest/aplicativos`](#buscar-aplicativos)
+* [`GET - /rest/aplicativos/pessoa/{codPessoa}`](#buscar-aplicativos-por-pessoa)
 * [`POST - /rest/aplicativos`](#cadastrar-aplicativo)
 * [`GET - /rest/aplicativos/{codAplicativo}`](#informações-de-aplicativo)
 * [`PUT - /rest/aplicativos/{codAplicativo}`](#alterar-aplicativo)
@@ -156,6 +157,44 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
           "descricao": "Aplicativo para gerência de cartão de vacina digital"
         }
       ```
+      
+### Buscar aplicativo por pessoa
+  
+  Este *endpoint* retorna  o conjunto de aplicativos de um responsável buscado por código do mesmo.
+  
+* `GET - /rest/aplicativos/pessoa/{codPessoa}`
+
+  **Parâmetros**
+  
+    * {codPessoa} - Código da pessoa responsável pelos aplicativos a serem buscados.
+  
+  **Retorno**
+    
+    * 200 - OK
+      
+      **Exemplo**
+      
+      ````
+        {
+          "cod": 21,
+          "nome": "MeuRemedio",
+          "descricao": "Aplicativo para exibir preços de medicamentos com base em dados abertos da Anvisa.",
+          "links": [
+            {
+              "rel": "self",
+              "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/21"
+            },
+            {
+              "rel": "responsavel",
+              "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/pessoas/148"
+            }
+          ]
+        }
+      ```
+      
+    * 400 - Bad Request
+      
+      Código informado está sintaticamente incorreto.
       
 ### Cadastrar Aplicativo
     
