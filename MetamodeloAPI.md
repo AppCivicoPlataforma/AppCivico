@@ -61,6 +61,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * [`POST - /rest/notificacoes`](#registrar-notificação)
 * [`GET - /rest/notificacoes/{codNotificacao}`](#buscar-notificação)
+* [`GET - /rest/notificacoes/pessoa/{codPessoa}`](#buscar-notificação-por-pessoa)
 * [`PUT - /rest/notificacoes/{codNotificacao}`](#alterar-notificação)
 
 ### Pessoas
@@ -1135,8 +1136,60 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
             }
           }
         ```
-    * 404 - Não encontrado
-        Instalação não encontrada.
+        
+    
+    * 404 - Não encontrado -
+      Notificação não encontrada.
+        
+### Buscar Notificação por Pessoa
+  
+  A partir da identificação do usuário, esta operação recupera todas as notificações dele ou apenas aquelas que ainda não foram lidas.
+  
+* `GET - /rest/notificacoes/pessoa/{codPessoa}`
+
+  **Parâmetros**
+  
+  * {codPessoa} - Parâmetro de path que representa o código do usuário responsável pelas notificações a serem buscadas.
+  * notificacoesNaoLidas - **Opcional**. Parâmetro booleano que caso seja "true", apenas as notificações não lidas serão retornadas. Caso seja "false" (que é o valor padrão), todas as notificações daquele usuário serão recuperadas.
+  * pagina - **Opcional**.  Parâmetro de query opcional para uma busca paginada. **Opcional**. Número da página com valor padrão 0.
+  * quantidadeDeItens -  **Opcional**. Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+  
+  **Retorno**
+    
+    * 200 - Ok
+    
+      **Exemplo**
+        
+        ```
+          {
+            "descricao": "oi",
+            "destinatario": {
+              "codPessoa": 1
+            },
+            "dataHoraLeitura": 1448024436000,
+            "JSON": {
+              "post": {
+                 "codPost": 1
+              },
+            "tipo": "Teste",
+            "autor": {
+            "codPessoa": 1
+            }
+          }
+        }
+        ```
+        
+     **Retorno**
+    * 204 - No content -
+    
+      Usuário inexistente ou sem notificações cadastradas.
+        
+    * 404 - Nenhuma notificação encontrada
+    
+    * 400 - Bad Request -
+    
+      Parâmetros incorretos
+
 
 ### Alterar Notificação
   
