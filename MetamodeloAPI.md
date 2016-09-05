@@ -75,6 +75,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/pessoas/{codPessoa}`](#encontrar-pessoa)
 * [`POST - /rest/pessoas/{codPessoa}`](#atualizar-pessoa)
 * [`DELETE - /rest/pessoas/{codPessoa}`](#excluir-cadastro)
+* [`GET - /rest/pessoas/{codPessoa}/status`](#status-cadastro)
 * [`PUT - /rest/pessoas/reativar`](#reativar-cadastro)
 * [`POST - /rest/pessoas/{codPessoa}/definirNovaSenha`](#alterar-senha)
 * [`GET - /rest/pessoas/{codPessoa}/fotoPerfil`](#foto-de-perfil)
@@ -1589,7 +1590,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
     * 404 - Não encontrado.
       
-      Pessoa com o código informada não se encontra cadastrada.
+      Pessoa com o código informado não se encontra cadastrada.
 
     * 401 - Não autorizado
         
@@ -1601,7 +1602,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
   Usuários que foram excluídos por meio da operação Delete /rest/pessoas/{codPessoa} podem ter suas contas recuperadas (reativadas) ao realizar a presente operação de reativação..
   
-* `DELETE - /rest/pessoas/reativar`
+* `PUT - /rest/pessoas/reativar`
   
   **Parâmetros** 
     
@@ -1620,11 +1621,33 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
     * 404 - Não encontrado.
       
-      Pessoa com o código informada não se encontra cadastrada.
+      Pessoa com o código informado não se encontra cadastrada.
 
     * 401 - Não autorizado
         
         Senha atual incorreta.
+        
+    * 400 - Parâmetros inconsistentes.
+    
+### Status cadastro
+  
+  A partir do código do usuário é possível identificar se sua conta está "Desativada" ou "Ativada", ou seja, se ela foi excluída ou não. Para contas desativadas, é possível reativá-la utilizando a operação /rest/pessoas/reativar.
+  
+* `GET - /rest/pessoas/{codPessoa}/status`
+  
+  **Parâmetros** 
+    
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa a ser verificado o status.
+  
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Ativada/Desativada
+      
+    * 404 - Não encontrado.
+      
+      Pessoa com o código informado não se encontra cadastrada.
         
     * 400 - Parâmetros inconsistentes.
     
