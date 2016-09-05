@@ -63,6 +63,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/notificacoes/{codNotificacao}`](#buscar-notificação)
 * [`GET - /rest/notificacoes/pessoa/{codPessoa}`](#buscar-notificação-por-pessoa)
 * [`PUT - /rest/notificacoes/{codNotificacao}`](#alterar-notificação)
+* [`DELETE - /rest/notificacoes/{codNotificacao}`](#excluir-notificação)
 
 ### Pessoas
 
@@ -1038,7 +1039,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 # Notificações
   
-  Através das notificações é possível armazenar ações feitas pelos usuários dentro dos aplicativos para que se possa mostrar posteriormente. É importante lembrar que a estrutura de notificação **não** fornece o serviço de #[Push Notifications](http://fabricadeaplicativos.com.br/fabrica/o-que-e-e-como-funciona-a-notificacao-push/), os endpoits de notificação são apenas para armazenamento. 
+  Através das notificações é possível armazenar ações feitas pelos usuários dentro dos aplicativos para que se possa mostrar posteriormente. É importante lembrar que a estrutura de notificação **não** fornece o serviço de #[Push Notifications](http://fabricadeaplicativos.com.br/fabrica/o-que-e-e-como-funciona-a-notificacao-push/), os endpoints de notificação são apenas para armazenamento. 
 
 ### Registrar Notificação
   
@@ -1226,6 +1227,36 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 400 - Parâmentros incorretos
       
       Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
+      
+### Excluir Notificação
+  
+  Excluir uma notificação.
+  
+* [`DELETE - /rest/notificacoes`]
+  
+  **Parâmetros**
+  
+    **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+   * {codNotificacao} - Parâmetro de path que representa o código da notificação a ser excluída.
+  
+  **Retorno**
+  
+    * 200 - Notificação excluída com sucesso.
+    
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmetros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
+      
+    * 404 - Não encontrado
+      
+      Notificação não foi encontrada. 
       
 # Pessoas
 
