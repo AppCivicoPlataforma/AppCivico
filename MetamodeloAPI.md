@@ -2,7 +2,7 @@
 
 ##API Referece
 
-Esses *endpoints* são responsáveis por fornecer uma infraestrutura para armazenamento de dados de aplicações cívicas. O metamodelo provê serviços como cadastro e armazenamento de usuários genéricos, criação de perfis específicos para determinado aplicativo, login com senha ou com redes sociais **Facebook**, **Twitter**, **Intagram** e **GooglePlus**. Além de dar suporte à dados de usuários o metamodelo também proporciona a criação de grupos de usuário relacionados a um aplicativo, provê também suporte à notificações para aplicativos móveis. Para armazenamento de dados bastante genéricos é dado ao desenvolvedor o objeto de Postagem onde criada uma postagem, pode - se associar vários conteúdos a mesma seja ele objetos da aplicação ou arquivos binários como por exemplo fotos ou vídeos. Os conteúdos que são objetos objetos são salvos como no formato JSON, fazendo com que ele seja dinâmico e genérico podendo armazenar qualquer objeto. Podendo posteriormente alterar, excluir e fazer buscas nos mesmos.
+Esses *endpoints* são responsáveis por fornecer uma infraestrutura para armazenamento de dados de aplicações cívicas. O metamodelo provê serviços como cadastro e armazenamento de usuários genéricos, criação de perfis específicos para determinado aplicativo, login com senha ou com redes sociais **Facebook**, **Twitter**, **Instagram** e **GooglePlus**. Além de dar suporte à dados de usuários o metamodelo também proporciona a criação de grupos de usuário relacionados a um aplicativo, provê também suporte à notificações para aplicativos móveis. Para armazenamento de dados bastante genéricos é dado ao desenvolvedor o objeto de Postagem onde criada uma postagem, pode - se associar vários conteúdos a mesma seja ele objetos da aplicação ou arquivos binários como por exemplo fotos ou vídeos. Os conteúdos que são objetos objetos são salvos como no formato JSON, fazendo com que ele seja dinâmico e genérico podendo armazenar qualquer objeto. Podendo posteriormente alterar, excluir e fazer buscas nos mesmos.
 
 Todos os dados armazenados no metamodelo, que não dizem respeito à dados de usuários ou perfil, são abstraidos como **Postagem** e seus **Conteudos**, sejam eles textos JSON ou arquivos binários. Uma postagem pode ter um ou mais conteúdos, além de poder estar relacionada à uma outra postagem.
 
@@ -75,6 +75,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/pessoas/{codPessoa}`](#encontrar-pessoa)
 * [`POST - /rest/pessoas/{codPessoa}`](#atualizar-pessoa)
 * [`DELETE - /rest/pessoas/{codPessoa}`](#excluir-cadastro)
+* [`PUT - /rest/pessoas/reativar`](#reativar-cadastro)
 * [`POST - /rest/pessoas/{codPessoa}/definirNovaSenha`](#alterar-senha)
 * [`GET - /rest/pessoas/{codPessoa}/fotoPerfil`](#foto-de-perfil)
 * [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`](#cadastrar-foto-de-perfil)
@@ -1568,14 +1569,15 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
 ### Excluir cadastro
   
-  Exclui permanentemente dados cadastrais de uma pessoa.
-  **Obs:** Essa é uma ação que não pode ser desfeita. Certifique-se de sempre pedir confirmações por parte do usuário.
+  Exclui temporariamente dados cadastrais de uma pessoa.
+  **Obs:** Essa é uma ação que desativa o cadastro do usuário. Certifique-se de sempre pedir confirmações por parte do usuário.
+  Para reativar o cadastro, utilizar o endpoint de Reativar Cadastro.
   
 * `DELETE - /rest/pessoas/{codPessoa}`
   
   **Parâmetros** 
     
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmetro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
     * {codPessoa} - Parâmetro de path. Indica o código da pessoa a ser excluída.
   
@@ -1584,6 +1586,37 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 200 - Ok    
       
       Excluído com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Pessoa com o código informada não se encontra cadastrada.
+
+    * 401 - Não autorizado
+        
+        Senha atual incorreta.
+        
+    * 400 - Parâmetros inconsistentes.
+    
+### Reativar cadastro
+  
+  Usuários que foram excluídos por meio da operação Delete /rest/pessoas/{codPessoa} podem ter suas contas recuperadas (reativadas) ao realizar a presente operação de reativação..
+  
+* `DELETE - /rest/pessoas/reativar`
+  
+  **Parâmetros** 
+    
+    * appIdentifier - Parâmetro de header. **Opcional**. Código do aplicativo onde as pessoas possuem um perfil.
+    * email - Parâmetro de header. **Opcional**. E-mail da pessoa.
+    * senha - Parâmetro de header. **Opcional**. Senha da pessoa.
+    * facebookToken - Parâmetro de header. **Opcional**. Facebook id que irá buscar a pessoa cadastrada com o mesmo.
+    * googleToken - Parâmetro de header. **Opcional**. GooglePlus id que irá buscar a pessoa cadastrada com o mesmo.
+    * twitterToken - Parâmetro de header. **Opcional**. Twitter id que irá buscar a pessoa cadastrada com o mesmo.
+    
+  **Retorno**
+    
+    * 201 - Reativado    
+      
+      Usuário reativado com sucesso.
       
     * 404 - Não encontrado.
       
