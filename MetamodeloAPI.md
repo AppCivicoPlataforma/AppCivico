@@ -55,6 +55,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`POST - /rest/instalacoes`](#registrar-instalação) 
 * [`GET - /rest/instalacoes/{codInstalacao}`](#buscar-instalação)
 * [`PUT - /rest/instalacoes/{codInstalacao}`](#alterar-instalação)
+* [`DELETE - /rest/instalacoes/{codInstalacao}`](#excluir-instalação)
   
 ### Notificações
 
@@ -911,10 +912,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 400 - Parâmentros incorretos
       
       Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
-      
-    * 404 - Não encontrado
-      
-      Aplicativo com o código passado no campo **codAplicativo** não foi encontrado ou usuário com o código passado no campo **codUsuario** não foi encontrado. 
 
 ### Encontrar Instalação
 
@@ -1001,7 +998,42 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
     * 404 - Não encontrado
       
-      Aplicativo com o código passado no campo **codAplicativo** não foi encontrado ou usuário com o código passado no campo **codUsuario** não foi encontrado. 
+      Instalação com o código passado no campo **codInstalacao** não foi encontrado.
+
+### Excluir Instalação
+
+  Excluir uma instalação.
+  
+* `DELETE - /rest/instalacoes/{codInstalacao}`
+
+  **aplication/json**
+      
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    * {codInstalacao} - Parâmetro de path que representa o código da instalação a ser excluída.
+
+      **Exemplo**
+      
+      ````
+        {
+          "Instalação de aplicativo excluída com sucesso" 
+        }
+      ```
+  
+  **Retorno**
+  
+    * 200 - Instalação excluída com sucesso.
+      
+    * 401 - Não autorizado.
+      
+      O apptoken enviado não é um token válido ou está expirado.
+          
+    * 400 - Parâmentros incorretos
+      
+      Falta de parâmetros obrigatórios ou parâmetros incorretos ou device token já está registrado.
+      
+    * 404 - Não encontrado
+          
+      Instalação com o código passado no campo **codInstalacao** não foi encontrado.
 
 # Notificações
   
