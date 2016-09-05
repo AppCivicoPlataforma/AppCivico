@@ -33,6 +33,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/aplicativos/{codAplicativo}/tipos-perfil`](#tipos-de-perfil-por-aplicativo)
 * [`POST - /rest/aplicativos/{codAplicativo}/tipos-perfil`](#cadastrar-tipo-de-perfil)
 * [`GET - /rest/aplicativos/{codAplicativo}/tipos-perfil/{codTipoPerfil}`](#encontrar-tipo-de-perfil)
+* [`PUT - /rest/aplicativos/{codAplicativo}/tipos-perfil/{codTipoPerfil}`](#atualizar-tipo-de-perfil)
 
 ### Grupos
 
@@ -164,7 +165,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         }
       ```
       
-### Buscar aplicativo por pessoa
+### Buscar aplicativos por pessoa
   
   Este *endpoint* retorna  o conjunto de aplicativos de um responsável buscado por código do mesmo.
   
@@ -463,7 +464,32 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 404 - Não encontrado.
     
         Não foi encontrado um tipo de perfil com esse código nesse aplicativo.
+
+### Atualizar Tipo de Perfil
   
+  Este *endpoint* atualiza informações de um tipo de perfil especifico buscado por código do mesmo.
+
+* `PUT - /rest/aplicativos/{codAplicativo}/tipos-perfil/{codTipoPerfil}`
+  
+  **Parâmetros**
+    
+    * {codAplicativo} - Parâmetro de path que indica código do aplicativo.
+    * {codTipoPerfil} - Parâmtro de path que indica código do tipo de perfil a ser atualizado.
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    * **body** - Campos com informações sobre o tipo de perfil.
+      
+        * descricao - Descrição do tipo de perfil.
+    
+  **Retorno**
+  
+    * 201 - Created
+      Tipo de perfil atualizado.
+
+    * 401 - Não autorizado.
+      O apptoken enviado não é um token válido ou está expirado.
+      
+    * 404 - Não encontrado
+      Tipo de perfil ou aplicativo não cadastrado.
   
 # Grupos
 
