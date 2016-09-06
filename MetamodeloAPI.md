@@ -1691,9 +1691,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
   
     * {codPessoa} - Parâmetro de path. Indica o código da pessoa que irá alterar a senha.
   
-    * email - e-mail do usuário que deseja alterar senha.
-    * senhaAtual - Senha atual para autenticação antes da alteração.
-    * novaSenha - Nova senha do usuário.
+    * email - Parâmtro de header. E-mail do usuário que deseja alterar senha.
+    * senhaAtual - Parâmtro de header. Senha atual para autenticação antes da alteração.
+    * novaSenha - Parâmtro de header. Nova senha do usuário.
     
   **Retorno**
     
