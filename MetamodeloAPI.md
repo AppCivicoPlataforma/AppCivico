@@ -38,7 +38,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Grupos
 
 * [`POST - /rest/grupos`](#criar-grupo)
-* [`GET - /rest/grupos/subgrupos/{codGrupoPai}`](#encontrar-subgrupo)
+* [`GET - /rest/grupos/subgrupos/{codGrupoPai}`](#encontrar-subgrupos)
 * [`GET - /rest/grupos/{codGrupo}`](#encontrar-grupo)
 * [`DELETE - /rest/grupos/{codGrupo}`](#excluir-grupo)
 * [`GET - /rest/grupos/{codGrupo}/membros`](#membros-por-grupo)
