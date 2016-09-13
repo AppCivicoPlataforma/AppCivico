@@ -277,6 +277,39 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
     
     * {codUnidade} - Parâmetro de path que indica o código de unidade.
     
+    **Especialidades Habilitadas Disponíveis**
+    
+    * DST/AIDS
+    * NEFROLOGIA
+    * OSTEOGENESIS IMPERFECTA
+    * TRANSEXUALIZADOR
+    * NEUROLOGIA/NEUROCIRURGIA
+    * PNEUMOLOGIA
+    * TRANSPLANTES
+    * ATENCAO A SAUDE AUDITIVA
+    * UNIDADE TERAPIA INTENSIVA
+    * TRAUMATO-ORTOPEDIA
+    * QUEIMADOS
+    * ATENCAO A OBESIDADE GRAVE
+    * ONCOLOGIA
+    * VIDEOCIRURGIAS
+    * ATENCAO A SAUDE OCULAR
+    * ATENCAO A SAUDE MENTAL
+    * HOSPITAL DIA
+    * DOR CRONICA
+    * PLANEJAMENTO FAMILIAR/ESTERELIZACAO
+    * CUIDADOS PROLONGADOS
+    * TERAPIA NUTRICIONAL
+    * REABILITACAO
+    * UNIDADE DE CUIDADOS INTERMEDIARIOS NEONATAL
+    * ATENCAO A SAUDE BUCAL
+    * INTERNACAO DOMICILIAR
+    * URGENCIA
+    * ATENCAO AO IDOSO
+    * CARDIOVASCULAR
+    * MATERNO INFANTIL
+    * PROGRAMA DA MAMOGRAFIA MÓVEL
+
     **Retorno**
     
     **Exemplo**
