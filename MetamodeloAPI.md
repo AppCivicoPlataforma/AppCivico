@@ -38,6 +38,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Grupos
 
 * [`POST - /rest/grupos`](#criar-grupo)
+* [`GET - /rest/grupos/subgrupos/{codGrupoPai}`](#encontrar-subgrupo)
 * [`GET - /rest/grupos/{codGrupo}`](#encontrar-grupo)
 * [`DELETE - /rest/grupos/{codGrupo}`](#excluir-grupo)
 * [`GET - /rest/grupos/{codGrupo}/membros`](#membros-por-grupo)
@@ -551,7 +552,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Encontrar Grupo
 
-  Este *endpoint* retorna informações de um grupo especifico buscado por código do mesmo.
+  Este *endpoint* retorna informações de um grupo específico buscado pelo código.
 
 * `GET - /rest/grupos/{codGrupo}`
 
@@ -587,6 +588,38 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       ```
       
     * 404 - Grupo não encontrado.
+
+### Encontrar Subgrupos
+
+  Este *endpoint* retorna os grupos filhos diretos de um grupo pai especificado.
+
+* `GET - /rest/grupos/subgrupos/{codGrupoPai}`
+
+   **Parâmetros**
+    
+    * {codGrupoPai} - Parâmetro de path que indica o código do grupo pai, de quem os grupos filhos serão buscados.
+  
+  **Retorno**
+    
+    * 200 - Ok
+      
+      **Exemplo**
+      
+      ```
+        [
+          {
+            "descricao": "filho do 3",
+            "codGrupo": 4,
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/4"
+              }
+            ]
+          }
+        ]
+      ```
+
 
 ### Excluir Grupo
 
