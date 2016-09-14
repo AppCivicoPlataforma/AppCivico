@@ -277,7 +277,8 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
     
     * {codUnidade} - Parâmetro de path que indica o código de unidade.
     
-    **Especialidades Habilitadas Disponíveis**
+
+#### Especialidades Habilitadas Disponíveis
     
     * DST/AIDS
     * NEFROLOGIA
