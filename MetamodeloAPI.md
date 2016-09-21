@@ -37,6 +37,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Grupos
 
+* [`GET - /rest/grupos`](#buscar-grupos)
 * [`POST - /rest/grupos`](#criar-grupo)
 * [`GET - /rest/grupos/subgrupos/{codGrupoPai}`](#encontrar-subgrupos)
 * [`GET - /rest/grupos/{codGrupo}`](#encontrar-grupo)
@@ -355,7 +356,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     * {codAplicativo} - Parâmetro de path que indica o código do aplicativo em que os perfis serão buscados.
     * pagina - Parâmetro de query opcional para uma busca paginada. **Opcional**. Número da página com valor padrão 0.
-    * quantidadeDeItens - Parâmetro de query opcional que define o máximo de escolas retornadas na busca. **Opcional**.Valor padrão é 20.
+    * quantidadeDeItens - Parâmetro de query opcional que define o máximo de tipos de perfil retornados na busca. **Opcional**. Valor padrão é 20.
   
   **Retorno**
   
@@ -496,11 +497,77 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   Assim como diferentes perfis, para cada aplicativo é possível criar é possível grupos de usuários em um aplicativo. Onde se pode adicionar membros cadastrados na plataforma pelo seu código de usuário.
 
+### Buscar Grupos
+
+  Este *endpoint* é responsável por realizar uma busca genérica de grupos de um determinado aplicativo utilizando-se de filtros opcaionais.
+
+* `GET - /rest/grupos`
+
+  **Parâmetros**
+    
+    * codAplicativo - **Obrigatório**. Código do aplicativo ao qual o grupo pertence.
+    * descricao - **Opcional**. Parte da descrição do grupo.
+    * codObjeto - **Opcional**. Código do objeto ao qual esse grupo está associado.
+    * codTipoObjeto - **Opcional**. Código do tipo de objeto ao qual esse grupo está associado.
+    * codPessoa - **Opcional**. Código de um usuário. Utilize este filtro para recuperar todos os grupos dos quais um determinado usuário faz parte.
+    * pagina - **Opcional**. Parâmetro de query opcional para uma busca paginada. Número da página com valor padrão 0.
+    * quantidadeDeItens - **Opcional**. Parâmetro de query opcional que define o máximo de grupos retornados na busca. Valor padrão é 30.
+    
+    **Exemplo**
+      
+    ````
+    {
+      "codAplicativo": 0,
+      "descricao": "string",
+      "codTipoObjeto": 0,
+      "codObjeto": 0,
+      "codPessoa": 0
+    }
+    ````
+
+  **Retorno**
+
+  * 200 - OK.
+    
+      Retorna a lista de grupos. 
+        
+        ```
+          [
+            {
+              "descricao": "string",
+              "codGrupo": 2,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/2"
+                }
+              ]
+            }, 
+            {
+              "descricao": "string2",
+              "codGrupo": 3,
+              "links": [
+                {
+                  "rel": "self",
+                  "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/grupos/3"
+                }
+              ]
+            }
+          ]
+        ```
+  
+  * 400 - Parâmetros incorretos
+    
+    Falta de parâmetros obrigatórios ou parâmetros incorretos.
+  * 404 - Aplicativo não encontrado
+  
+    Não exite um aplicativo cadastrado com o código informado no campo **codAplicativo**.
+
 ### Criar grupo
 
   Este *endpoint* é responsável por criar um novo grupo de usuários para um aplicativo.
 
-* `POST - /rest/grupos` 
+* `POST - /rest/grupos`
 
   **Parâmetros**
   
@@ -510,10 +577,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
     * **body** - Campos com informações sobre o grupo.
     
-      * codAplicativo - Código do aplicativo à qual o grupo pertence.
+      * codAplicativo - Código do aplicativo ao qual o grupo pertence.
       * codGrupoPai - **Opcional**. Para criação de subgrupos em hieraquia e indica de qual grupo, esse grupo é um subgrupo.
-      * codObjeto -  **Opcional**. Código do objeto à qual esse grupo está associado.
-      * codTipoObjeto -  **Opcional**. Código do tipo de objeto à qual esse grupo está associado.
+      * codObjeto - **Opcional**. Código do objeto ao qual esse grupo está associado.
+      * codTipoObjeto - **Opcional**. Código do tipo de objeto ao qual esse grupo está associado.
       * descricao - Descrição do grupo.
       
       **Exemplo**
@@ -547,7 +614,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     Falta de parâmetros obrigatórios ou parâmetros incorretos.
   * 404 - Aplicativo não encontrado
   
-    Não exite um aplicativo cadastrado com o código informado no campo **codAplicativo**.    
+    Não exite um aplicativo cadastrado com o código informado no campo **codAplicativo**.
 
 
 ### Encontrar Grupo
