@@ -79,6 +79,8 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 * turnoAtendimento -  Referente aos turnos de atendimento do estabelecimento.
 * lat - Referênte à geolocalização do estabelecimento indicando latitude.
 * long - Referênte à geolocalização do estabelecimento indicando latitude.
+* telefone - Referente ao telefone do estabelecimento e representa o número.
+* cnpj - Referente ao CNPJ do estabelecimento.
 
 
 ### Estabelecimentos
