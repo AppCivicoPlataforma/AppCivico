@@ -108,6 +108,7 @@ Cada escola está representado pelos seguintes dados.
       * uf - Sigla do estado onde se encontra a escola.
       * situacaoFuncionamento - Filtra por situação de funcionamento. Os parâmetros válidos são: Em Atividade, Paralisada ou Extinta.
       * categoriaEscolaPrivada - Filtra a categoria da escola privada. Os parâmtros válidos são: Particular, Comunitária, Confessional ou Filantrópica.
+      * esferaAdministrativa - Filtra a esfera administrativa da escola. Os parâmtros válidos são: Estadual, Municipal, Federal ou Privada.
       * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Deve-se separar cada campo apenas por vírgula, sem espaço em branco. Exemplo:
          endereco,qtdAlunos,qtdFuncionarios
       * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
