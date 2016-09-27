@@ -143,14 +143,14 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
 
 ### Estabelecimentos Georreferenciados
 
-Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio de distância.
+Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com determinado raio (em quilômetros) de distância.
 
 * `GET - /rest/estabelecimentos/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
     **Parâmetros**
   * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
   * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
-  * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os estabelecimentos.
+  * {raio} - Parâmetro de path que representa a distância (em quilômetros), a partir do ponto de referência, que serão buscados os estabelecimentos.
   * texto - Parâmetro de query que é utilizado para busca textual livre em cima de diversos dados relativos a estabelecimentos, como por exemplo: especialidades, serviços e profissionais.
   * categoria - Parâmetro de query utilizado para filtrar os estabelecimentos de saúdes por categorias específicas. As categorias possíveis para filtro são:
 
@@ -606,7 +606,7 @@ Buscar dados de uma unidade do CRAS por código.
 
 ### CRAS Georreferenciado
 
-Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado.
+Traz postos do CRAS ao redor de uma latitude e longitude em um raio (em quilômetros) determindado.
 
 * `GET - /rest/assistenciasocial/cras/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
@@ -614,7 +614,7 @@ Traz postos do CRAS ao redor de uma latitude e longitude em um raio determindado
     
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
-    * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
+    * {raio} - Parâmetro de path que representa a distância (em quilômetros), a partir do ponto de referência, que serão buscados os CRAS.
     * campos - Parâmetros de query **opcionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         cep,codIbgeMun,complemento,endereco,gid,idCras,lat,long,nomeCras,nomeMunicipio,numero,theGeom,tipoLogradouro,uf.
@@ -778,7 +778,7 @@ Buscar dados de uma unidade do CREAS por código.
 
 ### CREAS Georreferenciado
 
-Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindado.
+Traz postos do CREAS ao redor de uma latitude e longitude em um raio (em quilômetros) determindado.
 
 * `GET - /rest/assistenciasocial/creas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
@@ -786,7 +786,7 @@ Traz postos do CREAS ao redor de uma latitude e longitude em um raio determindad
     
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
-    * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os CRAS.
+    * {raio} - Parâmetro de path que representa a distância (em quilômetros), a partir do ponto de referência, que serão buscados os CRAS.
     * campos - Parâmetros de query. **Opcional**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         
         bairro,cep,codigoIbge,complemento,dataImplantacao,id,idCreas,latitude,localizacaoCreas,logradouro,longitude,municipio,nomeCreas,numero,pontoReferencia,populacaoCenso2010,porteCenso2010,regiao,tipoLogradouro,uf.
@@ -924,7 +924,7 @@ Busca posto do SINE por código.
 
 ### Postos do SINE Georreferenciados
 
-Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio de distância.
+Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio (em quilômetros) de distância.
 
 * `GET - /rest/emprego/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
     
@@ -932,7 +932,7 @@ Busca postos do SINE ao redor de uma coordenada geográfica com determinado raio
     
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
-    * {raio} - Parâmetro de path que representa a distância, a partir do ponto de referência, que serão buscados os estabelecimentos.
+    * {raio} - Parâmetro de path que representa a distância (em quilômetros), a partir do ponto de referência, que serão buscados os estabelecimentos.
     * campos - Parâmetros de query.**Opcional**.Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
     
         bairro,cep,codPosto,endereco,entidadeConveniada,id,lat,long,municipio,nome,telefone,uf.
