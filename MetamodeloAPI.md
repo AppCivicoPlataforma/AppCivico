@@ -2188,7 +2188,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     
     * **body** - Campos com informações sobre a postagem.
         
-      * autor **Obrigatório**
+      * autor - **Obrigatório**
         * codPessoa - Código da pessoa que criou a postagem.
       * codGrupoDestino - **Opcional**. Código do grupo ao qual a postagem é destinada.
       * codObjetoDestino - **Opcional**. Código do objeto ao qual a postagem está associada.
@@ -2196,7 +2196,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       * codPessoaDestino - **Opcional**. Código do usuário ao qual se refere a postagem.
       * postagemRelacionada **Opcional**
         * codPostagem - Código da postagem relacionada.
-      * tipo **Obrigatório**
+      * tipo - **Obrigatório**
         * codTipoPostagem - Código do tipo da postagem.
   
       **Exemplo** 
