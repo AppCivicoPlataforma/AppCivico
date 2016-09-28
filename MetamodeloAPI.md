@@ -2184,16 +2184,19 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
     * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
-    * appIdentifier - Parâmtro de header. Código do aplicativo que é dono da postagem.
+    * appIdentifier - Parâmtro de header **Obrigatório**. Código do aplicativo que é dono da postagem.
     
     * **body** - Campos com informações sobre a postagem.
         
-      * autor 
+      * autor **Obrigatório**
         * codPessoa - Código da pessoa que criou a postagem.
-      * codObjetoDestino - **Opcional**. Código do objeto à qual a postagem está associada.
+      * codGrupoDestino - **Opcional**. Código do grupo ao qual a postagem é destinada.
+      * codObjetoDestino - **Opcional**. Código do objeto ao qual a postagem está associada.
+      * codTipoObjetoDestino - **Opcional**. Código do tipo de objeto de destino da postagem.
+      * codPessoaDestino - **Opcional**. Código do usuário ao qual se refere a postagem.
       * postagemRelacionada **Opcional**
         * codPostagem - Código da postagem relacionada.
-      * tipo 
+      * tipo **Obrigatório**
         * codTipoPostagem - Código do tipo da postagem.
   
       **Exemplo** 
@@ -2203,7 +2206,10 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
             "autor": {
               "codPessoa": 21
             },
+            "codGrupoDestino": 0,
             "codObjetoDestino": 34397294832,
+            "codTipoObjetoDestino": 0,
+            "codPessoaDestino": 0,
             "postagemRelacionada": {
               "codPostagem": 23
             },
@@ -2211,7 +2217,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
               "codTipoPostagem": 100
             }
           }
-          
         ```
         
     **Retorno** 
