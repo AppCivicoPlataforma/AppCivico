@@ -1588,7 +1588,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 ### Reativar Conta
   
-  Através desse end point é possivel reativar o perfil do usuário que está desativado. 
+  Através desse end point é possivel reativar o perfil do usuário que está desativado. Desativação da conta é feita pelo endpoint [`DELETE - /rest/pessoas/{codPessoa}`](#excluir-cadastro).
   
 * `PUT /rest/pessoas/reativar`
  
