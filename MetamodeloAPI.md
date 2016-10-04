@@ -82,6 +82,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/pessoas/{codPessoa}/status`](#status-cadastro)
 * [`PUT - /rest/pessoas/reativar`](#reativar-cadastro)
 * [`POST - /rest/pessoas/{codPessoa}/definirNovaSenha`](#alterar-senha)
+* [`PUT - /rest/pessoas/{codPessoa}/definirNovotoken`](#alterar-token)
 * [`GET - /rest/pessoas/{codPessoa}/fotoPerfil`](#foto-de-perfil)
 * [`POST - /rest/pessoas/{codPessoa}/fotoPerfil`](#cadastrar-foto-de-perfil)
 
@@ -1836,6 +1837,40 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 401 - Não autorizado
         
         Senha atual incorreta.
+        
+    * 400 - Parâmetros inconsistentes.
+    
+### Alterar Token
+  
+  Altera os dados de token de rede social do usuário. Pelo menos um token deve ser passado via header para atualização.
+
+* `PUT - /rest/pessoas/{codPessoa}/definirNovoToken`
+
+ **Parâmetros** 
+    
+    **www-form-urlencoded**
+    
+    * appToken - Parâmetro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+  
+    * {codPessoa} - Parâmetro de path. Indica o código da pessoa que irá alterar a senha.
+  
+    * facebookToken - Parâmetro de header (opcional). Token do facebook do usuário.
+    * googleToken - Parâmetro de header (opcional). Token do google do usuário.
+    * twitterToken - Parâmetro de header (opcional). Token do twitter do usuário.
+    
+  **Retorno**
+    
+    * 200 - Ok    
+      
+      Token alterado com sucesso.
+      
+    * 404 - Não encontrado.
+      
+      Pessoa com o código informada não se encontra cadastrada.
+      
+    * 401 - Não autorizado
+        
+      Erro na autenticação.
         
     * 400 - Parâmetros inconsistentes.
 
