@@ -2320,6 +2320,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       * codObjetoDestino - **Opcional**. Código do objeto ao qual a postagem está associada.
       * codTipoObjetoDestino - **Opcional**. Código do tipo de objeto de destino da postagem.
       * codPessoaDestino - **Opcional**. Código do usuário ao qual se refere a postagem.
+      * latitude - **Opcional**. Localização geográfica da latitude de onde a postagem é cadastrada.
+      * longitude - **Opcional**. Localização geográfica da longitude de onde a postagem é cadastrada.
       * postagemRelacionada **Opcional**
         * codPostagem - Código da postagem relacionada.
       * tipo - **Obrigatório**
@@ -2336,6 +2338,8 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
             "codObjetoDestino": 34397294832,
             "codTipoObjetoDestino": 0,
             "codPessoaDestino": 0,
+            "latitude": -23.56256,
+            "longitude": -46.64069,
             "postagemRelacionada": {
               "codPostagem": 23
             },
