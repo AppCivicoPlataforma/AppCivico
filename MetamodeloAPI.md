@@ -2248,7 +2248,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * codAplicativo - Parâmetro de query **obrigatório**. Código do aplicativo do qual serão buscadas as postagens.
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
-    * {raio} - Parâmetro de path que representa a distância (em quilômetros), a partir do ponto de referência informados, que serão buscados os CRAS.
+    * {raio} - Parâmetro de path que representa a distância (em quilômetros), a partir do ponto de referência informado, de onde serão buscadas as postagens.
     * pagina - **Opcional**. Parâmetro de query opcional para uma busca paginada. Número da página com valor padrão 0.
     * quantidadeDeItens - Parâmetro de query opcional que define o máximo de postagens retornadas na busca. **Opcional**. Valor padrão é 20.
   
