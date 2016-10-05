@@ -2176,7 +2176,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
    Esse **endpoint** provê buscas de postagens podendo-se filtrar por autor, aplicativo, tipo de postagem, entre outros.
 
-* [`GET - /rest/postagens`] 
+* `GET - /rest/postagens` 
 
   **Parâmetros**
   
@@ -2239,7 +2239,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
    Esse **endpoint** provê buscas de postagens de um determinado aplicativo por meio da localização geográfica de onde a postagem foi criada.
 
-* [`GET - /rest/postagens/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]
+* `GET - /rest/postagens/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
 
   **Parâmetros**
   
