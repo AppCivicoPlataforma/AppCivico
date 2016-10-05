@@ -100,7 +100,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Postagens
 
 * [`GET - /rest/postagens`](#buscar-postagens)
-* [`GET - /rest/postagens/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#buscar-postagens-por-geolocalizacao)
+* [`GET - /rest/postagens/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#buscar-postagens-por-geolocalização)
 * [`POST - /rest/postagens`](#cadastrar-postagem)
 * [`GET - /rest/postagens/{codPostagem}`](#encontrar-postagem)
 * [`DELETE - /rest/postagens/{codPostagem}`](#excluir-postagem)
