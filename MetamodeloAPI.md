@@ -100,6 +100,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Postagens
 
 * [`GET - /rest/postagens`](#buscar-postagens)
+* [`GET - /rest/postagens/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#buscar-postagens-por-geolocalizacao)
 * [`POST - /rest/postagens`](#cadastrar-postagem)
 * [`GET - /rest/postagens/{codPostagem}`](#encontrar-postagem)
 * [`DELETE - /rest/postagens/{codPostagem}`](#excluir-postagem)
@@ -2171,7 +2172,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
   A postagem é a entidade mais genérica do metamodelo e que abstrai qualquer informação gerada por um usuário do aplicativo que queria ser armazenada dentro da plataforma. Uma postagem é só a representação básica da entidade, onde o que compõe a mesma são os [**conteúdos**](#conteudos-de-postagens) que podem ser textuais ou arquivos em geral e que serão explicados a seguir. A postagem pode, opcionalmente, estar relacionada à algum objeto e também à uma outra postagem. Um exemplo disso é um modelo de rede social onde se tem um texto publicado e o mesmo possui comentários. Abstraindo isso para o metamodelo, teriamos apenas postagens de tipos diferentes, onde cada comentário em forma de postagem estaria relacionada à uma outra postagem que representa o texto publicado. O relacionamento com objetos funciona com os campos **codObjetoDestino** e **codTipoObjetoDestino**, onde o codTipoObjetoDestino é o código do tipo de objeto que deve estar previamente cadastrado na plataforma e o código do objeto é o identificador único de um objeto qualquer, como por exemplo, uma escola ou estabelecimento de saúde.
 
-### Buscar postagens
+### Buscar Postagens
 
    Esse **endpoint** provê buscas de postagens podendo-se filtrar por autor, aplicativo, tipo de postagem, entre outros.
 
@@ -2233,8 +2234,70 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * 204 - Não encontrado
       
       Nenhuma postagem que se encaixa nos parâmetros passados foi encontrada.
-    
+
+### Buscar Postagens Por Geolocalização
+
+   Esse **endpoint** provê buscas de postagens de um determinado aplicativo por meio da localização geográfica de onde a postagem foi criada.
+
+* [`GET - /rest/postagens/latitude/{latitude}/longitude/{longitude}/raio/{raio}`]
+
+  **Parâmetros**
   
+    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * codAplicativo - Parâmetro de query **obrigatório**. Código do aplicativo do qual serão buscadas as postagens.
+    * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
+    * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
+    * {raio} - Parâmetro de path que representa a distância (em quilômetros), a partir do ponto de referência informados, que serão buscados os CRAS.
+    * pagina - **Opcional**. Parâmetro de query opcional para uma busca paginada. Número da página com valor padrão 0.
+    * quantidadeDeItens - Parâmetro de query opcional que define o máximo de postagens retornadas na busca. **Opcional**. Valor padrão é 20.
+  
+  
+  **Retorno**  
+  
+    * 200 - Sucesso.
+      
+      Dados buscados com sucesso.
+
+      ```
+       [
+          {
+            "codPostagem": 7495,
+            "dataHoraPostagem": "2016-10-05T08:29:41BRT",
+            "codAutor": 9832,
+            "conteudos": [],
+            "codTipoPostagem": 6740,
+            "latitude": -22.46506,
+            "longitude": -44.45857,
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/7495"
+              }
+            ]
+          },
+          {
+            "codPostagem": 7496,
+            "dataHoraPostagem": "2016-10-05T08:30:15BRT",
+            "codAutor": 9832,
+            "conteudos": [],
+            "codTipoPostagem": 6740,
+            "latitude": -21.05505,
+            "longitude": -33.06789,
+            "links": [
+              {
+                "rel": "self",
+                "href": "http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/postagens/7496"
+              }
+            ]
+          }
+        ]
+      ```
+      
+    * 400 - Parâmetros incorretos.
+      
+      Algum parâmetro está inconsistente.
+
 ### Cadastrar Postagem
 
   Registra uma postagem na plataforma.
