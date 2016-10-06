@@ -2249,6 +2249,9 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
     * {latitude} - Parâmetro de path que representa a latitude do ponto de referência para a busca.
     * {longitude} - Parâmetro de path que representa a longitude do ponto de referência para a busca.
     * {raio} - Parâmetro de path que representa a distância (em quilômetros), a partir do ponto de referência informado, de onde serão buscadas as postagens.
+    * codTipoObjetoDestino - Parâmetro de query. **Opcional**. Código do tipo de objeto do qual a postagem está relacionada. Caso não seja passado serão buscadas postagens relacionadas à todos tipos os objetos.
+    * codObjetoDestino - Parâmetro de query. **Opcional**. Código do objeto do qual a postagem está relacionada. Caso não seja passado serão buscadas postagens relacionadas à todos os objetos.
+    * codTiposPostagem - Parâmetro de query. **Opcional**. Códigos dos tipos de postagem, separados por vírgula, sem espaços em branco.
     * pagina - **Opcional**. Parâmetro de query opcional para uma busca paginada. Número da página com valor padrão 0.
     * quantidadeDeItens - Parâmetro de query opcional que define o máximo de postagens retornadas na busca. **Opcional**. Valor padrão é 20.
   
