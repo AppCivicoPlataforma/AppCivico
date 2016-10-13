@@ -1727,17 +1727,17 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
         
     * 400 - Parâmetros inconsistentes.
     
-### Reativar cadastro
+### Reativar Cadastro
   
-  Usuários que foram excluídos por meio da operação Delete /rest/pessoas/{codPessoa} podem ter suas contas recuperadas (reativadas) ao realizar a presente operação de reativação..
+  Usuários que foram excluídos por meio da operação Delete /rest/pessoas/{codPessoa} podem ter suas contas recuperadas (reativadas) ao realizar a presente operação de reativação.
   
 * `PUT - /rest/pessoas/reativar`
   
   **Parâmetros** 
     
     * appIdentifier - Parâmetro de header. **Opcional**. Código do aplicativo onde as pessoas possuem um perfil.
-    * email - Parâmetro de header. **Opcional**. E-mail da pessoa.
-    * senha - Parâmetro de header. **Opcional**. Senha da pessoa.
+    * email - Parâmetro de header. **Opcional**. E-mail da pessoa. É utilizado em conjunto com o parâmetro da senha.
+    * senha - Parâmetro de header. **Opcional**. Senha da pessoa. É utilizada em conjunto com o parâmetro de email.
     * facebookToken - Parâmetro de header. **Opcional**. Facebook id que irá buscar a pessoa cadastrada com o mesmo.
     * googleToken - Parâmetro de header. **Opcional**. GooglePlus id que irá buscar a pessoa cadastrada com o mesmo.
     * twitterToken - Parâmetro de header. **Opcional**. Twitter id que irá buscar a pessoa cadastrada com o mesmo.
