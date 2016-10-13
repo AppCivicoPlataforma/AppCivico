@@ -74,7 +74,6 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 * [`GET - /rest/pessoas`](#buscar-pessoa)
 * [`POST - /rest/pessoas`](#cadastrar-pessoa)
 * [`GET - /rest/pessoas/autenticar`](#autenticar)
-* [`PUT /rest/pessoas/reativar`](#reativar-conta)
 * [`POST - /rest/pessoas/redefinirSenha`](#redefinir-senha)
 * [`GET - /rest/pessoas/{codPessoa}`](#encontrar-pessoa)
 * [`POST - /rest/pessoas/{codPessoa}`](#atualizar-pessoa)
@@ -1588,33 +1587,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       
       Falta de parâmetros ou parâmetros inconsistentes.
 
-### Reativar Conta
-  
-  Através desse end point é possivel reativar o perfil do usuário que está desativado. Desativação da conta é feita pelo endpoint [`DELETE - /rest/pessoas/{codPessoa}`](#excluir-cadastro).
-  
-* `PUT /rest/pessoas/reativar`
- 
-  **Parâmetros**
-    
-    * appIdentifier - Parâmetro de header. **Optional**. Código do app, caso a reativação seja de um perfil específico que a pessoa possua em um aplicativo.
-    * email - Parâmetro de header. e-mail da pessoa.
-    * senha - Parâmetro de header. **Optional**. Para reativação de conta padrão da plataforma. Caso seja uma conta com alguma rede social, é um parâmetro opcional.
-    * facebookToken - Parâmetro de header. **Optional**. Para contas com a API do facebook.
-    * googleToken - Parâmetro de header. **Optional**. Para contas com a API do GooglePlus.
-    * twitterToken - Parâmetro de header. **Optional**. Para contas com a API do Twitter.
-  
-  **Retorno**
-  
-    200 - Conta de usuário reativado com sucesso.
-      
-    401 - Credenciais inválidas
-      
-      Usuário ou senha incorretos.
-      
-    400 - Parâmetros incorretos
-      
-      Falta de parâmetros ou parâmetros inconsistentes.     
-  
+
 ### Redefinir Senha
 
   Usado para funcionalidade de esqueci minha senha. O servidor gera uma nova senha aleatória para o usuário e envia para o email do mesmo.
