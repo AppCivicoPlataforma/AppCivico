@@ -1,5 +1,9 @@
 # AppCivico / Nuvem Cívica
 Documentação de Endpoints para acesso à plataforma de AppCivicos do TCU.
+ - Para dúvidas ou esclarecimentos sobre o uso da plataforma, utilize a [página de Issues do repositório.](https://github.com/AppCivicoPlataforma/AppCivico/issues)
+ - Temos uma página de [FAQ na Wiki](https://github.com/AppCivicoPlataforma/AppCivico/wiki/%5BFAQ%5D-Perguntas-Frequentes) para documentar perguntas frequentes e dicas.
+ - Após o término do Desafio de Aplicativos Cívicos, iniciaremos uma evolução da plataforma para sua versão 2.0. As alterações futuras podem ser visualizadas na [página do projeto AppCivico Versão 2.0](https://github.com/AppCivicoPlataforma/AppCivico/projects/1) deste repositório.
+
 ## Dados Abertos
 Visando facilitar o acesso à dados abertos do governo para a comunidade de desenvolvedores o Tribunal de Contas da União criou a plataforma AppCívico, que fornece através de uma API de serviços REST informações abertas. Exemplo:
 - Informações georreferênciadas sobre estabelecimentos de saúde públicos e privados do país, sendo as mesmas providas do   [Cadastro Nacional de Estabelecimentos de Saúde (CNES)](http://cnes.datasus.gov.br/) que é a base do próprio DataSUS.
