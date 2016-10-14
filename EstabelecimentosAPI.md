@@ -92,6 +92,7 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     **Parâmetros**
     * municipio - Parâmetro de query **opcional**. O nome do múnicipio que se deseja buscar as unidades.
     * uf - Parâmetro de query **opcional**. É a sigla do estado onde se encontra o estabelecimento.
+     * categoria - Parâmetro de query **opcional**. É a categoria do estabelecimento. São elas: hospital, posto de saúde, urgência, samu, farmácia, clínica, consultório, laboratório, apoio à saúde, atenção específica, unidade administrativa, atendimento domiciliar. Apenas uma categoria pode ser pesquisada por vez.
     * especialidade - Parâmetro de query **opcional**. Filtra os estabelecimentos que possuem uma determinada especialidade habilitada. Verifique a [`lista de especialidades disponíveis`](#especialidades).
     * campos - Parâmetros de query **opcionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         codCnes, codUnidade, codIbge, nomeFantasia, tipoUnidade, esferaAdministrativa, vinculoSus, temCentroCirurgico, temNeoNatal, uf, entre outros.
