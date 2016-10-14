@@ -100,6 +100,7 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 
 * [`GET - /rest/postagens`](#buscar-postagens)
 * [`GET - /rest/postagens/latitude/{latitude}/longitude/{longitude}/raio/{raio}`](#buscar-postagens-por-geolocalização)
+* [`GET - /rest/postagens/timeline`](#buscar-timeline)
 * [`POST - /rest/postagens`](#cadastrar-postagem)
 * [`GET - /rest/postagens/{codPostagem}`](#encontrar-postagem)
 * [`DELETE - /rest/postagens/{codPostagem}`](#excluir-postagem)
@@ -2397,6 +2398,118 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
       O apptoken enviado não é um token válido ou está expirado.
           
     
+
+### Buscar Timeline
+
+  Busca dados da postagem no formato de Timeline. Essa solução retorna um tipo mais abrangente de busca de postagens, enviando tanto as informações completas do autor, todos os conteúdos da postagem buscada, uma lista com todas as postagens filhas dela, e uma lista de tipos das postagens relacionadas.
+  
+No momento, a busca é feita de forma similar ao endpoint 'postagens', em que são utilizados parâmetros opcionais para filtrar os resultados, que são exibidos em ordem cronológica de postagem (como uma timeline).
+
+1. O primeiro bloco contém as informações padrão de uma postagem: seu código, data/hora, e códigos de objeto/tipos.
+2. No próximo, informações de código de autor, nome e a foto de perfil também são enviados.
+3. No último bloco, são enviados os conteúdos da postagem (agora abertos ao invés de apenas links), todas as postagens relacionadas (abertas) e uma nova estrutura* para contabilizar quantidades de postagens relacionadas.
+  
+* `GET - /rest/postagens/timeline` 
+
+  **Parâmetros**
+  
+    * appToken - Parâmetro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    
+    * codAplicativo - Parâmetro de query. **Opcional**. Código do aplicativo do qual serão buscadas as postagens. Caso não seja passado serão retornadas postagens de todos os aplicativos.
+    * codAutor - Parâmetro de query. **Opcional**. Código do autor do qual serão buscadas as postagens. Caso não seja passado serão retornadas postagens de todos as pessoas.
+    * codGrupoDestino - Parâmetro de query. **Opcional**. Identificador único do grupo ao qual a postagem é destinada.
+    * codPostagemRelacionada - Parâmetro de query. **Opcional**. Código da postagem relacionada da qual serão buscadas as postagens.
+    * codPessoaDestino - Parâmetro de query. **Opcional**. Identificador único da pessoa a quem a postagem é destinada.
+    * codTiposPostagem - Parâmetro de query. **Opcional**. Código do tipo de postagem do qual serão buscadas as mesmas. Caso não seja passado serão retornadas postagens de todos os tipos.
+    * hashtag - Parâmetro de query. **Opcional**. Hashtag para busca de todas as postagens que possuam como parâmetro texto em algum de seus conteúdos, o texto da hashtag.
+    * codTipoObjetoDestino - Parâmetro de query. **Opcional**. Código do tipo de objeto do qual a postagem está relacionada. Caso não seja passado serão buscadas postagens relacionadas à todos tipos os objetos.
+    * codObjetoDestino - Parâmetro de query. **Opcional**. Código do objeto do qual a postagem está relacionada. Caso não seja passado serão buscadas postagens relacionadas à todos os objetos.
+    * pagina - **Opcional**. Parâmetro de query opcional para uma busca paginada. **Opcional**. Número da página com valor padrão 0.
+    * quantidadeDeItens - Parâmetro de query opcional que define o máximo de escolas retornadas na busca. **Opcional**.Valor padrão é 20.
+  
+  **Retorno**  
+  
+    * 200 - Sucesso.
+      
+      Dados buscados com sucesso.
+      
+      Model Schema:
+      ```json
+[
+  {
+    "codAutor": 0,
+    "codObjetoDestino": 0,
+    "codPostagem": 0,
+    "codTipoObjetoDestino": 0,
+    "codTipoPostagem": 0,
+    "conteudos": [
+      {
+        "JSON": "string",
+        "codConteudoPost": 0,
+        "links": [
+          {
+            "href": "string",
+            "rel": "string",
+            "templated": true
+          }
+        ],
+        "postagem": {
+          "codAutor": 0,
+          "codObjetoDestino": 0,
+          "codPostagem": 0,
+          "codTipoObjetoDestino": 0,
+          "codTipoPostagem": 0,
+          "conteudos": [
+            {
+              "codConteudoPostagem": 0,
+              "links": [
+                "Link"
+              ]
+            }
+          ],
+          "dataHoraPostagem": "2016-10-14T14:55:51.623Z",
+          "latitude": 0,
+          "links": [
+            "Link"
+          ],
+          "longitude": 0
+        },
+        "texto": "string",
+        "valor": 0
+      }
+    ],
+    "dataHoraPostagem": "2016-10-14T14:55:51.623Z",
+    "fotoPerfilAutor": [
+      "string"
+    ],
+    "links": [
+      "Link"
+    ],
+    "nomeAutor": "string",
+    "postagensRelacionadas": [
+      "Postagem"
+    ],
+    "tipoPostagensRelacionadas": [
+      {
+        "codTipoPostagem": 0,
+        "links": [
+          "Link"
+        ],
+        "qteTipoPostagem": 0
+      }
+    ]
+  }
+]
+      ```
+      
+    * 400 - Parâmetros incorretos.
+      
+      Algum parâmetro está inconsistente.
+      
+    * 404 - Não encontrado
+    
+      Postagem não encontrada.
+          
 ### Excluir Postagem 
   
   Exclui uma postagem e seus conteúdos da plataforma.
