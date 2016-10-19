@@ -94,6 +94,16 @@ Cada estabelecimento de saúde está representado pelos seguintes dados.
     * uf - Parâmetro de query **opcional**. É a sigla do estado onde se encontra o estabelecimento.
      * categoria - Parâmetro de query **opcional**. É a categoria do estabelecimento. São elas: hospital, posto de saúde, urgência, samu, farmácia, clínica, consultório, laboratório, apoio à saúde, atenção específica, unidade administrativa, atendimento domiciliar. Apenas uma categoria pode ser pesquisada por vez.
     * especialidade - Parâmetro de query **opcional**. Filtra os estabelecimentos que possuem uma determinada especialidade habilitada. Verifique a [`lista de especialidades disponíveis`](#especialidades).
+    * nomeFantasia - Parâmetro de query **opcional**. Filtra os estabelecimentos por nome fantasia.
+    * vinculoSus - Parâmetro de query **opcional**. Vínculo (Sim/Não) do estabelecimento com o SUS.
+    * retencao - Parâmetro de query **opcional**. Tipo de retenção do estabelecimento. Opções disponíveis:
+        * Unidade Pessoa Física
+        * Unidade Filantrópica
+        * Unidade sem fins lucrativos
+        * Unidade Privada Lucrativa/ Opção pelo Simples
+        * Unidade Sindical
+        * Unidade Pública
+        * Unidade Privada Lucrativa
     * campos - Parâmetros de query **opcionais**. Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
         codCnes, codUnidade, codIbge, nomeFantasia, tipoUnidade, esferaAdministrativa, vinculoSus, temCentroCirurgico, temNeoNatal, uf, entre outros.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
