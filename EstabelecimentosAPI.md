@@ -179,6 +179,16 @@ Busca estabelecimentos de sáude ao redor de uma coordenada geográfica com dete
       * ATENDIMENTO DOMICILIAR 
 
     **Observação:** O valor para filtro deve ser passado todo em maíusculo e com acentos, exatamente iguais à listagem acima.
+    
+   * vinculoSus - Parâmetro de query **opcional**. Vínculo (Sim/Não) do estabelecimento com o SUS.
+   * retencao - Parâmetro de query **opcional**. Tipo de retenção do estabelecimento. Opções disponíveis:
+        * Unidade Pessoa Física
+        * Unidade Filantrópica
+        * Unidade sem fins lucrativos
+        * Unidade Privada Lucrativa/ Opção pelo Simples
+        * Unidade Sindical
+        * Unidade Pública
+        * Unidade Privada Lucrativa
   * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos que podem ser retornados são: 
        codCnes, codUnidade, codIbge, nomeFantasia, natureza, tipoUnidade, esferaAdministrativa, vinculoSus, retencao, fluxoClientela, origemGeografica, temAtendimentoUrgencia, temAtendimentoAmbulatorial, temCentroCirurgico,temObstetra,temNeoNatal, temDialise, descricaoCompleta,tipoUnidadeCnes, categoriaUnidade, logradouro, numero, bairro, cidade, uf, cep, turnoAtendimento, lat, long.
     **Observações:** Os campos devem ser passados separados por vígurla e sem espaços em branco. 
