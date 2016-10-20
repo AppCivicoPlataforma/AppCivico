@@ -122,6 +122,15 @@ Clique aqui para testar os endpoints no [Swagger API](http://mobile-aceite.tcu.g
 ### Tipos de objeto
   
   Tipos de objeto são usuados para relacionar o metamodelo com as bases que contém os dados abertos, como por exemplo, as bases de remédios, estabelecimentos de saúde, escolas, entre outras. Essa relação é feita através da postagem, pelo campo tipoObjetoDestino, onde se pode criar postagens relacionadas à uma entidade de dados aberto, como por exemplo uma escola. Além desse código do tipo de objeto destino essa relação ainda necessita do código do objeto destino, ou seja, o código único que identifica uma escola, estabelecimento de saúde ou outra entidade qualquer. Essa relação pode ser usada de várias maneiras para contruir aplicações, um bom exemplo disso é um aplicativo que faça avaliações de escolas, essa avaliações podem ser salvas como postagem, onde o código do tipoObjetoDestino é **1**(código do tipo objeto que representa uma escola) e o código objeto destino seria o código identificador da escola.  
+Na versão atual da API, existe um conjunto de tipos de objeto pré-definidos:
+
+ * 100 Estabelecimento de saúde
+ * 200 Remédios catalogados na ANVISA
+ * 300 Posto de atendimento do SINE
+ * 400 Centro de Referência Especializado em Assistência Social
+ * 500 Centro de Referência em Assistência Social
+  
+Apesar da existência de endpoints para cadastro de tipos de objeto, eles não estarão disponíveis na próxima versão da API. Assim, utilize apenas os tipos de objeto citados acima, pois são os únicos que possuem utilidade prática.
 
 ### Tipos de postagem
 
