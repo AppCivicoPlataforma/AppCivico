@@ -1745,12 +1745,14 @@ Apesar da existência de endpoints para cadastro de tipos de objeto, eles não e
   
   **Parâmetros** 
     
-    * appIdentifier - Parâmetro de header. **Opcional**. Código do aplicativo onde as pessoas possuem um perfil.
+    * appIdentifier - Parâmetro de header. **Opcional**. Código do aplicativo no qual as pessoas possuem um perfil.
     * email - Parâmetro de header. **Opcional**. E-mail da pessoa. É utilizado em conjunto com o parâmetro da senha.
     * senha - Parâmetro de header. **Opcional**. Senha da pessoa. É utilizada em conjunto com o parâmetro de email.
     * facebookToken - Parâmetro de header. **Opcional**. Facebook id que irá buscar a pessoa cadastrada com o mesmo.
     * googleToken - Parâmetro de header. **Opcional**. GooglePlus id que irá buscar a pessoa cadastrada com o mesmo.
     * twitterToken - Parâmetro de header. **Opcional**. Twitter id que irá buscar a pessoa cadastrada com o mesmo.
+    
+      **Obs:** caso o usuário escolha reativar a conta via e-mail, é obrigatório informar também a senha. De outro modo, se for optado por reativar via token, basta informar apenas o token (do Facebook, Google ou Twitter) que está no cadastro do usuário.
     
   **Retorno**
     
