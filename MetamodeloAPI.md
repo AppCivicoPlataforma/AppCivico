@@ -1752,7 +1752,7 @@ Apesar da existência de endpoints para cadastro de tipos de objeto, eles não e
     * googleToken - Parâmetro de header. **Opcional**. GooglePlus id que irá buscar a pessoa cadastrada com o mesmo.
     * twitterToken - Parâmetro de header. **Opcional**. Twitter id que irá buscar a pessoa cadastrada com o mesmo.
     
-      **Obs:** caso o usuário escolha reativar a conta via e-mail, é obrigatório informar também a senha. De outro modo, se for optado por reativar via token, basta informar apenas o token (do Facebook, Google ou Twitter) que está no cadastro do usuário.
+      **Obs:** existem duas formas para reativar um cadastro: via **e-mail e senha** ou via **token** (do Facebook, Google ou Twitter). Caso o método de reativação seja este último, basta informar o token (sem e-mail nem senha).
     
   **Retorno**
     
