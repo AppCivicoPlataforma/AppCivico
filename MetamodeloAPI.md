@@ -2523,13 +2523,13 @@ No momento, a busca é feita de forma similar ao endpoint 'postagens', em que s�
           
 ### Excluir Postagem 
   
-  Exclui uma postagem e seus conteúdos da plataforma.
+  Exclui uma postagem, todas suas postagens relacionadas e seus conteúdos da plataforma.
 
 * `DELETE - /rest/postagens/{codPostagem}
 
   **Parâmetros** 
     
-    * appToken - Parâmtro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
+    * appToken - Parâmetro de header. Token para autenticação de sessão. Obtido inicialmente por meio da operação [`GET - /rest/pessoas/autenticar`](#autenticar), e enviado nas requisições subsequentes pela aplicação cliente.
     
     * {codPostagem} - Parâmetro de path. Indica o código da postagem a ser excluída.
   
@@ -2537,7 +2537,7 @@ No momento, a busca é feita de forma similar ao endpoint 'postagens', em que s�
     
     * 200 - Ok    
       
-      Excluído com sucesso.
+      No content - Excluído com sucesso.
       
     * 404 - Não encontrado.
       
