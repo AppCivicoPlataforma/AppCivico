@@ -32,3 +32,27 @@ O objetivo é fazer com que mais desenvolvedores, interessados em desenvolver ap
   [API de Centros de Referência Especializado de Assistência Social - Creas](/EstabelecimentosAPI.md#postos-de-atendimento-do-centro-de-referência-especializado-de-assistência-social)
   
   [API de Postos do Site Nacional de Empregos](/EstabelecimentosAPI.md#postos-do-sine)
+
+### Links úteis
+
+- [Faça aqui o download do edital retificado do Desafio](http://portal.tcu.gov.br/lumis/portal/file/fileDownload.jsp?fileId=8A8182A157C4E4100157D381E2BA1CF5)
+ 
+- [Acesse aqui o Gihub da Nuvem Cívica para obter informações técnicas.](https://github.com/AppCivicoPlataforma/AppCivico)
+ 
+- [Acesse aqui a página de cadastramento de desenvolvedor e aplicativo na Nuvem Cívica.](http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/login)
+ 
+- [Leia aqui com atenção os procedimentos para o envio das propostas](http://drive.google.com/open?id=0B-NBmgxn2OjNQjR1SEdJaUxLZHM)
+
+### Datas Importantes
+|  Evento	| Data |
+|-------------------------	|----------------	
+| Lançamento do edital    	| 17/08/2016    
+| Envio dos aplicativos   	| Até 15/11/2016
+| Publicação do resultado 	| Até 22/11/2016 	
+| Cerimônia de premiação  	| 29/11/2016     
+
+### Premiação
+| Colocação | Valor |
+|-------------------------	|----------------
+|1º lugar	|R$ 25.000,00
+|2º lugar	|R$ 15.000,00
