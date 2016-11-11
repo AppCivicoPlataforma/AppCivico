@@ -33,7 +33,7 @@ O objetivo é fazer com que mais desenvolvedores, interessados em desenvolver ap
   
   [API de Postos do Site Nacional de Empregos](/EstabelecimentosAPI.md#postos-do-sine)
 
-### Links úteis
+## Links e informações úteis
 
 - [Faça aqui o download do edital retificado do Desafio](http://portal.tcu.gov.br/lumis/portal/file/fileDownload.jsp?fileId=8A8182A157C4E4100157D381E2BA1CF5)
  
