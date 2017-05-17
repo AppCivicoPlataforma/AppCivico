@@ -102,17 +102,17 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * nome - Nome da escola.
-      * rede - Se a rede é pública ou privada.
-      * municipio - Município onde se encon1tra a escola.
-      * uf - Sigla do estado onde se encontra a escola.
-      * situacaoFuncionamento - Filtra por situação de funcionamento. Os parâmetros válidos são: Em Atividade, Paralisada ou Extinta.
-      * categoriaEscolaPrivada - Filtra a categoria da escola privada. Os parâmtros válidos são: Particular, Comunitária, Confessional ou Filantrópica.
-      * esferaAdministrativa - Filtra as escolas de acordo com sua esfera administrativa. Os parâmtros válidos são: Estadual, Municipal, Federal ou Privada.
-      * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Deve-se separar cada campo apenas por vírgula, sem espaço em branco. Exemplo:
+   * nome - Nome da escola.
+   * rede - Se a rede é pública ou privada.
+   * municipio - Município onde se encon1tra a escola.
+   * uf - Sigla do estado onde se encontra a escola.
+   * situacaoFuncionamento - Filtra por situação de funcionamento. Os parâmetros válidos são: Em Atividade, Paralisada ou Extinta.
+   * categoriaEscolaPrivada - Filtra a categoria da escola privada. Os parâmtros válidos são: Particular, Comunitária, Confessional ou Filantrópica.
+   * esferaAdministrativa - Filtra as escolas de acordo com sua esfera administrativa. Os parâmtros válidos são: Estadual, Municipal, Federal ou Privada.
+   * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Deve-se separar cada campo apenas por vírgula, sem espaço em branco. Exemplo:
          endereco,qtdAlunos,qtdFuncionarios
-      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
-      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20. 
+   * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+   * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20. 
    
    **Retorno** 
       
@@ -202,15 +202,15 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * latitude - Parâmetro de path que recebe a latitude para busca georeferênciada.
-      * longitude - Parâmetro de path que recebe a longitude para busca georeferênciada.
-      * raio - Parâmetro de path que recebe o limite em quilometros a partir das coordenadas de referência que as  escolas serão buscadas.
-      * rede - Parâmetro de query opcional para filtrar o tipo de rede da escola: Pública ou Privada.
-      * situacaoFuncionamento - Parâmetro de query opcional para filtrar a situação de funcionamento da escola: se ela está em atividade, paralisada ou se foi extinta.
-      * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Deve-se separar cada campo apenas por vírgula, sem espaço em branco. Exemplo: 
+   * latitude - Parâmetro de path que recebe a latitude para busca georeferênciada.
+   * longitude - Parâmetro de path que recebe a longitude para busca georeferênciada.
+   * raio - Parâmetro de path que recebe o limite em quilometros a partir das coordenadas de referência que as  escolas serão buscadas.
+   * rede - Parâmetro de query opcional para filtrar o tipo de rede da escola: Pública ou Privada.
+   * situacaoFuncionamento - Parâmetro de query opcional para filtrar a situação de funcionamento da escola: se ela está em atividade, paralisada ou se foi extinta.
+   * campos - Representa a lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Deve-se separar cada campo apenas por vírgula, sem espaço em branco. Exemplo: 
          endereco,qtdAlunos,qtdFuncionarios
-      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
-      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+   * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+   * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
    **Retorno**
       
@@ -298,8 +298,8 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * campos - Lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos informados devem ser separados apenas por vírgula, sem espaços em branco nem com acentuação, mas devem ser escritos exatamente como foram declarados no modelo. Por exemplo, para retornar cnpj, endereço e quantidade de alunos da escola: 
+   * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+   * campos - Lista de campos a serem retornados. Caso seja omitida, todos os campos serão retornados. Os campos informados devem ser separados apenas por vírgula, sem espaços em branco nem com acentuação, mas devem ser escritos exatamente como foram declarados no modelo. Por exemplo, para retornar cnpj, endereço e quantidade de alunos da escola: 
          cnpj,endereco,qtdAlunos
       
       
@@ -389,9 +389,9 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código da escola referente.
-      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
-      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+    * {codEscola} - Parâmetro de path que representa o código da escola referente.
+    * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+    * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
    **Retorno**
       
@@ -431,10 +431,10 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {ano} - Parâmetro de path que representa o ano a ser buscado.
-      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
-      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+    * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+    * {ano} - Parâmetro de path que representa o ano a ser buscado.
+    * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+    * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
    **Retorno**
       
@@ -475,8 +475,8 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {ano} - Parâmetro de path que representa o ano à ser buscado.
+    * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+    * {ano} - Parâmetro de path que representa o ano à ser buscado.
       
       
    **Retorno**
@@ -500,9 +500,9 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {ano} - Parâmetro de path que representa o ano à ser buscado.
-      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
+    * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+    * {ano} - Parâmetro de path que representa o ano à ser buscado.
+    * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
       
       
    **Retorno**
@@ -545,9 +545,9 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {ano} - Parâmetro de path que representa o ano à ser buscado.
-      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
+    * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+    * {ano} - Parâmetro de path que representa o ano à ser buscado.
+    * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
       
    **Retorno**
       
@@ -593,10 +593,10 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
-      * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
-      * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
+    * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+    * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
+    * pagina - Parâmetro de query opcional para uma busca paginada, número da página com valor padrão 0.
+    * quantidadeDeItens -  Parâmetro de query opcional que define o máximo de escolas retornadas na busca. Valor padrão é 20.
       
    **Retorno**
       
@@ -637,8 +637,8 @@ Cada escola está representado pelos seguintes dados.
 
    **Parâmetros**
    
-      * {codEscola} - Parâmetro de path que representa o código a ser buscado.
-      * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
+    * {codEscola} - Parâmetro de path que representa o código a ser buscado.
+    * {tipo} - Parâmetro de path qua representa o código do tipo de avaliação a ser buscada. Para saber os tipos disponíveis, utilize a operação [`GET - /rest/tiposavaliacao`](#tipos-de-avaliação).
 
    **Retorno**
       
