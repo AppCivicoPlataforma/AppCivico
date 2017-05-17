@@ -1,7 +1,7 @@
-#Estabelecimentos de Saúde
-##API Referece
+# Estabelecimentos de Saúde
+## API Reference
 Esses *endpoints* são responsáveis por fornecer dados sobre os estabelecimentos de Saúde.
-##Fonte
+## Fonte
 [DataSUS - Cadastro Nacional de Estabelecimentos de Saúde(CNES)](http://cnes.datasus.gov.br/)
 
 ## URL Base 
