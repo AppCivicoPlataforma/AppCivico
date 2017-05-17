@@ -1,7 +1,7 @@
-#Escolas
-##API Referece
+# Escolas
+## API Referece
 Esses *endpoints* são responsáveis por fornecer dados sobre escolas públicas e privadas do país.
-##Fonte
+## Fonte
 [Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP)](http://portal.inep.gov.br/)
 
 ## URL Base 
