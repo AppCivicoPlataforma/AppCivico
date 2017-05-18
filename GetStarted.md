@@ -1,125 +1,117 @@
-Utilizando a API
+Primeiros passos
 ===================
 
-A **Nuvem Cívica** permite que você obtenha dados abertos de bases públicas de **saúde e educação**, assim como disponibiliza um sistema de **armazenamento de dados estruturado** para sua aplicação. Vamos explicar passo a passo nesse tutorial os procedimentos iniciais para utilização da API.
-
+### Introdução
 ----------
 
-### Pré-requisitos
-----------
+Este tutorial tem como objetivo apresentar alguns exemplos de como recuperar dados abertos disponíveis na Nuvem Cívica. Estes dados foram obtidos por portais públicos e estão estruturados na base do TCU para livre consulta.
 
-#### Cadastro na Nuvem Cívica
-Antes de começar, você precisará se cadastrar no Portal do Desenvolvedor da Nuvem Cívica e registrar sua aplicação.
 
- 1. Acesse o [Portal do Desenvolvedor], e clique na opção **Cadastrar**.
- 2. Preencha todos os dados corretamente e confirme os termos de compromisso. 
- 3. Após o cadastro, acesse a aba **Aplicativos** no canto superior esquerdo da tela.
- 4. Clique em **Novo Aplicativo** e insira o nome e descrição de sua aplicação, e clique em **Cadastrar**.
+### Como fazer uma requisição
+As informações da Nuvem Cívica são disponibilizadas por meio de *webservices* utilizando arquitetura [REST] ( Representational State Transfer). 
 
-Você receberá o código identificador do seu aplicativo. ***Lembre-se desse número!*** Ele será necessário em algumas operações da API.
+Todas os *endpoints* da plataforma possuem a mesma **URL Base**, seguida do nome da API específica:
 
-Após esses passos, você já está cadastrado na Nuvem Cívica! Agora, é possível executar operações na API que necessitam de autenticação.
+>  - **API Saúde:** http://mobile-aceite.tcu.gov.br/mapa-da-saude/
+>  - **API Escolas:** http://mobile-aceite.tcu.gov.br/nossaEscolaRS/
 
-#### Exemplo
+A referência de cada método disponível nas API's pode ser encontrada em [EscolasAPI.md] e [EstabelecimentosAPI.md].
 
- - Cadastrando aplicativo "NovoAplicativo"
+#### Requisição
+Como exemplo, vamos testar uma requisição simples na **API de remédios**, que pesquisa dados de medicamentos fabricados no Brasil e registrados pela ANVISA:
 
-> Aplicativo cadastrado com sucesso com sucesso. O código do aplicativo é o "448". Esse será o código que você irá usar como parâmetro nos endpoints da plataforma.
+ > **GET**  -  `http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/remedios?parametro=valor`
+ > [(Ver documentação)](https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EstabelecimentosAPI.md#rem%C3%A9dios-1)
 
-Já podemos fazer nossa primeira requisição! Ao executar a seguinte chamada:
->**http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/448**
+De acordo com a documentação, um dos parâmetros aceitados por esta requisição é o `produto`, indicando o nome comercial do remédio. Assim, para efetuar uma busca pelo remédio "Paracetamol", a seguinte requisição deve ser feita:
 
-Podemos obter as informações básicas referentes ao aplicativo cadastrado, com o seguinte retorno:
+> **GET** - http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/remedios?produto=paracetamol
+
+Obs: Você pode clicar no *link* acima e verificar o retorno das informações!
+#### Retorno
+Como observado, a requisição acima retorna uma lista de resultados em formato **JSON** com todos os produtos encontrados dado o parâmetro informado. Um exemplo de um trecho do retorno de produto:
 
 ```json
 {
-  "cod": 448,
-  "nome": "NovoAplicativo",
-  "descricao": "Novo aplicativo teste",
-  "links": [
-    {
-      "rel": "self",
-      "href": "http:\/\/mobile-aceite.tcu.gov.br\/appCivicoRS\/rest\/aplicativos\/448"
-    },
-    {
-      "rel": "responsavel",
-      "href": "http:\/\/mobile-aceite.tcu.gov.br\/appCivicoRS\/rest\/pessoas\/2"
-    }
-  ]
+  "codBarraEan": "7896181921547",
+  "principioAtivo": "CLORIDRATO DE TRAMADOL",
+  "cnpj": "53.162.095\/0001-06",
+  "laboratorio": "BIOSINT\u00c9TICA FARMAC\u00caUTICA LTDA",
+  "codGgrem": "521113010057106",
+  "registro": "1121304480023",
+  "produto": "CLORIDRATO DE TRAMADOL + PARACETAMOL",
+  "apresentacao": "37,5 MG + 325 MG COM REV CT BL AL PLAS TRANS X 10",
+  "classeTerapeutica": "N02A0 - ANALG\u00c9SICOS NARC\u00d3TICOS",
+  "precoLiberado": "N\u00e3o",
+  [...]
 }
 ```
 
-----------
+Executando esta busca de sua aplicação, o retorno em **JSON** pode ser tratado da forma que melhor atender à sua aplicação/linguagem, sendo serializado com objeto ou interpretando diretamente seus atributos. 
 
-Autenticação
--------------------
-Sua aplicação provavelmente precisa saber a identidade de um usuário, para que seja possível salvar seus dados de maneira segura e fornecer acesso aos dados em todos os dispositivos desse usuário. 
+Os dados então podem gerar funcionalidades práticas e úteis!
 
-O sistema de autenticação da Nuvem Cívica fornece serviços de *backend* prontos para serem utilizados pela sua aplicação, com suporte a cadastro, atualização de dados, recuperação de senha e autenticação segura.
+### Requisições georreferenciadas
 
+Os dados da Nuvem Cívica também dispõem de informações de geolocalização e muito mais sobre estabelecimentos de todo o Brasil. Atualmente, podem ser pesquisados:
 
+ - **Escolas**
+ - **Estabelecimentos de Saúde**
+ - **Unidades de Assistência Social**
+ - **Postos do SINE (empregos)**
 
-#### Cadastrando um usuário
-#### Autenticando um usuário
-#### Recuperação de senha
+Para ilustrar o exemplo, iremos executar uma requisição de busca de escolas por meio de localização.
+#### Requisição
 
+A chamada abaixo busca dados de escolas próximas a uma coordenada de referência:
+ > **GET** - `http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+ > [(Ver documentação)](https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EscolasAPI.md#escolas-georreferenciadas)
 
-[Portal do Desenvolvedor]: http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/login
-[Aplicativos]:http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/aplicativos
+Em que `{latitude} e {longitude}` são as coordenadas de pesquisa e `{raio}` o raio em quilômetros da área analisada pela busca.
 
-# AppCivico / Nuvem Cívica
+Tomando como exemplo as coordenadas da **sede do TCU** `(latitude: -15.8039346, longitude: -47.863683)`, podemos montar a seguinte requisição para pesquisar todas as escolas num raio de 2km:
 
+ > **GET** - http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/latitude/-15.8039346/longitude/-47.863683/raio/2
 
-## Como usar o metamodelo nos meus aplicativos?
+#### Retorno
 
-Para utilizar a API do metamodelo da Nuvem Cívica, primeiramente é necessário se cadastrar como desenvolvedor,
-para que assim você possa criar aplicativos e começar a usar os recursos disponíveis.
+Após a busca, obtemos a seguinte resposta em **JSON** (trecho):
+```json
+[ 
+  {
+    "codEscola": 53001397,
+    "nome": "COL SANTA ROSA",
+    "latitude": -15.807057,
+    "longitude": -47.880608,
+    "rede": "Privada",
+    "email": "DIRECAO@CSRDF.COM.BR",
+    "esferaAdministrativa": "Privada",
+    "categoriaEscolaPrivada": "Particular",
+    "situacaoFuncionamento": "Em Atividade",
+    "tipoConvenioPoderPublico": "Estadual e Municipal",
+    "cnpj": "61638227000313",
+    "telefone": "61 32242966",
+    "seFimLucrativo": "S",
+    "seConveniadaSetorPublico": "N",
+    "qtdSalasExistentes": 25,
+    "qtdSalasUtilizadas": 21,
+    "qtdFuncionarios": 107,
+    "qtdComputadores": 55,
+    "qtdComputadoresPorAluno": 26,
+    "qtdAlunos": 674,
+    "endereco": {
+      "cep": "70200610",
+      "descricao": "SGAS 601 - CJ C - LT 03 ",
+      "bairro": "ASA SUL",
+      "municipio": "Bras\u00edlia                                          ",
+      "uf": "DF"
+    },
+    [...]
+ ]
+```
 
-Você poderá realizar o seu cadastro através do [Portal do Desenvolvedor](http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/login). 
-Você cadastrará algumas informações sobre você e sua carreira como desenvolvedor, falando um pouco de sua experiência com desenvolvimento de aplicativos móveis. 
-
-Se você já possui cadastro seja no [Portal](http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/login) ou em algum aplicativo que utiliza a API do metamodelo, você poderá irá apenas fazer sua autenticação e acessar a plataforma.
-
-Com o seu perfil cadastrado, você terá acesso ao Portal do Desenvolvedor, que é um site onde você poderá criar e gerênciar seus aplicativos, tipos de perfil para os mesmos e tipos de postagem que serão registradas. 
-
-### Aplicativos
-
-* Para cada aplicativo criado, será gerado um código, que será usado por você nas chamadas das API's do metamodelo. Esse código é muito importante, é com ele que você irá registrar e buscar postagens, grupos, instalações e notificações dentro da plataforma. Para mais informações acesse a sessão de [Aplicativos](/MetamodeloAPI.md/#aplicativos) na documentação do metamodelo.
-
-### Tipo de Perfil
-
-* Para cada um de seus aplicativos, você poderá criar vários tipos de perfil. O tipo de perfil, é o que fará a destinção entre usuários dentro do seu aplicativo. Para mais informações acesse a sessão de [Tipos de Perfil](/MetamodeloAPI.md/#tipos-de-perfil) na documentação do metamodelo.
-
-
-### Tipos de Postagem
-
-* Postagens são a base de armazenamento de informação genérica dentro do metamodelo. Para distiguir as informações armazenadas em formato de postagem, cada uma delas possui um tipo. Você pode criar quantos tipos de postagem forem necessárias para seu aplicativo. Você pode configurar as seguintes características em um tipo de postagem:
-    * Tipo de postagem pai, que é o tipo de postagem associada. 
-    * Um tipo de objeto relacionado, que pode um dos objetos já pré cadastrados. São os dados abertos disponibilizados como por exemplo, estabelecimentos de saúde, escolas, remédios, entre outros.
-    * Descrição simples e descrição detalhada dos campos e dados que serão armazenados nas postagens desse tipo.
-    
-Para mais informações acesse a sessão de [Tipos de Postagem](/MetamodeloAPI.md/#tipos-de-postagem) na documentação do metamodelo.
-
-### Hashtags
-
-* Hashtags são marcadores em postagens, e você pode definir suas hastags por aplicativo ou seus usuários podem usar as hashtags pré-definidas na nuvem cívica. Para mandar uma postagem com hastags um dos conteúdos da mesma deve possuir uma hashtag pré-definida no campo texto.  
-
-Para mais informações acesse a sessão de [Hashtags](/MetamodeloAPI.md/#hashtags) na documentação do metamodelo.
-
-## Algum end-point do metamodelo não está funcionando corretamente?
-
-Se você percebeu algum problema em um dos webservices do metamodelo ou no [Portal do Desenvolvedor](http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/), por favor verifique na sessão de [*issues*](https://github.com/AppCivicoPlataforma/AppCivico/issues) se há algo à respeito. Se não houver, registre seu problema para que possamos verificar e dar um retorno assim que possível. 
-
-## Alguma parte da documentação ficou faltando ou não ficou clara?
-
-Você poderá colaborar com a documentação editando os arquivos e fazendo pull request para que possamos melhorar cada vez mais a plataforma. A sua colaboração é muito importante, pois ajuda na melhoria do da plataforma.
-
-## Alguma sugestão ?
-
-Se tiver alguma sugestão de melhoria nos serviços, dê seu *feedback* através do e-mail [appcivico@tcu.gov.br](mailto:appcivico@tcu.gov.br). 
-
-## Sou um Desenvolvedores iOS
-
-Para desenvolvedores iOS existe uma framework com métodos de conveniência para acesso aos endpoints do metamodelo.
-O framework não está completo, porém você pode colaborar no desenvolvimento e na melhora do mesmo. 
-Clique aqui para acessar o repositório do [APCSDK](https://github.com/neneds/APCSDK2).
+[http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/remedios]:http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/remedios
+[documentação]:https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EstabelecimentosAPI.md#remédios-1
+[EscolasAPI.md]:https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EscolasAPI.md
+[EstabelecimentosAPI.md]:https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EstabelecimentosAPI.md
+[REST]:https://www.infoq.com/br/articles/rest-introduction
