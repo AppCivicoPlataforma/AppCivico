@@ -1,3 +1,74 @@
+Primeiros passos
+===================
+
+A **Nuvem Cívica** permite que você obtenha dados abertos de bases públicas de **saúde e educação**, assim como disponibiliza um sistema de **armazenamento de dados estruturado** para sua aplicação. Vamos explicar passo a passo nesse tutorial os procedimentos iniciais para utilização da API.
+
+[TOC]
+
+----------
+
+### Pré-requisitos
+----------
+
+#### Cadastro na Nuvem Cívica
+Antes de começar, você precisará se cadastrar no Portal do Desenvolvedor da Nuvem Cívica e registrar sua aplicação.
+
+ 1. Acesse o [Portal do Desenvolvedor], e clique na opção **Cadastrar**.
+ 2. Preencha todos os dados corretamente e confirme os termos de compromisso. 
+ 3. Após o cadastro, acesse a aba **Aplicativos** no canto superior esquerdo da tela.
+ 4. Clique em **Novo Aplicativo** e insira o nome e descrição de sua aplicação, e clique em **Cadastrar**.
+
+Você receberá o código identificador do seu aplicativo. ***Lembre-se desse número!*** Ele será necessário em algumas operações da API.
+
+Após esses passos, você já está cadastrado na Nuvem Cívica! Agora, é possível executar operações na API que necessitam de autenticação.
+
+#### Exemplo
+
+ - Cadastrando aplicativo "NovoAplicativo"
+
+> Aplicativo cadastrado com sucesso com sucesso. O código do aplicativo é o "448". Esse será o código que você irá usar como parâmetro nos endpoints da plataforma.
+
+Já podemos fazer nossa primeira requisição! Ao executar a seguinte chamada:
+>**http://mobile-aceite.tcu.gov.br/appCivicoRS/rest/aplicativos/448**
+
+Podemos obter as informações básicas referentes ao aplicativo cadastrado, com o seguinte retorno:
+
+```json
+{
+  "cod": 448,
+  "nome": "NovoAplicativo",
+  "descricao": "Novo aplicativo teste",
+  "links": [
+    {
+      "rel": "self",
+      "href": "http:\/\/mobile-aceite.tcu.gov.br\/appCivicoRS\/rest\/aplicativos\/448"
+    },
+    {
+      "rel": "responsavel",
+      "href": "http:\/\/mobile-aceite.tcu.gov.br\/appCivicoRS\/rest\/pessoas\/2"
+    }
+  ]
+}
+```
+
+----------
+
+Autenticação
+-------------------
+Sua aplicação provavelmente precisa saber a identidade de um usuário, para que seja possível salvar seus dados de maneira segura e fornecer acesso aos dados em todos os dispositivos desse usuário. 
+
+O sistema de autenticação da Nuvem Cívica fornece serviços de *backend* prontos para serem utilizados pela sua aplicação, com suporte a cadastro, atualização de dados, recuperação de senha e autenticação segura.
+
+
+
+#### Cadastrando um usuário
+#### Autenticando um usuário
+#### Recuperação de senha
+
+
+[Portal do Desenvolvedor]: http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/login
+[Aplicativos]:http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/aplicativos
+
 # AppCivico / Nuvem Cívica
 
 
