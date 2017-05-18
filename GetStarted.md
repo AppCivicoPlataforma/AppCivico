@@ -2,9 +2,6 @@ Primeiros passos
 ===================
 
 A **Nuvem Cívica** permite que você obtenha dados abertos de bases públicas de **saúde e educação**, assim como disponibiliza um sistema de **armazenamento de dados estruturado** para sua aplicação. Vamos explicar passo a passo nesse tutorial os procedimentos iniciais para utilização da API.
-
-[TOC]
-
 ----------
 
 ### Pré-requisitos
