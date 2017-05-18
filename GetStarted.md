@@ -4,18 +4,18 @@ Primeiros passos
 ### Introdução
 ----------
 
-Este tutorial tem como objetivo apresentar alguns exemplos de como recuperar dados abertos disponíveis na Nuvem Cívica. Estes dados foram obtidos por portais públicos e estão estruturados na base do TCU para livre consulta.
+Este tutorial tem como objetivo apresentar exemplos de como recuperar dados abertos disponíveis na Nuvem Cívica. 
 
 
 ### Como fazer uma requisição
 As informações da Nuvem Cívica são disponibilizadas por meio de *webservices* utilizando arquitetura [REST] ( Representational State Transfer). 
 
-Todas os *endpoints* da plataforma possuem a mesma **URL Base**, seguida do nome da API específica:
+Todos os *endpoints* da plataforma possuem a mesma **URL Base**, seguida do nome da API específica:
 
 >  - **API Saúde:** http://mobile-aceite.tcu.gov.br/mapa-da-saude/
 >  - **API Escolas:** http://mobile-aceite.tcu.gov.br/nossaEscolaRS/
 
-A referência de cada método disponível nas API's pode ser encontrada em [EscolasAPI.md] e [EstabelecimentosAPI.md].
+O detalhamento de cada método disponível nas API's pode ser encontrada em [EscolasAPI.md] e [EstabelecimentosAPI.md].
 
 #### Requisição
 Como exemplo, vamos testar uma requisição simples na **API de remédios**, que pesquisa dados de medicamentos fabricados no Brasil e registrados pela ANVISA:
@@ -23,7 +23,7 @@ Como exemplo, vamos testar uma requisição simples na **API de remédios**, que
  > **GET**  -  `http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/remedios?parametro=valor`
  > [(Ver documentação)](https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EstabelecimentosAPI.md#rem%C3%A9dios-1)
 
-De acordo com a documentação, um dos parâmetros aceitados por esta requisição é o `produto`, indicando o nome comercial do remédio. Assim, para efetuar uma busca pelo remédio "Paracetamol", a seguinte requisição deve ser feita:
+De acordo com a documentação, um dos parâmetros aceitoss por esta requisição é o `produto`, indicando o nome comercial do remédio. Assim, para efetuar uma busca pelo remédio "Paracetamol", a seguinte requisição deve ser feita:
 
 > **GET** - http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/remedios?produto=paracetamol
 
@@ -47,20 +47,18 @@ Como observado, a requisição acima retorna uma lista de resultados em formato 
 }
 ```
 
-Executando esta busca de sua aplicação, o retorno em **JSON** pode ser tratado da forma que melhor atender à sua aplicação/linguagem, sendo serializado com objeto ou interpretando diretamente seus atributos. 
-
 Os dados então podem gerar funcionalidades práticas e úteis!
 
 ### Requisições georreferenciadas
 
-Os dados da Nuvem Cívica também dispõem de informações de geolocalização e muito mais sobre estabelecimentos de todo o Brasil. Atualmente, podem ser pesquisados:
+Os dados da Nuvem Cívica também dispõem de informações de geolocalização e diversos outros atributos acerca de entidades de todo o Brasil. Atualmente, podem ser pesquisados:
 
  - **Escolas**
  - **Estabelecimentos de Saúde**
  - **Unidades de Assistência Social**
  - **Postos do SINE (empregos)**
 
-Para ilustrar o exemplo, iremos executar uma requisição de busca de escolas por meio de localização.
+Para ilustrar o exemplo, executaremos uma requisição de busca de escolas por meio de localização.
 #### Requisição
 
 A chamada abaixo busca dados de escolas próximas a uma coordenada de referência:
