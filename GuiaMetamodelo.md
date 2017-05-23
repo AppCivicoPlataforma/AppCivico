@@ -11,7 +11,7 @@ A **Nuvem Cívica** permite que você obtenha dados abertos de bases públicas d
 #### Cadastro na Nuvem Cívica
 Antes de começar, você precisará se cadastrar no Portal do Desenvolvedor da Nuvem Cívica e registrar sua aplicação.
 
- 1. Acesse o [Portal do Desenvolvedor], e clique na opção **Cadastrar**.
+ 1. Acesse o [Portal do Desenvolvedor](http://mobile-aceite.tcu.gov.br/appCivicoWeb/web/externo/#/login), e clique na opção **Cadastrar**.
  2. Preencha todos os dados corretamente e confirme os termos de compromisso. 
  3. Após o cadastro, acesse a aba **Aplicativos** no canto superior esquerdo da tela.
  4. Clique em **Novo Aplicativo** e insira o nome e descrição de sua aplicação, e clique em **Cadastrar**.
