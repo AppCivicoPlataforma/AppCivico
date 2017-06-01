@@ -49,6 +49,53 @@ Como observado, a requisição acima retorna uma lista de resultados em formato 
 
 Os dados então podem gerar funcionalidades práticas e úteis!
 
+### Requisições com múltiplos parâmetros
+
+Muitos dos *endpoints* abertos disponíveis na Nuvem Cívica permitem uma busca mais parametrizada por meio de atributos específicos. Utilizando agora a base de Escolas e a seguinte requisição como exemplo:
+
+ > **GET** - `http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/`
+ > [(Ver documentação)](https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EscolasAPI.md#buscar-escolas)
+
+Em buscas genéricas, parâmetros são necessários para filtrar os resultados retornados por essas pesquisas. Estes parâmetros são inseridos na busca por meio da sintaxe ` "...rest/escolas?tipoparam1=param1&tipoparam2=param2"`. Os tipos de parâmetros disponíveis podem ser encontrados na [documentação](https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EscolasAPI.md) dos *endpoints.*
+
+#### Requisição
+Numa situação onde fosse necessário pesquisar todas as **escolas** **particulares** **em atividade do DF**, a seguinte chamada deve ser feita:
+
+> **GET** http://mobile-aceite.tcu.gov.br:80/nossaEscolaRS/rest/escolas?rede=Privada&uf=df&situacaoFuncionamento=Em%20Atividade&quantidadeDeItens=20
+
+#### Retorno 
+
+Após executada esta chamada, serão retornadas as escolas que correspondem aos requisitos solicitados. Um trecho da resposta pode ser observado abaixo:
+```json
+[ 
+   {
+    "codEscola": 53007638,
+    "nome": "CR FREDERICO OZANAM",
+    "rede": "Privada",
+    "email": "CRECHEFREDERICOOZANAM@HOTMAIL.COM",
+    "esferaAdministrativa": "Privada",
+    "categoriaEscolaPrivada": "Filantrópica",
+    "situacaoFuncionamento": "Em Atividade",
+    "tipoConvenioPoderPublico": "Estadual",
+    "cnpj": "00573550000108",
+    "telefone": "61 33711868",
+    "seFimLucrativo": "N",
+    "seConveniadaSetorPublico": "S",
+    "qtdSalasExistentes": 8,
+    "qtdSalasUtilizadas": 8,
+    "qtdFuncionarios": 67,
+    "qtdComputadores": 11,
+    "qtdComputadoresPorAluno": 0,
+    "qtdAlunos": 140,
+    "endereco": {
+      "cep": "72215310",
+      "descricao": "QNM 31 - MOD C - AE ",
+      "bairro": "CEILANDIA SUL",
+      "municipio": "Brasília",
+      "uf": "DF"
+    }, [...]
+```
+
 ### Requisições georreferenciadas
 
 Os dados da Nuvem Cívica também dispõem de informações de geolocalização e diversos outros atributos acerca de entidades de todo o Brasil. Atualmente, podem ser pesquisados:
