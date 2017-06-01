@@ -148,7 +148,7 @@ Após a busca, obtemos a seguinte resposta em **JSON** (trecho):
       "cep": "70200610",
       "descricao": "SGAS 601 - CJ C - LT 03 ",
       "bairro": "ASA SUL",
-      "municipio": "Bras\u00edlia                                          ",
+      "municipio": "Brasília",
       "uf": "DF"
     },
     [...]
