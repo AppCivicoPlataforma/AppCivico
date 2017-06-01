@@ -62,7 +62,7 @@ Para ilustrar o exemplo, executaremos uma requisição de busca de escolas por m
 #### Requisição
 
 A chamada abaixo busca dados de escolas próximas a uma coordenada de referência:
- > **GET** - `http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
+ > **GET** - `http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/latitude/{latitude}/longitude/{longitude}/raio/{raio}`
  > [(Ver documentação)](https://github.com/AppCivicoPlataforma/AppCivico/blob/master/EscolasAPI.md#escolas-georreferenciadas)
 
 Em que `{latitude} e {longitude}` são as coordenadas de pesquisa e `{raio}` o raio em quilômetros da área analisada pela busca.
